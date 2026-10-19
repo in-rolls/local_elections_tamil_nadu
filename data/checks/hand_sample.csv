@@ -1,0 +1,31 @@
+sample_id,year,district_code,block,gram_panchayat,reservation_raw,winner,winner_sex_raw,votes,source_path,source_page,heading_on_same_page,crop
+2011_01,2011,cud,கம்மாபுரம்,ஊ.மங்களம்,பொது,அறிவழகன்.நா,ஆண்,726.0,data/raw/tnsec/rulbe2011/vpp_cud.pdf,30,True,data/checks/hand/2011_01.png
+2011_02,2011,pdk,கந்தவர்வ கோட்டை,நம்புரான்பட்டி,பொது,குமரவேல்.ப,ஆண்,259.0,data/raw/tnsec/rulbe2011/vpp_pdk.pdf,37,True,data/checks/hand/2011_02.png
+2011_03,2011,vpm,சங்கராபுரம்,சோழம்பட்டு,ஆதி திராவிடர் (பொது),சித்ரா.வெ,பெண்,1124.0,data/raw/tnsec/rulbe2011/vpp_vpm.pdf,138,True,data/checks/hand/2011_03.png
+2011_04,2011,slm,மேக்.சௌழ்த்ரி,கண்டர்குலமாணிக்கம்,ஆதி திராவிடர் (பொது),ஈஸ்வரன்.பெ.,ஆண்,1858.0,data/raw/tnsec/rulbe2011/vpp_slm.pdf,33,True,data/checks/hand/2011_04.png
+2011_05,2011,vlr,அணைக்கட்டு,சத்தியமங்கலம்,ஆதி திராவிடர் (பொது),ரமணி.அ,பெண்,1631.0,data/raw/tnsec/rulbe2011/vpp_vlr.pdf,11,True,data/checks/hand/2011_05.png
+2011_06,2011,ngp,சீர்காழி,பெருமங்கலம்,பொது,இளங்கோவன்.இராம.,ஆண்,454.0,data/raw/tnsec/rulbe2011/vpp_ngp.pdf,70,True,data/checks/hand/2011_06.png
+2011_07,2011,rmd,மண்டபம்,ஆற்றாங்கரை,பொது,அஸ்மத் அலி.எம்,ஆண்,679.0,data/raw/tnsec/rulbe2011/vpp_rmd.pdf,25,True,data/checks/hand/2011_07.png
+2011_08,2011,cud,நல்லூர்,மேலூர்,பொது,செல்வன்.ப,ஆண்,779.0,data/raw/tnsec/rulbe2011/vpp_cud.pdf,106,True,data/checks/hand/2011_08.png
+2011_09,2011,svg,சக்கோட்டை,சங்கராபுரம்,பொது,மாங்குடி.சா,ஆண்,3251.0,data/raw/tnsec/rulbe2011/vpp_svg.pdf,53,False,data/checks/hand/2011_09.png
+2011_10,2011,svg,சக்கோட்டை,செங்காத்தங்குடி,ஆதி திராவிடர் (பெண்கள்),பஞ்சவர்ணம்.அ,பெண்,725.0,data/raw/tnsec/rulbe2011/vpp_svg.pdf,52,False,data/checks/hand/2011_10.png
+2019_01,2019,tnj,திருவையாறு,பூதராயநல்லூர்,பொது (பெண்கள்),மகேஸ்வரி.E,பெண்,0.0,data/raw/tnsec/rlbe2019/vpp_tnj.pdf,78,True,data/checks/hand/2019_01.png
+2019_02,2019,mdu,திருமங்கலம்,கரிசல்பட்டி,பொது (பெண்கள்),கோட்டூா் (எ) குருவுலட்சுமி.சி,பெண்,720.0,data/raw/tnsec/rlbe2019/vpp_mdu.pdf,43,True,data/checks/hand/2019_02.png
+2019_03,2019,tvm,ஆரணி (மேற்கு),அய்யம்பாளையம்,ஆதி திராவிடர் (பெண்கள்),கற்பகம்.சே,பெண்,714.0,data/raw/tnsec/rlbe2019/vpp_tvm.pdf,20,False,data/checks/hand/2019_03.png
+2019_04,2019,vnr,காரியாபட்டி,வரலொட்டி,பொது,திருப்பதி.வெ,ஆண்,785.0,data/raw/tnsec/rlbe2019/vpp_vnr.pdf,23,True,data/checks/hand/2019_04.png
+2019_05,2019,rmd,திருவாடானை,மாவூர்,ஆதி திராவிடர் (பெண்கள்),கலைச்செல்வி.ர,பெண்,335.0,data/raw/tnsec/rlbe2019/vpp_rmd.pdf,45,True,data/checks/hand/2019_05.png
+2019_06,2019,mdu,மதுரை (மேற்கு),பூதகுடி,பொது,முத்து.K.C,ஆண்,1039.0,data/raw/tnsec/rlbe2019/vpp_mdu.pdf,67,True,data/checks/hand/2019_06.png
+2019_07,2019,pdk,விராலிமலை,குமாரமங்களம்,பொது,பொன்ராமன்.தெ,ஆண்,862.0,data/raw/tnsec/rlbe2019/vpp_pdk.pdf,96,True,data/checks/hand/2019_07.png
+2019_08,2019,cud,அண்ணாகிராமம்,காவனூர்,ஆதி திராவிடர் (பெண்கள்),லலிதா.ஏ,பெண்,644.0,data/raw/tnsec/rlbe2019/vpp_cud.pdf,3,True,data/checks/hand/2019_08.png
+2019_09,2019,tlr,ஆர் கே பேட்டை,வெள்ளாத்தூர்,பொது,துரை.K,ஆண்,1121.0,data/raw/tnsec/rlbe2019/vpp_tlr.pdf,7,True,data/checks/hand/2019_09.png
+2019_10,2019,vnr,வெம்பக்கோட்டை,ஜெகவீரம்பட்டி,ஆதி திராவிடர் (பொது),வீரலட்சுமி.ச,பெண்,177.0,data/raw/tnsec/rlbe2019/vpp_vnr.pdf,88,False,data/checks/hand/2019_10.png
+2021_01,2021,kpm,காஞ்சிபுரம்,மேல்லொட்டிவாக்கம்,பொது (பெண்கள்),சம்பூரணம்.சு,பெண்,496.0,data/raw/tnsec/rlbe2021/vpp_kpm.pdf,22,True,data/checks/hand/2021_01.png
+2021_02,2021,vpm,மேல்மலையனூர்,தேப்பிரம்பட்டு,பொது (பெண்கள்),சரோஜா.ம,பெண்,1239.0,data/raw/tnsec/rlbe2021/vpp_vpm.pdf,103,True,data/checks/hand/2021_02.png
+2021_03,2021,kki,திருகோவிலூர்,நெடுங்கம்பட்டு,ஆதி திராவிடர் (பொது),அல்லி.அ,பெண்,767.0,data/raw/tnsec/rlbe2021/vpp_kki.pdf,49,True,data/checks/hand/2021_03.png
+2021_04,2021,kki,உளுந்தூர்பேட்டை,குணமங்கலம்,ஆதி திராவிடர் (பொது),சாமிநாதன்.ல,ஆண்,491.0,data/raw/tnsec/rlbe2021/vpp_kki.pdf,2,True,data/checks/hand/2021_04.png
+2021_05,2021,tnv,வள்ளியூர்,ஆ.திருமலாபுரம்,பொது (பெண்கள்),இந்திரா.ச,பெண்,914.0,data/raw/tnsec/rlbe2021/vpp_tnv.pdf,47,True,data/checks/hand/2021_05.png
+2021_06,2021,vpm,கண்டமங்கலம்,கோண்டூர்,ஆதி திராவிடர் (பொது),ஏழுமலை.கு,ஆண்,959.0,data/raw/tnsec/rlbe2021/vpp_vpm.pdf,18,True,data/checks/hand/2021_06.png
+2021_07,2021,rpt,திமிரி,குட்டியம்,பொது (பெண்கள்),லட்சுமி.பா,பெண்,411.0,data/raw/tnsec/rlbe2021/vpp_rpt.pdf,36,True,data/checks/hand/2021_07.png
+2021_08,2021,tpt,கந்திலி,செவ்வாத்தூர்,பொது,மோகனா.சா,பெண்,2301.0,data/raw/tnsec/rlbe2021/vpp_tpt.pdf,9,True,data/checks/hand/2021_08.png
+2021_09,2021,kki,உளுந்தூர்பேட்டை,ஸ்ரீதேவி,ஆதி திராவிடர் (பெண்கள்),சசிகலா.எம்,பெண்,1030.0,data/raw/tnsec/rlbe2021/vpp_kki.pdf,5,True,data/checks/hand/2021_09.png
+2021_10,2021,vlr,குடியாத்தம்,அக்ராவரம்,ஆதி திராவிடர் (பொது),முனிசாமி.ந,ஆண்,1290.0,data/raw/tnsec/rlbe2021/vpp_vlr.pdf,26,True,data/checks/hand/2021_10.png

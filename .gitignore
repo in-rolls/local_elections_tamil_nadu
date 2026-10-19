@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+/build/
+dist/
+*.log
+*.part
+data/derived/
+data/raw/tnrd/1_58_2006_228_en.pdf
+!data/raw/**/collect.log
