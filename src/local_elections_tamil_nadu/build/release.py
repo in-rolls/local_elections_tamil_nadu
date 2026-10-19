@@ -13,6 +13,7 @@ Commands:
 """
 
 import argparse
+import csv
 import hashlib
 import json
 import re
@@ -532,6 +533,38 @@ def checks_links():
     return out
 
 
+def stored_sha256(path):
+    """sha256 of a raw file as stored, or None if it is not in the repo.
+
+    Files over GitHub's 100 MB limit are committed as byte-split parts
+    (`split -b 90m -a 1 FILE FILE.part_`); the hash is taken on the parts
+    concatenated in order, which restores the original bytes.
+    """
+    if path.exists():
+        return sha256(path)
+    parts = sorted(path.parent.glob(path.name + ".part_*"))
+    if not parts:
+        return None
+    digest = hashlib.sha256()
+    for part in parts:
+        digest.update(part.read_bytes())
+    return digest.hexdigest()
+
+
+def raw_problems():
+    """Every logged raw file must be in the repo with the logged sha256."""
+    with (DATA / "raw" / "fetch_log.csv").open(encoding="utf-8") as fh:
+        rows = list(csv.DictReader(fh))
+    problems = []
+    for row in rows:
+        got = stored_sha256(ROOT / row["path"])
+        if got != row["sha256"]:
+            problems.append(
+                row["path"] + (" (missing)" if got is None else " (changed)")
+            )
+    return len(rows), problems
+
+
 def run_checks():
     out = []
     for year in (2011, 2019, 2021):
@@ -591,11 +624,17 @@ def main():
     fails = [
         c["check"] for c in new["checks"] if c["blocking"] and c["status"] == "fail"
     ]
+    logged, raw_bad = raw_problems()
+    print(
+        f"raw files: {logged - len(raw_bad)} of {logged} match data/raw/fetch_log.csv"
+    )
+    if raw_bad:
+        print("raw file missing or changed:", raw_bad[:20])
     if bad:
         print("hash mismatch:", bad)
     if fails:
         print("blocking failures:", fails)
-    sys.exit(1 if bad or fails else 0)
+    sys.exit(1 if bad or fails or raw_bad else 0)
 
 
 if __name__ == "__main__":

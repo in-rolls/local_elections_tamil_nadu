@@ -10,17 +10,16 @@ is requested (checked 2026-10-18 for 2016, 2019, 2020, 2021). Kept here:
   254/2006  G.O.Ms.121 errata to 228/2006
   the index page and the department's 2006 election summary page
 
-Files over 95 MB are listed in data/raw/LARGE_FILES.csv with their hash and URL
-instead of being committed, and are not fetched again.
+A file over GitHub's 100 MB limit (228/2006) is committed as byte-split parts,
+`split -b 90m -a 1 FILE FILE.part_`; `cat FILE.part_*` restores it, and
+`make verify` checks the parts against the logged sha256.
 
 Run: python -m local_elections_tamil_nadu.collect.tnrd
 """
 
-import csv
 import logging
 
 from local_elections_tamil_nadu.collect.fetch import (
-    RAW,
     fetch,
     session,
     setup_logging,
@@ -44,14 +43,8 @@ log = logging.getLogger("tnrd")
 def main():
     setup_logging(f"{OUT}/collect.log")
     s = session(proxy=False)
-    with (RAW / "LARGE_FILES.csv").open(encoding="utf-8") as fh:
-        large = {row["path"] for row in csv.DictReader(fh)}
     for name, url in FILES.items():
-        rel = f"{OUT}/{name}"
-        if rel in large:
-            log.info("skipping %s: listed in LARGE_FILES.csv", rel)
-            continue
-        fetch(s, url, rel)
+        fetch(s, url, f"{OUT}/{name}")
 
 
 if __name__ == "__main__":

@@ -123,7 +123,10 @@ def save(content, rel, url, status, method="GET"):
 
 def done(rel, held=None):
     held = logged() if held is None else held
-    return any(r in held and (ROOT / r).exists() for r in (rel, rel + ".gz"))
+    stored = any(r in held and (ROOT / r).exists() for r in (rel, rel + ".gz"))
+    # a file over GitHub's size limit is committed as byte-split parts
+    split = rel in held and any((ROOT / rel).parent.glob((ROOT / rel).name + ".part_*"))
+    return stored or split
 
 
 def request(s, url, method="GET", data=None, retries=6, timeout=120):

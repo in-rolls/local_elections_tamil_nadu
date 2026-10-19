@@ -9,5 +9,4 @@ dist/
 *.log
 *.part
 data/derived/
-data/raw/tnrd/1_58_2006_228_en.pdf
 !data/raw/**/collect.log

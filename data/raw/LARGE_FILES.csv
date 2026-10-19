@@ -1,2 +1,0 @@
-path,url,sha256,bytes,fetched_at_utc,note
-data/raw/tnrd/1_58_2006_228_en.pdf,https://tnrd.tn.gov.in/project/go_files/1_58_2006_228_en.pdf,1d6db70518c7460a4618032cb91c2818541ad2f4243d72d332b0fb9e94b00498,116427005,2026-10-19T04:51:45Z,over 95 MB; not committed. Same sha256 as local_elections/data/source_search/early_heads/raw/tn_1_58_2006_228_en.pdf
