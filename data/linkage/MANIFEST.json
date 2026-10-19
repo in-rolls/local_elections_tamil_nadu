@@ -12,10 +12,10 @@
   }
  },
  "links": {
-  "2019": 9490,
+  "2019": 9491,
   "2021": 2747
  },
- "exact_folded_name_links": 11971,
+ "exact_folded_name_links": 11972,
  "fuzzy_name_links": 266,
  "excluded_2011": {
   "no_crosswalked_union": 0,
@@ -40,7 +40,7 @@
     ]
    },
    "exact_respelled": {
-    "links": 367,
+    "links": 368,
     "reviewed": 45,
     "correct": 45,
     "precision": 1.0,
@@ -99,7 +99,7 @@
   "linked_all": 0.1083,
   "linked_exact": 0.1088,
   "linked_fuzzy": 0.0865,
-  "n_exact": 11971,
+  "n_exact": 11972,
   "n_fuzzy": 266,
   "random_same_union_group": 0.0012,
   "random_permutations": 50
@@ -327,7 +327,7 @@
    "later_year": 2019,
    "seats_2011": 430,
    "seats_later": 430,
-   "linked": 420
+   "linked": 421
   },
   {
    "district_2011": "vlr",
@@ -363,13 +363,13 @@
  },
  "code_sha256": {
   "vp_links.py": "4a5e7b0318b4d74c54fb3aeb02fec0a370a6ac471a5ee7b0172fe2553e4237cb",
-  "names.py": "fe7035cbe8501278d9f22045846554aa4da0646a3dbf122011233c9140c04c07",
+  "names.py": "a78962ceff49172c26e995dd49cdea75d2e4320fd5fd085c2a36cc36c8c6d296",
   "candidate_check.py": "a7dad0c50b0eae3351cfd11f504f403dd99c8f797cec5e607ffab2087486b6be"
  },
  "outputs": {
   "vp_2011_2019.parquet": {
-   "rows": 9490,
-   "sha256": "4ca5f63814fa14b2843ca2a8776b5261a3fea8fb2985d5f0768482e7a814081f"
+   "rows": 9491,
+   "sha256": "4fecda05b10c0217adfaca8eb712d30d65ae1b08f449e48bb3695cb1ade9708f"
   },
   "vp_2011_2021.parquet": {
    "rows": 2747,

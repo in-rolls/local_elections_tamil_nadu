@@ -50,7 +50,7 @@ ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5}
 SECTION_WORDS = r"பிட்|சேத்தி|பகுதி"
 NUMBER = re.compile(
     r"(?:^|(?<=[\s.,(-]))(?:எண்\s*\.?\s*)?"
-    r"(\d{1,3}(?=$|[\s.,)-])|(?:I{1,3}|IV|V)(?=$|[\s)]))"
+    r"(\d{1,3}(?=$|[\s.,)\-஀-௿])|(?:I{1,3}|IV|V)(?=$|[\s)]))"
 )
 SERIES = re.compile(r"(?:^|\s)((?:ஏ|பி|சி|டி)/(?:ஏ|பி|சி|டி))(?=$|\s)")
 # An initial: one Tamil syllable or a spelled letter, or one Latin capital,

@@ -140,14 +140,14 @@ manifest`.
 | `2011_district_category_counts_vs_gazette_318`: seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, parsed independently in local_elections); differences can be real (later amendments, no-nomination seats) | external | **warn** | {"cells": 147, "cells_differing": 12, "seats_differing": 12, "examples": [{"cell": "ari/ST/False", "gazette": 3, "results": 2}, {"cell": "kar/SC/False", "gazette": 22, "results": 21}, {"cell": "nlg/NONE/False", "gazette": 13, "results": 14}, {"cell": "nlg/NONE/True", "gazette": 10, "results": 9}, {" |
 | `2011_women_reserved_share`: 2011 reserved one third of offices for women (50% came in 2016) | legal | **pass** | {"share": 0.3424} |
 | `2019_seats_vs_results_application`: seats in the PDFs (including headings printed with no candidate) vs posts in the commission's results application; the application's other rows are panchayats it marks 'result not declared' | external | **pass** | {"parsed": 9624, "parsed_no_candidates": 2, "app_posts": 9624, "app_posts_no_nomination": 2, "app_rows": 9690} |
-| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9994, "sex_compared": 9622, "sex_agree": 1.0} |
+| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9995, "sex_compared": 9622, "sex_agree": 1.0} |
 | `2019_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5, "districts_below_half": {}} |
 | `2021_ordinary_seats_vs_sec`: seats in the nine districts' files vs the 2,901 posts announced | external | **warn** | {"parsed": 2900, "sec": 2901, "casual_seats": 105} |
 | `2021_unopposed_vs_sec`: presidents elected unopposed in the nine districts vs 119 reported | external | **pass** | {"parsed": 119, "sec": 119} |
 | `2021_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5003, "districts_below_half": {}} |
 | `links_keys_resolve_one_to_one`: each link side's (district_code, block, gram_panchayat) names exactly one row of its results table (2021: ordinary election rows), and no seat is linked twice | internal | **pass** | {"2019:2011": {"repeated_in_links": 0, "not_one_row": 0}, "2019:2019": {"repeated_in_links": 0, "not_one_row": 0}, "2021:2011": {"repeated_in_links": 0, "not_one_row": 0}, "2021:2021": {"repeated_in_links": 0, "not_one_row": 0}} |
 | `links_union_crosswalk_covers_all_unions`: every 2011 and later panchayat union appears in a usable crosswalk row | internal | **pass** | {"decisions": {"same": 368, "split": 27, "merged": 4, "uncertain": 1}, "unions_2011_uncovered": [], "unions_later_uncovered": []} |
-| `links_precision_hand_review`: hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as wrong): precision at least 98% in every stratum and overall. Fuzzy links were read in full, exact links by sample | external | **pass** | {"bands": {"exact": "76/76 of 11604, CI 0.9519-1.0", "exact_respelled": "45/45 of 367, CI 0.9213-1.0", "0.94-0.97": "256/259 of 259, CI 0.9665-0.9961", "0.97-1.00": "7/7 of 7, CI 0.6457-1.0"}, "estimate": 0.9998, "lower_bound": 0.9511} |
+| `links_precision_hand_review`: hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as wrong): precision at least 98% in every stratum and overall. Fuzzy links were read in full, exact links by sample | external | **pass** | {"bands": {"exact": "76/76 of 11604, CI 0.9519-1.0", "exact_respelled": "45/45 of 368, CI 0.9213-1.0", "0.94-0.97": "256/259 of 259, CI 0.9665-0.9961", "0.97-1.00": "7/7 of 7, CI 0.6457-1.0"}, "estimate": 0.9998, "lower_bound": 0.9511} |
 | `links_share_candidates_vs_random`: linked pairs share a candidate name across the two elections far more often than random pairs in the same union group (code shares nothing with the name match); exact and fuzzy links each at least ten times the random rate | external | **pass** | {"linked_exact": 0.1088, "linked_fuzzy": 0.0865, "random_same_union_group": 0.0012} |
 <!-- checks:end -->
 
@@ -167,8 +167,8 @@ What the passes rest on:
 
 `make links` writes `data/linkage/vp_2011_2019.parquet` and
 `data/linkage/vp_2011_2021.parquet`: a 2011 president seat paired with its
-2019 or 2021 seat. **9,490 links to 2019 and 2,747
-to 2021** (11,971 with names identical after folding,
+2019 or 2021 seat. **9,491 links to 2019 and 2,747
+to 2021** (11,972 with names identical after folding,
 266 fuzzy). A link says two panchayat names agree inside
 matching unions; it is not an official identifier or proof of unchanged
 boundaries.
@@ -267,11 +267,11 @@ run in both directions; a link must be found both ways and score at least
 | Tiruchirappalli | try | 2019 | 404 | 404 | 395 |
 | Thoothukudi | tut | 2019 | 403 | 403 | 401 |
 | Tiruvannamalai | tvm | 2019 | 860 | 860 | 856 |
-| Tiruvarur | tvr | 2019 | 430 | 430 | 420 |
+| Tiruvarur | tvr | 2019 | 430 | 430 | 421 |
 | Vellore | vlr, tpt, rpt | 2021 | 743 | 743 | 655 |
 | Virudhunagar | vnr | 2019 | 450 | 450 | 442 |
 | Villupuram | vpm, kki | 2021 | 1,099 | 1,100 | 1,061 |
-| **All** | | | **12,523** | **12,524** | **12,237** |
+| **All** | | | **12,523** | **12,524** | **12,238** |
 
 Vellore is lowest (88%): its 2011 file was keyed loosely and its unions were
 reorganised across three new districts.
@@ -286,7 +286,7 @@ Claude, not a person.
 | Stratum | Links | Reviewed | Correct | Precision | 95% CI (Wilson) |
 |---|---:|---:|---:|---:|---|
 | exact (identical as printed) | 11,604 | 76 | 76 | 100.0% | 95.2–100.0% |
-| exact after folding, spelled differently | 367 | 45 | 45 | 100.0% | 92.1–100.0% |
+| exact after folding, spelled differently | 368 | 45 | 45 | 100.0% | 92.1–100.0% |
 | fuzzy 0.94–0.97 | 259 | 259 | 256 | 98.8% | 96.7–99.6% |
 | fuzzy 0.97–1.00 | 7 | 7 | 7 | 100.0% | 64.6–100.0% |
 
@@ -315,7 +315,7 @@ any candidate for the linked seat later?
 | Pairs | Share with a candidate name in common |
 |---|---:|
 | all links | 10.8% |
-| exact links (11,971) | 10.9% |
+| exact links (11,972) | 10.9% |
 | fuzzy links (266) | 8.6% |
 | random pairs in the same union group (50 permutations) | 0.12% |
 
