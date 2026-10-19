@@ -36,6 +36,10 @@ OUTPUTS = [
     "2021/vp_president_results.parquet",
     "2021/vp_president_candidates.parquet",
     "checks/hand_check.csv",
+    "linkage/union_crosswalk_2011_2019_2021.csv",
+    "linkage/review_2011_2019_2021.csv",
+    "linkage/vp_2011_2019.parquet",
+    "linkage/vp_2011_2021.parquet",
 ]
 # The commission's 2011 state abstracts (data/raw/tnsec/rulbe2011/abstract_*.pdf),
 # row "சிற்றூராட்சி தலைவர்" (village panchayat president), read 2026-10-18.
@@ -422,11 +426,118 @@ def checks_2021():
     return out
 
 
+# ------------------------------------------------------------------ links
+
+LINK_KEY = ["district_code", "block", "gram_panchayat"]
+
+
+def checks_links():
+    """The 2011 -> 2019/2021 links (data/linkage/)."""
+    out = []
+    summary = json.loads(
+        (DATA / "linkage" / "MANIFEST.json").read_text(encoding="utf-8")
+    )
+    early = pd.read_parquet(DATA / "2011" / "vp_president_results.parquet")
+    problems = {}
+    for year in (2019, 2021):
+        links = pd.read_parquet(DATA / "linkage" / f"vp_2011_{year}.parquet")
+        later = pd.read_parquet(DATA / str(year) / "vp_president_results.parquet")
+        later = later[later["election_type"] == "General Election"]
+        for side, rows in (("2011", early), (str(year), later)):
+            keys = links[[f"{k}_{side}" for k in LINK_KEY]].set_axis(LINK_KEY, axis=1)
+            counts = rows.groupby(LINK_KEY).size()
+            found = counts.reindex(pd.MultiIndex.from_frame(keys))
+            problems[f"{year}:{side}"] = {
+                "repeated_in_links": int(keys.duplicated().sum()),
+                "not_one_row": int((found != 1).sum()),
+            }
+    bad = sum(v for p in problems.values() for v in p.values())
+    out.append(
+        result(
+            "links_keys_resolve_one_to_one",
+            "internal",
+            "pass" if bad == 0 else "fail",
+            "each link side's (district_code, block, gram_panchayat) names exactly "
+            "one row of its results table (2021: ordinary election rows), and no "
+            "seat is linked twice",
+            blocking=True,
+            **problems,
+        )
+    )
+    cw = pd.read_csv(DATA / "linkage" / "union_crosswalk_2011_2019_2021.csv")
+    used = cw[cw["decision"] != "uncertain"]
+    later_all = pd.concat(
+        pd.read_parquet(DATA / str(y) / "vp_president_results.parquet").query(
+            "election_type == 'General Election'"
+        )
+        for y in (2019, 2021)
+    )
+    miss_e = set(zip(early["district_code"], early["block"], strict=True)) - set(
+        zip(used["district_2011"], used["block_2011"], strict=True)
+    )
+    miss_l = set(
+        zip(later_all["district_code"], later_all["block"], strict=True)
+    ) - set(zip(used["district_later"], used["block_later"], strict=True))
+    out.append(
+        result(
+            "links_union_crosswalk_covers_all_unions",
+            "internal",
+            "pass" if not miss_e and not miss_l else "warn",
+            "every 2011 and later panchayat union appears in a usable crosswalk row",
+            decisions=cw["decision"].value_counts().to_dict(),
+            unions_2011_uncovered=sorted(map("/".join, miss_e)),
+            unions_later_uncovered=sorted(map("/".join, miss_l)),
+        )
+    )
+    prec = summary["precision"]
+    low = {b: v["precision"] for b, v in prec["bands"].items() if v["precision"] < 0.98}
+    out.append(
+        result(
+            "links_precision_hand_review",
+            "external",
+            "pass" if not low and prec["estimate_stratified"] >= 0.98 else "fail",
+            "hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as "
+            "wrong): precision at least 98% in every stratum and overall. Fuzzy "
+            "links were read in full, exact links by sample",
+            blocking=True,
+            bands={
+                b: f"{v['correct']}/{v['reviewed']} of {v['links']}, "
+                f"CI {v['ci95'][0]}-{v['ci95'][1]}"
+                for b, v in prec["bands"].items()
+            },
+            estimate=prec["estimate_stratified"],
+            lower_bound=prec["lower_bound_stratified"],
+        )
+    )
+    ind = summary["independent_check"]
+    ok = (
+        min(ind["linked_exact"], ind["linked_fuzzy"])
+        >= 10 * ind["random_same_union_group"]
+    )
+    out.append(
+        result(
+            "links_share_candidates_vs_random",
+            "external",
+            "pass" if ok else "warn",
+            "linked pairs share a candidate name across the two elections far more "
+            "often than random pairs in the same union group (code shares nothing "
+            "with the name match); exact and fuzzy links each at least ten times "
+            "the random rate",
+            **{
+                k: ind[k]
+                for k in ("linked_exact", "linked_fuzzy", "random_same_union_group")
+            },
+        )
+    )
+    return out
+
+
 def run_checks():
     out = []
     for year in (2011, 2019, 2021):
         out += internal(year)
     out += checks_2011() + checks_2019() + checks_2021()
+    out += checks_links()
     return out
 
 

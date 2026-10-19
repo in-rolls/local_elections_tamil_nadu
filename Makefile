@@ -1,7 +1,7 @@
 PY = .venv/bin/python
 RUFF = .venv/bin/ruff
 
-.PHONY: sync collect collect-tnsec collect-tnrd data hand-sample manifest lint verify check
+.PHONY: sync collect collect-tnsec collect-tnrd data links union-evidence hand-sample manifest lint verify check
 
 sync:
 	uv sync --frozen --all-groups
@@ -21,6 +21,16 @@ data:
 	$(PY) -m local_elections_tamil_nadu.parse.results
 	$(PY) -m local_elections_tamil_nadu.parse.app2019
 	$(MAKE) manifest
+
+# 2011 -> 2019/2021 seat links from the results tables and the hand-coded
+# union crosswalk and review in data/linkage/
+links:
+	$(PY) -m local_elections_tamil_nadu.linkage.vp_links
+	$(MAKE) manifest
+
+# evidence table the union crosswalk was coded from (does not touch the crosswalk)
+union-evidence:
+	$(PY) -m local_elections_tamil_nadu.linkage.union_evidence
 
 # redraws the crops for the hand check (needs pdftoppm)
 hand-sample:

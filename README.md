@@ -11,8 +11,8 @@ carries:
 - the page, table and row of the commission's result sheet it was read from.
 
 Built for linking panchayats across consecutive elections, to study whether a
-women's quota in one term changes who wins the open seat in the next. **The
-cross-election link is not built here**; see
+women's quota in one term changes who wins the open seat in the next. The
+2011 → 2019/2021 seat links are in `data/linkage/`; see
 [Linking across elections](#linking-across-elections).
 
 ## Data
@@ -28,6 +28,8 @@ cross-election link is not built here**; see
 | `data/2019/app_winners.parquet` | panchayat row in the commission's 2019 results application, a second publication of the same results (winner with honorific) |
 | `data/2019/app_union_counts.parquet` | union: posts in total, declared, without nomination |
 | `data/checks/hand_check.csv`, `data/checks/hand/` | 30 sampled rows read by hand against crops of the source |
+| `data/linkage/vp_2011_2019.parquet`, `vp_2011_2021.parquet` | a 2011 seat paired with its 2019 or 2021 seat |
+| `data/linkage/union_crosswalk_2011_2019_2021.csv`, `review_2011_2019_2021.csv` | the hand-coded union crosswalk and the hand review behind the links |
 | `data/reference/` | district codes; the mPDF glyph table; seat counts from the 2011 gazette roster |
 
 `data/MANIFEST.json` holds the sha256 of every output and the result of every
@@ -138,11 +140,15 @@ manifest`.
 | `2011_district_category_counts_vs_gazette_318`: seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, parsed independently in local_elections); differences can be real (later amendments, no-nomination seats) | external | **warn** | {"cells": 147, "cells_differing": 12, "seats_differing": 12, "examples": [{"cell": "ari/ST/False", "gazette": 3, "results": 2}, {"cell": "kar/SC/False", "gazette": 22, "results": 21}, {"cell": "nlg/NONE/False", "gazette": 13, "results": 14}, {"cell": "nlg/NONE/True", "gazette": 10, "results": 9}, {" |
 | `2011_women_reserved_share`: 2011 reserved one third of offices for women (50% came in 2016) | legal | **pass** | {"share": 0.3424} |
 | `2019_seats_vs_results_application`: seats in the PDFs (including headings printed with no candidate) vs posts in the commission's results application; the application's other rows are panchayats it marks 'result not declared' | external | **pass** | {"parsed": 9624, "parsed_no_candidates": 2, "app_posts": 9624, "app_posts_no_nomination": 2, "app_rows": 9690} |
-| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9995, "sex_compared": 9622, "sex_agree": 1.0} |
+| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9994, "sex_compared": 9622, "sex_agree": 1.0} |
 | `2019_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5, "districts_below_half": {}} |
 | `2021_ordinary_seats_vs_sec`: seats in the nine districts' files vs the 2,901 posts announced | external | **warn** | {"parsed": 2900, "sec": 2901, "casual_seats": 105} |
 | `2021_unopposed_vs_sec`: presidents elected unopposed in the nine districts vs 119 reported | external | **pass** | {"parsed": 119, "sec": 119} |
 | `2021_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5003, "districts_below_half": {}} |
+| `links_keys_resolve_one_to_one`: each link side's (district_code, block, gram_panchayat) names exactly one row of its results table (2021: ordinary election rows), and no seat is linked twice | internal | **pass** | {"2019:2011": {"repeated_in_links": 0, "not_one_row": 0}, "2019:2019": {"repeated_in_links": 0, "not_one_row": 0}, "2021:2011": {"repeated_in_links": 0, "not_one_row": 0}, "2021:2021": {"repeated_in_links": 0, "not_one_row": 0}} |
+| `links_union_crosswalk_covers_all_unions`: every 2011 and later panchayat union appears in a usable crosswalk row | internal | **pass** | {"decisions": {"same": 368, "split": 27, "merged": 4, "uncertain": 1}, "unions_2011_uncovered": [], "unions_later_uncovered": []} |
+| `links_precision_hand_review`: hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as wrong): precision at least 98% in every stratum and overall. Fuzzy links were read in full, exact links by sample | external | **pass** | {"bands": {"exact": "76/76 of 11604, CI 0.9519-1.0", "exact_respelled": "45/45 of 367, CI 0.9213-1.0", "0.94-0.97": "256/259 of 259, CI 0.9665-0.9961", "0.97-1.00": "7/7 of 7, CI 0.6457-1.0"}, "estimate": 0.9998, "lower_bound": 0.9511} |
+| `links_share_candidates_vs_random`: linked pairs share a candidate name across the two elections far more often than random pairs in the same union group (code shares nothing with the name match); exact and fuzzy links each at least ten times the random rate | external | **pass** | {"linked_exact": 0.1088, "linked_fuzzy": 0.0865, "random_same_union_group": 0.0012} |
 <!-- checks:end -->
 
 What the passes rest on:
@@ -159,21 +165,176 @@ What the passes rest on:
 
 ## Linking across elections
 
-Not done here. What a link will rest on:
+`make links` writes `data/linkage/vp_2011_2019.parquet` and
+`data/linkage/vp_2011_2021.parquet`: a 2011 president seat paired with its
+2019 or 2021 seat. **9,490 links to 2019 and 2,747
+to 2021** (11,971 with names identical after folding,
+266 fuzzy). A link says two panchayat names agree inside
+matching unions; it is not an official identifier or proof of unchanged
+boundaries.
 
-- **No shared code.** No file carries a statewide panchayat code, so a link
-  must go through (union, panchayat name). The names are Tamil in all three
-  years. Exact (union, panchayat) keys already match 88% of 2019/2021 seats to
-  a 2011 seat; the panchayat name alone matches 94%.
-- **New districts.** Districts were split after 2011: Kallakurichi from
-  Villupuram, Chengalpattu from Kancheepuram, Tenkasi from Tirunelveli,
-  Tirupathur and Ranipet from Vellore, and Mayiladuthurai from Nagapattinam.
-  Match on union and panchayat, not on district.
+The use is a comparison of seats open in 2019/2021 by whether they were
+women's seats in 2011. A wrong link adds noise and can bias it; a missing link
+only costs sample. Doubtful pairs are left unlinked.
+
+**Keys.** Each side carries the key the results tables identify a row by,
+`district_code`, `block`, `gram_panchayat`, suffixed `_2011` and `_2019` /
+`_2021`. That triple is unique in every results table (checked, including the
+2021 by-elections; 2021 links point only at ordinary-election rows), and no
+seat is linked twice. Also: `source_page_*`, `name_folded_*`, `union_group`
+and the crosswalk decisions behind it, `qualifiers`, `folded_ratio`,
+`skeleton_ratio`, `name_score`, `link_rule` (`exact_folded_name` /
+`fuzzy_name`) and `candidate_name_shared` (the check below; not a match
+feature).
+
+### Union crosswalk
+
+`data/linkage/union_crosswalk_2011_2019_2021.csv`, coded by hand from
+`make union-evidence`: for each 2011 union, how many of its panchayats have
+their best name match in each later union of the same district or of the
+districts carved from it. An edge needs at least 3 identical folded names and
+15% of either union; the shared names of every edge that was not one-to-one
+were read. All 385 unions of 2011 and 388 later unions are covered.
+
+| Decision | Rows | Where |
+|---|---:|---|
+| same | 368 | including spelling-only name differences (தொட்டியாம் / தொட்டியம், டி கல்லுபட்டி / தே.கல்லுப்பட்டி) and unions now in a new district |
+| split | 27 | Cuddalore: கம்மாபுரம், காட்டுமன்னார்கோயில், கீரப்பாளையம் each gave panchayats to the new ஸ்ரீமுஷ்ணம். Dharmapuri: பென்னகரம் → ஏரியூர்; மொரப்பூர் → கடத்தூர். Tirunelveli/Tenkasi: குருவிகுளம், பாப்பாகுடி, மானூர், மேலநீலதநல்லூர் exchanged panchayats. Vellore/Ranipet/Tirupathur: காவேரிப்பாக்கம் went to three Ranipet unions; சோளிங்கர் partly to காட்பாடி; பேரனாம்பேட்டை to பேர்ணாம்பட்டு and மாதனூர்; மாதனூர் partly to அணைக்கட்டு |
+| merged | 4 | the receiving sides of those moves (tnv ஆலங்குளம் → tki ஆலங்குளம்; vlr அணைக்கட்டு, அரக்கோணம், காட்பாடி) |
+| uncertain | 1 | vlr திமிரி → வேலூர்: three generic names (குப்பம், புதூர், வெங்கடாபுரம்) while திமிரி keeps 55 of 55; not used |
+
+No union was renamed. Linked unions are closed into groups, so a split forms
+one blocking group.
+
+### Matching
+
+preclink 1.2.0: `block(on=union_key, crosswalk=...)`,
+one name comparison, `filter(min_score=0.94-0.05, margin=0.05)`, `decide("hungarian")`,
+run in both directions; a link must be found both ways and score at least
+0.94.
+
+- **Folding.** The commission's ா-for-ர keying (மாாியம்மன்), long and short
+  vowels, ண/ன/ந, ள/ழ/ல, ற/ர, ஷ/ஸ/ஜ/ச, a nasal before a consonant typed as
+  any nasal, doubled consonants at a join, a leading இ before ர or ல, a
+  second vowel sign left by decoding, spaces and punctuation.
+- **Score.** The largest of the folded ratio, the ratio with ா and the pulli
+  dropped less 5 points, and the ratio with every vowel sign dropped less 12
+  points. The last cannot carry a link by itself (it would make கோட்டமங்கலம்
+  and குடிமங்கலம் one name) but counts as a rival in the margin.
+- **Qualifiers must agree**, and one stated on only one side vetoes: numbers
+  (25 வேப்பம்பட்டு, எண்.2, I சேத்தி), lettered parts (ஏ/சி), dotted initials
+  by consonant (எஸ். ≠ எம்.; K. = கே.), directions (கிழக்கு, மேற்கு, வடக்கு,
+  தெற்கு, fused or in brackets, and வட / தென் starting a word), மேல / கீழ /
+  நடு, சின்ன / சிறு / பெரிய, புது / பழைய. A name that is a short prefix of
+  the other is vetoed.
+- **Threshold 0.94**, from the review: the 0.90–0.94 band came to 96%
+  and 0.85–0.90 to 85%.
+- **block_seq has weight 0.** It is file order, not a printed number, and it
+  is not stable: among exact-name links in unchanged unions only 11.7% keep
+  their rank within the union (median rank correlation 0.52).
+- **Not used:** reservation, winner sex, winner or candidate names.
+- **Excluded:** 16 (2011) and 14 (later) seats whose
+  folded name and qualifiers repeat inside a union group.
+
+### Coverage
+
+| 2011 district | Later districts | Year | 2011 seats | Later seats | Linked |
+|---|---|---:|---:|---:|---:|
+| Ariyalur | ari | 2019 | 200 | 201 | 200 |
+| Coimbatore | cbe | 2019 | 228 | 228 | 226 |
+| Cuddalore | cud | 2019 | 683 | 683 | 676 |
+| Dindigul | dgl | 2019 | 306 | 306 | 301 |
+| Dharmapuri | dpi | 2019 | 251 | 251 | 239 |
+| Erode | erd | 2019 | 225 | 225 | 221 |
+| Karur | kar | 2019 | 157 | 157 | 155 |
+| Krishnagiri | kgi | 2019 | 333 | 333 | 329 |
+| Kanniyakumari | kkm | 2019 | 95 | 95 | 95 |
+| Kancheepuram | kpm, cpt | 2021 | 633 | 632 | 630 |
+| Madurai | mdu | 2019 | 420 | 420 | 418 |
+| Nagapattinam | ngp | 2019 | 434 | 434 | 432 |
+| Nilgiris | nlg | 2019 | 35 | 35 | 35 |
+| Namakkal | nmk | 2019 | 322 | 322 | 316 |
+| Pudukkottai | pdk | 2019 | 497 | 497 | 486 |
+| Perambalur | pmb | 2019 | 121 | 121 | 121 |
+| Ramanathapuram | rmd | 2019 | 429 | 429 | 429 |
+| Salem | slm | 2019 | 385 | 385 | 382 |
+| Sivaganga | svg | 2019 | 445 | 445 | 442 |
+| Theni | thn | 2019 | 130 | 130 | 130 |
+| Tiruvallur | tlr | 2019 | 526 | 526 | 515 |
+| Thanjavur | tnj | 2019 | 589 | 589 | 565 |
+| Tirunelveli | tnv, tki | 2021 | 425 | 425 | 401 |
+| Tiruppur | tpr | 2019 | 265 | 265 | 263 |
+| Tiruchirappalli | try | 2019 | 404 | 404 | 395 |
+| Thoothukudi | tut | 2019 | 403 | 403 | 401 |
+| Tiruvannamalai | tvm | 2019 | 860 | 860 | 856 |
+| Tiruvarur | tvr | 2019 | 430 | 430 | 420 |
+| Vellore | vlr, tpt, rpt | 2021 | 743 | 743 | 655 |
+| Virudhunagar | vnr | 2019 | 450 | 450 | 442 |
+| Villupuram | vpm, kki | 2021 | 1,099 | 1,100 | 1,061 |
+| **All** | | | **12,523** | **12,524** | **12,237** |
+
+Vellore is lowest (88%): its 2011 file was keyed loosely and its unions were
+reorganised across three new districts.
+
+### Precision (hand review)
+
+`data/linkage/review_2011_2019_2021.csv`. Every fuzzy link was read; exact
+links by random sample. A pair was judged from both names, the best rival
+name on each side, and the union. `unsure` counts as wrong. The reviewer is
+Claude, not a person.
+
+| Stratum | Links | Reviewed | Correct | Precision | 95% CI (Wilson) |
+|---|---:|---:|---:|---:|---|
+| exact (identical as printed) | 11,604 | 76 | 76 | 100.0% | 95.2–100.0% |
+| exact after folding, spelled differently | 367 | 45 | 45 | 100.0% | 92.1–100.0% |
+| fuzzy 0.94–0.97 | 259 | 259 | 256 | 98.8% | 96.7–99.6% |
+| fuzzy 0.97–1.00 | 7 | 7 | 7 | 100.0% | 64.6–100.0% |
+
+Stratified estimate 99.98%; the lower bound (Wilson lower limits weighted by
+stratum size) is 95.1%, set almost entirely by the 76-link sample
+of exact links. The three unsure fuzzy links: கல்லான்குப்பம் / கல்லாலங்குப்பம்,
+கரும்பத்தூர் / கருகம்பத்தூர், வெத்தலைக்காடு / வத்தலைக்காடு.
+
+Below the threshold: of 69 pairs at 0.90–0.94, 66 are the same place;
+of 74 at 0.85–0.90, 63 (one clearly different: ரெங்கநாதபுரம் /
+ரெகுநாதபுரம்). Lowering the threshold to 0.90 would add about 66 correct and
+3 doubtful links. Of 30 pairs scoring at least 0.80 that the margin or the
+two-way rule dropped, 29 were different villages and 1 a lost link.
+
+What the review changed: the first version scored the consonant skeleton less
+5 points, which let vowel-quality differences through (தாடையூர் / தொடையூர்)
+and scored கோட்டமங்கலம் / குடிமங்கலம் at 0.95; and it missed வட as a
+direction (கடப்பந்தாங்கல் / வடகடப்பந்தாங்கல்).
+
+### Independent check
+
+`linkage/candidate_check.py` shares no code with the name match: does any
+candidate for president in 2011 have the same name (normalised separately) as
+any candidate for the linked seat later?
+
+| Pairs | Share with a candidate name in common |
+|---|---:|
+| all links | 10.8% |
+| exact links (11,971) | 10.9% |
+| fuzzy links (266) | 8.6% |
+| random pairs in the same union group (50 permutations) | 0.12% |
+
+Links share candidates about 90 times as often as random pairs. Fuzzy links
+share less than exact links. Matched to the same 2011 unions, exact links
+share 10.2% against 8.7%, a difference of −1.6 points (95% bootstrap
+−4.8 to +2.0). This check cannot certify the fuzzy stratum: taken at face
+value the gap allows about 15% of fuzzy links to be wrong, with wide
+uncertainty. The precision claim for fuzzy links rests on the full hand
+review.
+
+### What a link does not settle
+
 - **Two-term gap.** 2011 to 2019 spans two terms, because the 2016 election
   was cancelled.
 - **Quota levels differ.** In 2006 and 2011 one third of president offices
   were reserved for women (2011: 4,291 of 12,524). The Tamil Nadu Panchayats
-  (Amendment) Act, 2016 (L.A. Bill 5 of 2016; section 57 for president offices) raised it to half, so 2019 and 2021 reserve 50%.
+  (Amendment) Act, 2016 (L.A. Bill 5 of 2016; section 57 for president
+  offices) raised it to half, so 2019 and 2021 reserve 50%.
 - **Rotation.** TNRD notes that reserved president offices were rotated after
   ten years for 2006 (G.O.Ms.105/2006). Whether 2011 kept the 2006 roster can
   be checked from Gazettes 228 and 318, but has not been checked.
@@ -184,5 +345,6 @@ Not done here. What a link will rest on:
 make sync
 make collect      # network; tnsec.tn.gov.in needs TN_PROXY
 make data         # parse data/raw into data/<year>/; rewrite the manifest
+make links        # 2011 -> 2019/2021 links
 make check
 ```

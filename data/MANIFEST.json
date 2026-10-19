@@ -8,7 +8,11 @@
   "2019/app_union_counts.parquet": "8f374e3db261ef0d2d72dee16bae6caa5a1133b31c98898043527a038e8f8445",
   "2021/vp_president_results.parquet": "0b1c7ccfde11fa1862a23eba454d2479e9ef8c8059315f80c5b47ffa810c5331",
   "2021/vp_president_candidates.parquet": "29512e5bb38619cb6c71a106c749f9f55eccc79bab5413ca7eb47583e8f5b471",
-  "checks/hand_check.csv": "2acc46cfaa33d2ecca250b9797a506e464845ac8cf57bc6172b8028312581f39"
+  "checks/hand_check.csv": "2acc46cfaa33d2ecca250b9797a506e464845ac8cf57bc6172b8028312581f39",
+  "linkage/union_crosswalk_2011_2019_2021.csv": "3ba65d34309b1d5dcc45f6a617b681b8d5e28e7bc9188149b90bbd09b879c595",
+  "linkage/review_2011_2019_2021.csv": "9519e6a06c0d1cf353cd66c7d80108d221ef746bf0c58a39e35e236c1284f88a",
+  "linkage/vp_2011_2019.parquet": "4ca5f63814fa14b2843ca2a8776b5261a3fea8fb2985d5f0768482e7a814081f",
+  "linkage/vp_2011_2021.parquet": "283520d220be730d63a300a33c64ec5c84f83e221d5f3dd13e1ed38f98c20a2e"
  },
  "checks": [
   {
@@ -275,7 +279,7 @@
    "detail": "PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி)",
    "seats": 9624,
    "joined_on_names": 9624,
-   "winner_name_agree": 0.9995,
+   "winner_name_agree": 0.9994,
    "sex_compared": 9622,
    "sex_agree": 1.0
   },
@@ -315,6 +319,69 @@
    "detail": "at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district",
    "share": 0.5003,
    "districts_below_half": {}
+  },
+  {
+   "check": "links_keys_resolve_one_to_one",
+   "appeals_to": "internal",
+   "status": "pass",
+   "blocking": true,
+   "detail": "each link side's (district_code, block, gram_panchayat) names exactly one row of its results table (2021: ordinary election rows), and no seat is linked twice",
+   "2019:2011": {
+    "repeated_in_links": 0,
+    "not_one_row": 0
+   },
+   "2019:2019": {
+    "repeated_in_links": 0,
+    "not_one_row": 0
+   },
+   "2021:2011": {
+    "repeated_in_links": 0,
+    "not_one_row": 0
+   },
+   "2021:2021": {
+    "repeated_in_links": 0,
+    "not_one_row": 0
+   }
+  },
+  {
+   "check": "links_union_crosswalk_covers_all_unions",
+   "appeals_to": "internal",
+   "status": "pass",
+   "blocking": false,
+   "detail": "every 2011 and later panchayat union appears in a usable crosswalk row",
+   "decisions": {
+    "same": 368,
+    "split": 27,
+    "merged": 4,
+    "uncertain": 1
+   },
+   "unions_2011_uncovered": [],
+   "unions_later_uncovered": []
+  },
+  {
+   "check": "links_precision_hand_review",
+   "appeals_to": "external",
+   "status": "pass",
+   "blocking": true,
+   "detail": "hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as wrong): precision at least 98% in every stratum and overall. Fuzzy links were read in full, exact links by sample",
+   "bands": {
+    "exact": "76/76 of 11604, CI 0.9519-1.0",
+    "exact_respelled": "45/45 of 367, CI 0.9213-1.0",
+    "0.94-0.97": "256/259 of 259, CI 0.9665-0.9961",
+    "0.97-1.00": "7/7 of 7, CI 0.6457-1.0"
+   },
+   "estimate": 0.9998,
+   "lower_bound": 0.9511
+  },
+  {
+   "check": "links_share_candidates_vs_random",
+   "appeals_to": "external",
+   "status": "pass",
+   "blocking": false,
+   "detail": "linked pairs share a candidate name across the two elections far more often than random pairs in the same union group (code shares nothing with the name match); exact and fuzzy links each at least ten times the random rate",
+   "linked_exact": 0.1088,
+   "linked_fuzzy": 0.0865,
+   "random_same_union_group": 0.0012
   }
  ]
 }
