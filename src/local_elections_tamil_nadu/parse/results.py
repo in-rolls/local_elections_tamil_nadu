@@ -13,7 +13,7 @@ parse/tamil_fonts.py. Every candidate row keeps its page and table position.
 Outputs (data/<year>/):
   vp_president_candidates.parquet  one row per candidate (candidates.json names)
   vp_president_results.parquet     one row per seat, collapsed from candidates
-                                   (master.json names, plus winner_gender)
+                                   (master.json names, plus winner_woman)
 
 Run: python -m local_elections_tamil_nadu.parse.results
 """
@@ -72,6 +72,8 @@ TOTALS = {
     "valid_votes": r"செல்லத்தக்க\s*வாக்குகள்\s*:\s*(\d+)",
     "rejected_votes": r"செல்லாத\s*வாக்குகள்\s*:\s*(\d+)",
 }
+# female 1, male 0; "other" and anything unread stay blank rather than 0
+WOMAN = {"female": 1, "male": 0}
 SEX = {
     "ஆண்": "male",
     "பெண்": "female",
@@ -182,7 +184,7 @@ def parse_pdf(path, election, district_code):
             "heading_page": page,
             "union_raw": union,
             "gp_raw": gp,
-            "reservation_raw": res,
+            "reserved_raw": res,
             "rows": [],
         }
         for key, pattern in TOTALS.items():
@@ -244,7 +246,7 @@ def parse_pdf(path, election, district_code):
 def candidate_rows(blocks, election, district_code, path, year):
     out = []
     for b_index, block in enumerate(blocks, 1):
-        caste, woman, label, caste_local = reservation(block["reservation_raw"] or "")
+        caste, woman, label, caste_local = reservation(block["reserved_raw"] or "")
         # a heading printed with no candidate table (no nomination) still
         # stands for a seat; it is carried as a placeholder row
         empty = {
@@ -275,11 +277,11 @@ def candidate_rows(blocks, election, district_code, path, year):
                     "block_seq": b_index,
                     "tier": "gp_head",
                     "tier_local": "கிராம ஊராட்சித் தலைவர்",
-                    "reservation_raw": block["reservation_raw"],
-                    "caste_reservation": caste,
-                    "caste_reservation_local": caste_local,
-                    "woman_reserved": woman,
-                    "reservation": label,
+                    "reserved_raw": block["reserved_raw"],
+                    "reserved_caste": caste,
+                    "reserved_caste_local": caste_local,
+                    "reserved_woman": woman,
+                    "reserved_label": label,
                     "electors": block["electors"],
                     "votes_polled": block["votes_polled"],
                     "valid_votes": block["valid_votes"],
@@ -287,8 +289,8 @@ def candidate_rows(blocks, election, district_code, path, year):
                     "candidate_no": serial,
                     "candidate_name": name,
                     "relation_name": relation,
-                    "sex_raw": sex,
-                    "candidate_gender": SEX.get(sex),
+                    "candidate_woman_raw": sex,
+                    "candidate_woman": WOMAN.get(SEX.get(sex)),
                     "votes": int(votes) if re.fullmatch(r"\d+", votes) else None,
                     "vote_pct": float(pct) if re.fullmatch(r"\d+\.\d+", pct) else None,
                     "result": result,
@@ -320,7 +322,7 @@ def seats(cand):
             flags.append("no_candidates_printed")
         elif len(won) != 1:
             flags.append(f"elected_rows_{len(won)}")
-        if pd.isna(first["reservation_raw"]) and "[" in str(first["heading_raw"]):
+        if pd.isna(first["reserved_raw"]) and "[" in str(first["heading_raw"]):
             flags.append("reservation_blank_in_source")
         w = won.iloc[0] if len(won) else None
         others = g[~g["elected"]]
@@ -341,11 +343,11 @@ def seats(cand):
                         "block_seq",
                         "tier",
                         "tier_local",
-                        "caste_reservation",
-                        "caste_reservation_local",
-                        "woman_reserved",
-                        "reservation",
-                        "reservation_raw",
+                        "reserved_caste",
+                        "reserved_caste_local",
+                        "reserved_woman",
+                        "reserved_label",
+                        "reserved_raw",
                         "electors",
                         "votes_polled",
                         "valid_votes",
@@ -357,10 +359,8 @@ def seats(cand):
                 "seat_candidates": 0 if none_printed else len(g),
                 "winner": w["candidate_name"] if w is not None else None,
                 "winner_relation_name": w["relation_name"] if w is not None else None,
-                "winner_gender": w["candidate_gender"] if w is not None else None,
-                "winner_woman": (w["candidate_gender"] == "female")
-                if w is not None and w["candidate_gender"]
-                else None,
+                "winner_woman_raw": w["candidate_woman_raw"] if w is not None else None,
+                "winner_woman": w["candidate_woman"] if w is not None else None,
                 # "வெற்றி (குலுக்கல் முறை)": won by drawing lots after a tie
                 "winner_basis": (
                     "lot"
@@ -414,6 +414,13 @@ def main():
         out.mkdir(parents=True, exist_ok=True)
         seat = seats(cand)
         cand = cand[~cand["placeholder"]].drop(columns="placeholder")
+        # 1 / 0 / null integers, as NAMING.md types every *_woman column
+        for frame, columns in (
+            (cand, ["reserved_woman", "candidate_woman"]),
+            (seat, ["reserved_woman", "winner_woman"]),
+        ):
+            for column in columns:
+                frame[column] = frame[column].astype("Int8")
         cand.to_parquet(out / "vp_president_candidates.parquet", index=False)
         seat.to_parquet(out / "vp_president_results.parquet", index=False)
         log.info(

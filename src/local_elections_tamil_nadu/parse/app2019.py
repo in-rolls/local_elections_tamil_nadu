@@ -23,7 +23,8 @@ from local_elections_tamil_nadu.parse.common import DATA, RAW, rel
 
 APP = RAW / "tnsec" / "rlbe2019_app"
 LINK = re.compile(r"dcode=([A-Za-z0-9=]+)&(?:amp;)?bcode=([A-Za-z0-9=]+)")
-HONORIFIC = {"திருமதி": "female", "செல்வி": "female", "திரு": "male"}
+# 1 a woman's honorific, 0 a man's
+HONORIFIC = {"திருமதி": 1, "செல்வி": 1, "திரு": 0}
 
 
 def b64(code):
@@ -93,7 +94,7 @@ def winners(union_table):
                     "winner_printed": person,
                     "winner_honorific": title or None,
                     "winner": name.strip() or None,
-                    "winner_gender_from_honorific": HONORIFIC.get(title),
+                    "winner_woman_from_honorific": HONORIFIC.get(title),
                     "result": result,
                     "source_path": rel(path),
                     "source_row": i,
@@ -108,6 +109,7 @@ def main():
     u = unions()
     w = winners(u)
     u.to_parquet(out / "app_union_counts.parquet", index=False)
+    w["winner_woman_from_honorific"] = w["winner_woman_from_honorific"].astype("Int8")
     w.to_parquet(out / "app_winners.parquet", index=False)
     print(f"{len(u)} unions, {u.posts_total.sum()} posts; {len(w)} panchayat rows")
     print(w["result"].value_counts().to_string())
