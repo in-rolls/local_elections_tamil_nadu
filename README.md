@@ -47,12 +47,12 @@ candidate files follow `schemas/candidates.json`.
 | `block` | panchayat union (ஊராட்சி ஒன்றியம்) as printed, Tamil |
 | `gram_panchayat` | village panchayat as printed, Tamil |
 | `block_seq` | order of the panchayat within its district file |
-| `reservation_raw` | the bracket as printed: பொது (general), ஆதி திராவிடர் (SC), பழங்குடியினர் (ST), followed by (பெண்கள்) "women" or (பொது) "general" |
-| `caste_reservation`, `woman_reserved`, `reservation` | the bracket folded: `NONE`/`SC`/`ST`; true/false; the pooled label (`SC Woman`, `Other than Woman`, ...). Left empty when the bracket is printed empty |
+| `reserved_raw` | the bracket as printed: பொது (general), ஆதி திராவிடர் (SC), பழங்குடியினர் (ST), followed by (பெண்கள்) "women" or (பொது) "general" |
+| `reserved_caste`, `reserved_woman`, `reserved_label` | the bracket folded: `NONE`/`SC`/`ST`; true/false; the pooled label (`SC Woman`, `Other than Woman`, ...). Left empty when the bracket is printed empty |
 | `electors`, `votes_polled`, `valid_votes`, `rejected_votes` | as printed above each table |
 | `seat_candidates` | candidates listed |
 | `winner`, `winner_relation_name` | elected person and father's/husband's name, Tamil, as printed |
-| `winner_gender`, `winner_woman` | **recorded** sex: the sheet's பாலினம் column (ஆண் male, பெண் female, மற்றவர் other). Never inferred from a name. Not in the pooled master schema; it mirrors `candidate_gender` in the candidates schema |
+| `winner_woman`, `winner_woman_raw` | **recorded** sex: 1 woman, 0 man, blank for மற்றவர் (other) or unread; and the sheet's பாலினம் cell as printed (ஆண், பெண், மற்றவர்). Never inferred from a name. Mirrors `candidate_woman`, `candidate_woman_raw` in the candidates files |
 | `winner_basis` | `published`, `uncontested` (போட்டியின்றி தேர்வு), or `lot` (வெற்றி (குலுக்கல் முறை): a tie broken by drawing lots) |
 | `votes`, `runner_up`, `runner_up_votes`, `margin` | the winner's votes and the best loser's |
 | `unopposed`, `vacant` | elected unopposed; no one elected (a heading printed with no candidate) |
@@ -60,7 +60,7 @@ candidate files follow `schemas/candidates.json`.
 | `quality_flags` | `reservation_blank_in_source`, `no_candidates_printed` |
 
 Candidate files add `candidate_no`, `candidate_name`, `relation_name`,
-`sex_raw`, `candidate_gender`, `votes`, `vote_pct`, `result` (as printed:
+`candidate_woman_raw` (பாலினம் as printed), `candidate_woman` (1/0, blank for other), `votes`, `vote_pct`, `result` (as printed:
 வெற்றி won, தோல்வி lost, வைப்புத்தொகை இழப்பு lost deposit, போட்டியின்றி
 தேர்வு unopposed), `elected`, `source_table`, `source_row` and `source_bbox`
 (PDF points, top-left origin).
@@ -137,10 +137,10 @@ manifest`.
 | `2011_seats_vs_sec_abstract`: seats parsed vs the commission's abstract: 12,524 posts, 12,523 filled | external | **pass** | {"parsed": 12523, "sec_posts": 12524, "sec_elected": 12523} |
 | `2011_women_reserved_vs_sec_abstract`: women-reserved seats by caste category vs abstract_women.pdf; seats whose bracket is printed empty cannot be counted and may explain a gap | external | **warn** | {"parsed": {"ST": 38, "SC": 1164, "NONE": 3085}, "sec": {"ST": 38, "SC": 1164, "NONE": 3089}, "blank_in_source": 4} |
 | `2011_winners_by_sex_vs_sec_abstract`: winners by printed sex vs abstract_categorywise.pdf (whose categories are the winners' own caste, not the seat's: it counts 4,077 SC winners against 3,132 SC-reserved seats, so only the sex totals are comparable) | external | **pass** | {"parsed_vs_sec": {"female": [4984, 4984], "male": [7539, 7539]}, "total_abs_gap": 0} |
-| `2011_district_category_counts_vs_gazette_318`: seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, parsed independently in local_elections); differences can be real (later amendments, no-nomination seats) | external | **warn** | {"cells": 147, "cells_differing": 12, "seats_differing": 12, "examples": [{"cell": "ari/ST/False", "gazette": 3, "results": 2}, {"cell": "kar/SC/False", "gazette": 22, "results": 21}, {"cell": "nlg/NONE/False", "gazette": 13, "results": 14}, {"cell": "nlg/NONE/True", "gazette": 10, "results": 9}, {" |
+| `2011_district_category_counts_vs_gazette_318`: seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, parsed independently in local_elections); differences can be real (later amendments, no-nomination seats) | external | **warn** | {"cells": 147, "cells_differing": 12, "seats_differing": 12, "examples": [{"cell": "ari/ST/0", "gazette": 3, "results": 2}, {"cell": "kar/SC/0", "gazette": 22, "results": 21}, {"cell": "nlg/NONE/0", "gazette": 13, "results": 14}, {"cell": "nlg/NONE/1", "gazette": 10, "results": 9}, {"cell": "slm/NON |
 | `2011_women_reserved_share`: 2011 reserved one third of offices for women (50% came in 2016) | legal | **pass** | {"share": 0.3424} |
 | `2019_seats_vs_results_application`: seats in the PDFs (including headings printed with no candidate) vs posts in the commission's results application; the application's other rows are panchayats it marks 'result not declared' | external | **pass** | {"parsed": 9624, "parsed_no_candidates": 2, "app_posts": 9624, "app_posts_no_nomination": 2, "app_rows": 9690} |
-| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9995, "sex_compared": 9622, "sex_agree": 1.0} |
+| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9994, "sex_compared": 9622, "sex_agree": 1.0} |
 | `2019_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5, "districts_below_half": {}} |
 | `2021_ordinary_seats_vs_sec`: seats in the nine districts' files vs the 2,901 posts announced | external | **warn** | {"parsed": 2900, "sec": 2901, "casual_seats": 105} |
 | `2021_unopposed_vs_sec`: presidents elected unopposed in the nine districts vs 119 reported | external | **pass** | {"parsed": 119, "sec": 119} |

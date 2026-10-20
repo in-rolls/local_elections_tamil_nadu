@@ -23,6 +23,7 @@ import unicodedata
 import pandas as pd
 
 from local_elections_tamil_nadu.parse.common import DATA, ROOT
+from local_elections_tamil_nadu.parse.results import SEX
 
 MANIFEST = DATA / "MANIFEST.json"
 README = ROOT / "README.md"
@@ -110,7 +111,7 @@ def internal(year):
         )
     )
     blank = s["quality_flags"].str.contains("reservation_blank_in_source")
-    bad = (s["caste_reservation"].isna() | s["woman_reserved"].isna()) & ~blank
+    bad = (s["reserved_caste"].isna() | s["reserved_woman"].isna()) & ~blank
     out.append(
         result(
             f"{year}_reservation_read",
@@ -162,7 +163,7 @@ def internal(year):
             (s, "block"),
         ]
     )
-    sex = c["candidate_gender"].isna()
+    sex = c["candidate_woman_raw"].map(SEX).isna()
     out.append(
         result(
             f"{year}_glyphs_and_sex_decoded",
@@ -211,7 +212,7 @@ def checks_2011():
             sec_elected=SEC_2011["elected"],
         )
     )
-    got = s[s["woman_reserved"] == True].groupby("caste_reservation").size()  # noqa: E712
+    got = s[s["reserved_woman"] == True].groupby("reserved_caste").size()  # noqa: E712
     diffs = {k: int(got.get(k, 0)) - v for k, v in SEC_2011["women_reserved"].items()}
     blank = int(s["quality_flags"].str.contains("reservation_blank_in_source").sum())
     gap = sum(map(abs, diffs.values()))
@@ -228,7 +229,7 @@ def checks_2011():
             blank_in_source=blank,
         )
     )
-    sex = s["winner_gender"].value_counts()
+    sex = s["winner_woman_raw"].map(SEX).value_counts()
     cells = {g: (int(sex.get(g, 0)), v) for g, v in SEC_2011["winners_by_sex"].items()}
     gap = sum(abs(a - b) for a, b in cells.values())
     out.append(
@@ -248,20 +249,24 @@ def checks_2011():
     ref = pd.read_csv(DATA / "reference" / "gazette318_2011_counts.csv")
     names = pd.read_csv(DATA / "reference" / "districts.csv").dropna()
     fold = {
-        "General": ("NONE", False),
-        "General (Women)": ("NONE", True),
-        "SC (General)": ("SC", False),
-        "SC (Women)": ("SC", True),
-        "ST (General)": ("ST", False),
-        "ST (Women)": ("ST", True),
+        "General": ("NONE", 0),
+        "General (Women)": ("NONE", 1),
+        "SC (General)": ("SC", 0),
+        "SC (Women)": ("SC", 1),
+        "ST (General)": ("ST", 0),
+        "ST (Women)": ("ST", 1),
     }
-    ref = ref[ref["reservation"].isin(fold)]
-    ref[["caste_reservation", "woman_reserved"]] = ref["reservation"].map(fold).tolist()
+    ref = ref[
+        ref["reservation"].isin(fold)
+    ]  # old-name: header of a local_elections file
+    ref[["reserved_caste", "reserved_woman"]] = (
+        ref["reservation"].map(fold).tolist()
+    )  # old-name
     ref = ref.merge(names, left_on="district", right_on="gazette_2011_district")
-    a = ref.groupby(["district_code", "caste_reservation", "woman_reserved"])[
+    a = ref.groupby(["district_code", "reserved_caste", "reserved_woman"])[
         "gp_count"
     ].sum()
-    b = s.groupby(["district_code", "caste_reservation", "woman_reserved"]).size()
+    b = s.groupby(["district_code", "reserved_caste", "reserved_woman"]).size()
     both = pd.concat([a.rename("gazette"), b.rename("results")], axis=1).fillna(0)
     diff = both[both["gazette"] != both["results"]]
     out.append(
@@ -281,7 +286,7 @@ def checks_2011():
             ],
         )
     )
-    share = s["woman_reserved"].mean()
+    share = s["reserved_woman"].mean()
     out.append(
         result(
             "2011_women_reserved_share",
@@ -335,8 +340,8 @@ def checks_2019():
     name_ok = matched.apply(
         lambda r: _same_person(r["winner"], r["winner_app"]), axis=1
     )
-    sex = matched.dropna(subset=["winner_gender", "winner_gender_from_honorific"])
-    sex_ok = (sex["winner_gender"] == sex["winner_gender_from_honorific"]).mean()
+    sex = matched.dropna(subset=["winner_woman", "winner_woman_from_honorific"])
+    sex_ok = (sex["winner_woman"] == sex["winner_woman_from_honorific"]).mean()
     out.append(
         result(
             "2019_winner_vs_results_application",
@@ -379,7 +384,7 @@ def place_key(text):
 
 
 def women_share(s, year):
-    by = s.groupby("district_code")["woman_reserved"].mean()
+    by = s.groupby("district_code")["reserved_woman"].mean()
     low = by[by < 0.495]
     return [
         result(
@@ -389,7 +394,7 @@ def women_share(s, year):
             "at least half of president offices reserved for women (Tamil Nadu "
             "Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), "
             "statewide and per district",
-            share=round(float(s["woman_reserved"].mean()), 4),
+            share=round(float(s["reserved_woman"].mean()), 4),
             districts_below_half={k: round(float(v), 3) for k, v in low.items()},
         )
     ]

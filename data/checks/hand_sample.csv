@@ -1,4 +1,4 @@
-sample_id,year,district_code,block,gram_panchayat,reservation_raw,winner,winner_sex_raw,votes,source_path,source_page,heading_on_same_page,crop
+sample_id,year,district_code,block,gram_panchayat,reserved_raw,winner,winner_woman_raw,votes,source_path,source_page,heading_on_same_page,crop
 2011_01,2011,cud,கம்மாபுரம்,ஊ.மங்களம்,பொது,அறிவழகன்.நா,ஆண்,726.0,data/raw/tnsec/rulbe2011/vpp_cud.pdf,30,True,data/checks/hand/2011_01.png
 2011_02,2011,pdk,கந்தவர்வ கோட்டை,நம்புரான்பட்டி,பொது,குமரவேல்.ப,ஆண்,259.0,data/raw/tnsec/rulbe2011/vpp_pdk.pdf,37,True,data/checks/hand/2011_02.png
 2011_03,2011,vpm,சங்கராபுரம்,சோழம்பட்டு,ஆதி திராவிடர் (பொது),சித்ரா.வெ,பெண்,1124.0,data/raw/tnsec/rulbe2011/vpp_vpm.pdf,138,True,data/checks/hand/2011_03.png
