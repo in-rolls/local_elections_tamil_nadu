@@ -48,3 +48,4 @@ verify:
 	$(PY) -m local_elections_tamil_nadu.build.release verify
 
 check: lint verify
+	$(PY) -m unittest discover -s tests -v

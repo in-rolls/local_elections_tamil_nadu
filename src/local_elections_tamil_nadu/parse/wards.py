@@ -11,7 +11,7 @@ per candidate: serial, name, sex, father's or husband's name, (party, for
 puwm and dpwm), votes, percent, result. A heading at the foot of a page
 belongs to the first table of the next page.
 
-2011 prints only the winners: one ruled table per sheet, a row per ward with
+2011 village sheets print only the winners: a row per ward with
 village panchayat (or union), ward number, member, sex, community, the ward's
 reservation and how the member was elected, under caption rows naming the
 union.
@@ -19,7 +19,7 @@ union.
 Text is recovered with parse/tamil_fonts.py, as for the president sheets.
 
 Outputs (data/<year>/), with tier vp_ward / pu_ward / dp_ward:
-  ward_candidates.parquet  one row per candidate (2019, 2021)
+  ward_candidates.parquet  one row per candidate (2011 union/district; 2019/2021 all)
   ward_results.parquet     one row per ward
 
 Run: python -m local_elections_tamil_nadu.parse.wards
@@ -204,7 +204,11 @@ def parse_2011(path, office, district, family):
                     cells = [
                         cell_text(chars, c, family) if c else "" for c in row.cells
                     ]
-                    joined = " ".join(cells)
+                    joined = cell_text(
+                        chars,
+                        (table.bbox[0], row.bbox[1], table.bbox[2], row.bbox[3]),
+                        family,
+                    )
                     if (
                         u := re.search(r"ஊராட்சி\s*ஒன்றியம்\s*:\s*(\S.*?)\s*$", joined)
                     ) and not re.fullmatch(r"\d+", cells[0]):
