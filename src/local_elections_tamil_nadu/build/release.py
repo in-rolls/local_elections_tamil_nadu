@@ -38,6 +38,7 @@ OUTPUTS = [
     "2021/vp_president_results.parquet",
     "2021/vp_president_candidates.parquet",
     "2011/ward_results.parquet",
+    "2011/ward_candidates.parquet",
     "2019/ward_results.parquet",
     "2019/ward_candidates.parquet",
     "2021/ward_results.parquet",
@@ -604,7 +605,7 @@ def checks_wards():
             result(
                 f"2011_{tier}_seats_vs_abstract",
                 "external",
-                "pass" if gap <= 2 else "fail",
+                "pass" if gap == 0 else "warn" if gap <= 2 else "fail",
                 "rural ward seats in the 2011 sheets vs the commission's "
                 "category-wise abstract",
                 parsed=len(g),
@@ -634,22 +635,61 @@ def checks_wards():
                 result(
                     "2011_vp_ward_winners_by_community_sex_vs_abstract",
                     "external",
-                    "pass" if off <= 2 else "fail",
+                    "pass" if off == 0 else "warn" if off <= 2 else "fail",
                     "village ward winners by community and sex vs the abstract",
                     total_abs_gap=off,
                 )
             )
-    for year in (2019, 2021):
+    for year in (2011, 2019, 2021):
         w = pd.read_parquet(DATA / str(year) / "ward_results.parquet")
-        bad = w["quality_flags"].str.contains("elected_rows").sum()
+        candidates = pd.read_parquet(DATA / str(year) / "ward_candidates.parquet")
+        counts = candidates.groupby(["source_path", "ward_seq"]).elected.sum()
+        bad = counts.ne(1).sum()
         out.append(
             result(
                 f"{year}_ward_one_winner",
                 "internal",
                 "pass" if bad == 0 else "fail",
-                "every ward with candidates has exactly one elected row",
-                wards=len(w),
+                "every candidate-table ward has exactly one elected candidate",
+                blocking=True,
+                wards_with_candidates=len(counts),
                 not_one=int(bad),
+            )
+        )
+        duplicates = candidates.duplicated(
+            ["source_path", "ward_seq", "candidate_no"]
+        ).sum()
+        out.append(
+            result(
+                f"{year}_ward_candidate_keys",
+                "internal",
+                "pass" if duplicates == 0 else "fail",
+                "candidate serial numbers are unique within each source ward",
+                blocking=True,
+                duplicates=int(duplicates),
+            )
+        )
+        missing = (w.tier.isin(["vp_ward", "pu_ward"]) & w.block.isna()).sum()
+        out.append(
+            result(
+                f"{year}_ward_union_present",
+                "internal",
+                "pass" if missing == 0 else "fail",
+                "village and union wards retain their printed union identifier",
+                blocking=True,
+                missing=int(missing),
+            )
+        )
+        duplicates = w.duplicated(
+            ["district_code", "tier", "block", "gram_panchayat", "ward_no"]
+        ).sum()
+        out.append(
+            result(
+                f"{year}_ward_printed_keys",
+                "internal",
+                "pass" if duplicates == 0 else "warn",
+                "repeated printed ward identifiers are retained for source review",
+                duplicates=int(duplicates),
             )
         )
     return out

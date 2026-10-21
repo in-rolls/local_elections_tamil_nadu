@@ -27,7 +27,7 @@ women's quota in one term changes who wins the open seat in the next. The
 | `data/2021/vp_president_candidates.parquet` | candidate |
 | `data/2011/ward_results.parquet` | ward, three rural offices (`tier`: `vp_ward` village panchayat 99,322; `pu_ward` panchayat union 6,471; `dp_ward` district panchayat 655). 2011 prints winners only for village wards, with the winner's community (`winner_community_raw`) |
 | `data/2019/ward_results.parquet`, `data/2021/ward_results.parquet` | ward, the same three offices (2019: 76,734 / 5,090 / 515; 2021: 23,210 / 1,421 / 153, ordinary and by-elections) |
-| `data/2019/ward_candidates.parquet`, `data/2021/ward_candidates.parquet` | candidate, with sex, votes, result, and party for the union and district offices |
+| `data/2011/ward_candidates.parquet`, `data/2019/ward_candidates.parquet`, `data/2021/ward_candidates.parquet` | candidate, with sex, votes, result, and party for union/district offices; 2011 has 36,250 union/district candidates and no village-candidate table |
 | `data/2019/app_winners.parquet` | panchayat row in the commission's 2019 results application, a second publication of the same results (winner with honorific) |
 | `data/2019/app_union_counts.parquet` | union: posts in total, declared, without nomination |
 | `data/checks/hand_check.csv`, `data/checks/hand/` | 30 sampled rows read by hand against crops of the source |
@@ -106,6 +106,14 @@ union and 99,322 of 99,324 village wards; village winners by community and
 sex match the abstract in every cell but two. In 2019 and 2021 every ward with
 candidates has exactly one winner; 41 and 26 wards print no candidate.
 
+The 2011 village sheets contain 26 repeated district/union/panchayat/ward
+keys after recovering the union headings from merged table cells in
+Kanchipuram. They are retained with source page/table/row coordinates; the
+printed place and ward fields are not a unique identifier. For example,
+Cuddalore page 119 prints the same village and ward number for two rows.
+The two-seat shortfall against the 2011 abstract is reported as a warning,
+not exact agreement.
+
 ## How the text was recovered
 
 Ordinary text extraction garbles these PDFs, differently by year. The fixes
@@ -169,10 +177,20 @@ manifest`.
 | `links_share_candidates_vs_random`: linked pairs share a candidate name across the two elections far more often than random pairs in the same union group (code shares nothing with the name match); exact and fuzzy links each at least ten times the random rate | external | **pass** | {"linked_exact": 0.1088, "linked_fuzzy": 0.0865, "random_same_union_group": 0.0012} |
 | `2011_dp_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 655, "published": 655} |
 | `2011_pu_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 6471, "published": 6471} |
-| `2011_vp_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 99322, "published": 99324} |
-| `2011_vp_ward_winners_by_community_sex_vs_abstract`: village ward winners by community and sex vs the abstract | external | **pass** | {"total_abs_gap": 2} |
-| `2019_ward_one_winner`: every ward with candidates has exactly one elected row | internal | **pass** | {"wards": 82339, "not_one": 0} |
-| `2021_ward_one_winner`: every ward with candidates has exactly one elected row | internal | **pass** | {"wards": 24784, "not_one": 0} |
+| `2011_vp_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **warn** | {"parsed": 99322, "published": 99324} |
+| `2011_vp_ward_winners_by_community_sex_vs_abstract`: village ward winners by community and sex vs the abstract | external | **warn** | {"total_abs_gap": 2} |
+| `2011_ward_one_winner`: every candidate-table ward has exactly one elected candidate | internal | **pass** | {"wards_with_candidates": 7126, "not_one": 0} |
+| `2011_ward_candidate_keys`: candidate serial numbers are unique within each source ward | internal | **pass** | {"duplicates": 0} |
+| `2011_ward_union_present`: village and union wards retain their printed union identifier | internal | **pass** | {"missing": 0} |
+| `2011_ward_printed_keys`: repeated printed ward identifiers are retained for source review | internal | **warn** | {"duplicates": 26} |
+| `2019_ward_one_winner`: every candidate-table ward has exactly one elected candidate | internal | **pass** | {"wards_with_candidates": 82298, "not_one": 0} |
+| `2019_ward_candidate_keys`: candidate serial numbers are unique within each source ward | internal | **pass** | {"duplicates": 0} |
+| `2019_ward_union_present`: village and union wards retain their printed union identifier | internal | **pass** | {"missing": 0} |
+| `2019_ward_printed_keys`: repeated printed ward identifiers are retained for source review | internal | **pass** | {"duplicates": 0} |
+| `2021_ward_one_winner`: every candidate-table ward has exactly one elected candidate | internal | **pass** | {"wards_with_candidates": 24758, "not_one": 0} |
+| `2021_ward_candidate_keys`: candidate serial numbers are unique within each source ward | internal | **pass** | {"duplicates": 0} |
+| `2021_ward_union_present`: village and union wards retain their printed union identifier | internal | **pass** | {"missing": 0} |
+| `2021_ward_printed_keys`: repeated printed ward identifiers are retained for source review | internal | **pass** | {"duplicates": 0} |
 <!-- checks:end -->
 
 What the passes rest on:
