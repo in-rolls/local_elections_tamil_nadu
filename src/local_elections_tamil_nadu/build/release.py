@@ -37,6 +37,11 @@ OUTPUTS = [
     "2019/app_union_counts.parquet",
     "2021/vp_president_results.parquet",
     "2021/vp_president_candidates.parquet",
+    "2011/ward_results.parquet",
+    "2019/ward_results.parquet",
+    "2019/ward_candidates.parquet",
+    "2021/ward_results.parquet",
+    "2021/ward_candidates.parquet",
     "checks/hand_check.csv",
     "linkage/union_crosswalk_2011_2019_2021.csv",
     "linkage/review_2011_2019_2021.csv",
@@ -570,12 +575,93 @@ def raw_problems():
     return len(rows), problems
 
 
+# The 2011 "winners by category" abstract (abstract_categorywise.pdf): seats per
+# rural ward office, and winners by community and sex (ST women, ST men, SC
+# women, SC men, others women, others men).
+ABSTRACT_2011 = {
+    "dp_ward": (655, [3, 6, 74, 88, 175, 309]),
+    "pu_ward": (6471, [25, 46, 805, 851, 1886, 2858]),
+    "vp_ward": (99324, [470, 764, 12971, 15830, 25578, 43648]),
+}
+
+
+def community(raw):
+    raw = str(raw)
+    if "பழங்குடி" in raw:
+        return "ST"
+    if "ஆதி" in raw or "திராவிட" in raw:
+        return "SC"
+    return "other"
+
+
+def checks_wards():
+    out = []
+    w = pd.read_parquet(DATA / "2011" / "ward_results.parquet")
+    for tier, (seats, cells) in ABSTRACT_2011.items():
+        g = w[w["tier"] == tier]
+        gap = abs(len(g) - seats)
+        out.append(
+            result(
+                f"2011_{tier}_seats_vs_abstract",
+                "external",
+                "pass" if gap <= 2 else "fail",
+                "rural ward seats in the 2011 sheets vs the commission's "
+                "category-wise abstract",
+                parsed=len(g),
+                published=seats,
+            )
+        )
+        if tier == "vp_ward":
+            got = g.groupby(
+                [g["winner_community_raw"].map(community), "winner_woman"]
+            ).size()
+            want = dict(
+                zip(
+                    [
+                        ("ST", 1),
+                        ("ST", 0),
+                        ("SC", 1),
+                        ("SC", 0),
+                        ("other", 1),
+                        ("other", 0),
+                    ],
+                    cells,
+                    strict=True,
+                )
+            )
+            off = sum(abs(int(got.get(k, 0)) - v) for k, v in want.items())
+            out.append(
+                result(
+                    "2011_vp_ward_winners_by_community_sex_vs_abstract",
+                    "external",
+                    "pass" if off <= 2 else "fail",
+                    "village ward winners by community and sex vs the abstract",
+                    total_abs_gap=off,
+                )
+            )
+    for year in (2019, 2021):
+        w = pd.read_parquet(DATA / str(year) / "ward_results.parquet")
+        bad = w["quality_flags"].str.contains("elected_rows").sum()
+        out.append(
+            result(
+                f"{year}_ward_one_winner",
+                "internal",
+                "pass" if bad == 0 else "fail",
+                "every ward with candidates has exactly one elected row",
+                wards=len(w),
+                not_one=int(bad),
+            )
+        )
+    return out
+
+
 def run_checks():
     out = []
     for year in (2011, 2019, 2021):
         out += internal(year)
     out += checks_2011() + checks_2019() + checks_2021()
     out += checks_links()
+    out += checks_wards()
     return out
 
 
