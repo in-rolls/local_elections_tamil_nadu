@@ -680,16 +680,21 @@ def checks_wards():
                 missing=int(missing),
             )
         )
-        duplicates = w.duplicated(
-            ["district_code", "tier", "block", "gram_panchayat", "ward_no"]
-        ).sum()
+        key = ["district_code", "tier", "block", "gram_panchayat", "ward_no"]
+        duplicates = w.duplicated(key).sum()
+        repeated = w.duplicated(key, keep=False)
+        flags = w["quality_flags"].fillna("")
+        unmarked = int((repeated & ~flags.str.contains("gp_name_repeated")).sum())
         out.append(
             result(
                 f"{year}_ward_printed_keys",
                 "internal",
-                "pass" if duplicates == 0 else "warn",
-                "repeated printed ward identifiers are retained for source review",
+                "fail" if unmarked else "pass" if duplicates == 0 else "warn",
+                "repeated printed ward identifiers are retained for source review "
+                "and every row of one is marked gp_name_repeated",
+                blocking=True,
                 duplicates=int(duplicates),
+                unmarked=unmarked,
             )
         )
     return out

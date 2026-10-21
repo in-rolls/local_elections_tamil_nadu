@@ -8,7 +8,7 @@
   "2019/app_union_counts.parquet": "8f374e3db261ef0d2d72dee16bae6caa5a1133b31c98898043527a038e8f8445",
   "2021/vp_president_results.parquet": "4576af48e1d630c9931720a7e16ff54cb97f54c2e311c42142afe2d451dd8c1b",
   "2021/vp_president_candidates.parquet": "02b8668d2c7aed228f7c52623700a55e5a7cd06ce873b8bc2c510de9eb9edfb2",
-  "2011/ward_results.parquet": "5d3d3e124ceb16c6e971e7d309a9af99b63153dd86232186d0d96ac496a02011",
+  "2011/ward_results.parquet": "bbdf75ee8196e1667f7f4c149aad2f5abaf3359a8301b09d9874d94575d1212e",
   "2011/ward_candidates.parquet": "64b0292a38228ba0bac0895b644f58f861356d094a41aee35ea8470d66213398",
   "2019/ward_results.parquet": "973400680499a7226a0721ebafd777f76d0b276dd46c827bff94fff4ccb658e5",
   "2019/ward_candidates.parquet": "eddaa7e4f828f34f160828734e73efafe8c617014c865bed9c48c2849b162d77",
@@ -285,7 +285,7 @@
    "detail": "PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி)",
    "seats": 9624,
    "joined_on_names": 9624,
-   "winner_name_agree": 0.9995,
+   "winner_name_agree": 0.9994,
    "sex_compared": 9622,
    "sex_agree": 1.0
   },
@@ -453,9 +453,10 @@
    "check": "2011_ward_printed_keys",
    "appeals_to": "internal",
    "status": "warn",
-   "blocking": false,
-   "detail": "repeated printed ward identifiers are retained for source review",
-   "duplicates": 26
+   "blocking": true,
+   "detail": "repeated printed ward identifiers are retained for source review and every row of one is marked gp_name_repeated",
+   "duplicates": 26,
+   "unmarked": 0
   },
   {
    "check": "2019_ward_one_winner",
@@ -486,9 +487,10 @@
    "check": "2019_ward_printed_keys",
    "appeals_to": "internal",
    "status": "pass",
-   "blocking": false,
-   "detail": "repeated printed ward identifiers are retained for source review",
-   "duplicates": 0
+   "blocking": true,
+   "detail": "repeated printed ward identifiers are retained for source review and every row of one is marked gp_name_repeated",
+   "duplicates": 0,
+   "unmarked": 0
   },
   {
    "check": "2021_ward_one_winner",
@@ -519,9 +521,10 @@
    "check": "2021_ward_printed_keys",
    "appeals_to": "internal",
    "status": "pass",
-   "blocking": false,
-   "detail": "repeated printed ward identifiers are retained for source review",
-   "duplicates": 0
+   "blocking": true,
+   "detail": "repeated printed ward identifiers are retained for source review and every row of one is marked gp_name_repeated",
+   "duplicates": 0,
+   "unmarked": 0
   }
  ]
 }

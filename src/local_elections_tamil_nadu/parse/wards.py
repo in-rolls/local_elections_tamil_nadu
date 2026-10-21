@@ -339,6 +339,15 @@ def main():
                 cand[c] = cand[c].astype("Int8")
             cand["votes"] = cand["votes"].astype("Int32")
             cand.to_parquet(out / "ward_candidates.parquet", index=False)
+        # A sheet can print one GP name over two GPs' wards (Kancheepuram 2011
+        # lists Keezhmaruvathur's wards 1-6 twice, with different winners); both
+        # are kept as printed and marked, since the sheet does not say which
+        # GP the second run belongs to
+        key = ["tier", "district_code", "block", "gram_panchayat", "ward_no"]
+        repeated = seat.duplicated(key, keep=False)
+        flags = seat.get("quality_flags", pd.Series("", index=seat.index)).fillna("")
+        seat["quality_flags"] = flags.where(~repeated, flags + ";gp_name_repeated")
+        seat["quality_flags"] = seat["quality_flags"].str.strip(";")
         for c in ("reserved_woman", "winner_woman"):
             seat[c] = seat[c].astype("Int8")
         for c in ("votes", "electors", "valid_votes", "seat_candidates"):
