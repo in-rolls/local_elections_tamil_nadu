@@ -25,6 +25,9 @@ women's quota in one term changes who wins the open seat in the next. The
 | `data/2019/vp_president_candidates.parquet` | candidate |
 | `data/2021/vp_president_results.parquet` | seat: nine districts' ordinary election (`election_type` = `General Election`) plus casual by-elections elsewhere (`By Election`) |
 | `data/2021/vp_president_candidates.parquet` | candidate |
+| `data/2011/ward_results.parquet` | ward, three rural offices (`tier`: `vp_ward` village panchayat 99,322; `pu_ward` panchayat union 6,471; `dp_ward` district panchayat 655). 2011 prints winners only for village wards, with the winner's community (`winner_community_raw`) |
+| `data/2019/ward_results.parquet`, `data/2021/ward_results.parquet` | ward, the same three offices (2019: 76,734 / 5,090 / 515; 2021: 23,210 / 1,421 / 153, ordinary and by-elections) |
+| `data/2019/ward_candidates.parquet`, `data/2021/ward_candidates.parquet` | candidate, with sex, votes, result, and party for the union and district offices |
 | `data/2019/app_winners.parquet` | panchayat row in the commission's 2019 results application, a second publication of the same results (winner with honorific) |
 | `data/2019/app_union_counts.parquet` | union: posts in total, declared, without nomination |
 | `data/checks/hand_check.csv`, `data/checks/hand/` | 30 sampled rows read by hand against crops of the source |
@@ -88,6 +91,21 @@ India.
 and UTC time of every saved response. The `collect.log` files record each
 run.
 
+## Ward members
+
+`parse/wards.py` reads the rural ward-member sheets (`vpwm_`, `puwm_`,
+`dpwm_` in `data/raw/tnsec/<election>/`; village sheets are one per union from
+2019). 2019 and 2021 print a heading per ward (`வார்டு எண்: N
+[reservation]`) and every candidate; 2011 prints every candidate for union and
+district wards but only the winners for village wards. The reservation in the
+bracket is the ward's, read as for the presidents (with `ஆதிதிராவிடர்`,
+printed without its space on 310 wards in 2011, read as SC).
+
+Against the 2011 category-wise abstract: 655 of 655 district, 6,471 of 6,471
+union and 99,322 of 99,324 village wards; village winners by community and
+sex match the abstract in every cell but two. In 2019 and 2021 every ward with
+candidates has exactly one winner; 41 and 26 wards print no candidate.
+
 ## How the text was recovered
 
 Ordinary text extraction garbles these PDFs, differently by year. The fixes
@@ -140,7 +158,7 @@ manifest`.
 | `2011_district_category_counts_vs_gazette_318`: seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, parsed independently in local_elections); differences can be real (later amendments, no-nomination seats) | external | **warn** | {"cells": 147, "cells_differing": 12, "seats_differing": 12, "examples": [{"cell": "ari/ST/0", "gazette": 3, "results": 2}, {"cell": "kar/SC/0", "gazette": 22, "results": 21}, {"cell": "nlg/NONE/0", "gazette": 13, "results": 14}, {"cell": "nlg/NONE/1", "gazette": 10, "results": 9}, {"cell": "slm/NON |
 | `2011_women_reserved_share`: 2011 reserved one third of offices for women (50% came in 2016) | legal | **pass** | {"share": 0.3424} |
 | `2019_seats_vs_results_application`: seats in the PDFs (including headings printed with no candidate) vs posts in the commission's results application; the application's other rows are panchayats it marks 'result not declared' | external | **pass** | {"parsed": 9624, "parsed_no_candidates": 2, "app_posts": 9624, "app_posts_no_nomination": 2, "app_rows": 9690} |
-| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9994, "sex_compared": 9622, "sex_agree": 1.0} |
+| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9995, "sex_compared": 9622, "sex_agree": 1.0} |
 | `2019_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5, "districts_below_half": {}} |
 | `2021_ordinary_seats_vs_sec`: seats in the nine districts' files vs the 2,901 posts announced | external | **warn** | {"parsed": 2900, "sec": 2901, "casual_seats": 105} |
 | `2021_unopposed_vs_sec`: presidents elected unopposed in the nine districts vs 119 reported | external | **pass** | {"parsed": 119, "sec": 119} |
@@ -149,6 +167,12 @@ manifest`.
 | `links_union_crosswalk_covers_all_unions`: every 2011 and later panchayat union appears in a usable crosswalk row | internal | **pass** | {"decisions": {"same": 368, "split": 27, "merged": 4, "uncertain": 1}, "unions_2011_uncovered": [], "unions_later_uncovered": []} |
 | `links_precision_hand_review`: hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as wrong): precision at least 98% in every stratum and overall. Fuzzy links were read in full, exact links by sample | external | **pass** | {"bands": {"exact": "76/76 of 11604, CI 0.9519-1.0", "exact_respelled": "45/45 of 368, CI 0.9213-1.0", "0.94-0.97": "256/259 of 259, CI 0.9665-0.9961", "0.97-1.00": "7/7 of 7, CI 0.6457-1.0"}, "estimate": 0.9998, "lower_bound": 0.9511} |
 | `links_share_candidates_vs_random`: linked pairs share a candidate name across the two elections far more often than random pairs in the same union group (code shares nothing with the name match); exact and fuzzy links each at least ten times the random rate | external | **pass** | {"linked_exact": 0.1088, "linked_fuzzy": 0.0865, "random_same_union_group": 0.0012} |
+| `2011_dp_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 655, "published": 655} |
+| `2011_pu_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 6471, "published": 6471} |
+| `2011_vp_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 99322, "published": 99324} |
+| `2011_vp_ward_winners_by_community_sex_vs_abstract`: village ward winners by community and sex vs the abstract | external | **pass** | {"total_abs_gap": 2} |
+| `2019_ward_one_winner`: every ward with candidates has exactly one elected row | internal | **pass** | {"wards": 82339, "not_one": 0} |
+| `2021_ward_one_winner`: every ward with candidates has exactly one elected row | internal | **pass** | {"wards": 24784, "not_one": 0} |
 <!-- checks:end -->
 
 What the passes rest on:

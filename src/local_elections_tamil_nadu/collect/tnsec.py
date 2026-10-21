@@ -21,7 +21,8 @@ Two published forms, both read 2026-10-18 (see collect/fetch.py for the proxy):
    honorific and name in Unicode). Codes are base64 in the query string.
    No such application exists for 2011 or 2021 (probed 2026-10-18).
 
-Ward-member files are not collected. Every saved response is logged in
+Ward-member sheets for the three rural tiers (vpwm, puwm, dpwm) are collected
+beside the president sheets; urban sheets are not. Every saved response is logged in
 data/raw/fetch_log.csv; a logged path is not fetched again.
 
 Run: python -m local_elections_tamil_nadu.collect.tnsec
@@ -58,7 +59,11 @@ SITE = [
 ]
 OPTION = re.compile(r'<option value="([a-z]{3})">')
 # Only the plain file names the pages use; anything else (e.g. "../") is ignored.
-LINK = re.compile(r"window\.open\('((?:vpp|abstract)_[a-z_]+\.pdf)'")
+LINK = re.compile(r"window\.open\('((?:vpp|vpwm|puwm|dpwm|abstract)_[a-z_]+\.pdf)'")
+# The rural offices' result sheets: village panchayat president, village
+# panchayat ward members (one sheet per union from 2019), panchayat union ward
+# members and district panchayat ward members. Urban sheets are not collected.
+RURAL = ("vpp_", "vpwm_", "puwm_", "dpwm_")
 LEVEL2 = re.compile(
     r"village_panchayat_president_level_2\.php\?post_code=MQ==&(?:amp;)?dcode=([A-Za-z0-9=]+)"
 )
@@ -103,10 +108,10 @@ def result_sheets(s, held):
                 s, url, rel, method="POST", data={"cmb_district": d}, held=held
             )
             linked = LINK.findall(path.read_text(encoding="utf-8", errors="replace"))
-            vpp = [p for p in linked if p.startswith("vpp_")]
-            if not vpp:
+            rural = [p for p in linked if p.startswith(RURAL)]
+            if not any(p.startswith("vpp_") for p in rural):
                 log.warning("%s %s: no president file linked", election, d)
-            pdfs.update(vpp)
+            pdfs.update(rural)
         for name in sorted(pdfs):
             fetch(
                 s, f"{RESULTS}/{election}/{name}", f"{OUT}/{election}/{name}", held=held

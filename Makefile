@@ -20,6 +20,7 @@ collect-tnrd:
 data:
 	$(PY) -m local_elections_tamil_nadu.parse.results
 	$(PY) -m local_elections_tamil_nadu.parse.app2019
+	$(PY) -m local_elections_tamil_nadu.parse.wards
 	$(MAKE) manifest
 
 # 2011 -> 2019/2021 seat links from the results tables and the hand-coded
