@@ -1,0 +1,379 @@
+{
+ "purpose": "2011 to 2019/2021 village panchayat president seat links, precision first. A link states that two panchayat names agree inside crosswalked unions, not that boundaries are unchanged.",
+ "matcher": {
+  "preclink": "1.2.0",
+  "rapidfuzz": "3.14.6",
+  "threshold": 0.94,
+  "margin": 0.05,
+  "mutual": true,
+  "weights": {
+   "name": 1.0,
+   "block_seq": 0.0
+  }
+ },
+ "links": {
+  "2019": 9491,
+  "2021": 2747
+ },
+ "exact_folded_name_links": 11972,
+ "fuzzy_name_links": 266,
+ "excluded_2011": {
+  "no_crosswalked_union": 0,
+  "blank_name": 0,
+  "name_repeated_in_group": 16
+ },
+ "excluded_later": {
+  "no_crosswalked_union": 0,
+  "blank_name": 0,
+  "name_repeated_in_group": 14
+ },
+ "precision": {
+  "bands": {
+   "exact": {
+    "links": 11604,
+    "reviewed": 76,
+    "correct": 76,
+    "precision": 1.0,
+    "ci95": [
+     0.9519,
+     1.0
+    ]
+   },
+   "exact_respelled": {
+    "links": 368,
+    "reviewed": 45,
+    "correct": 45,
+    "precision": 1.0,
+    "ci95": [
+     0.9213,
+     1.0
+    ]
+   },
+   "0.94-0.97": {
+    "links": 259,
+    "reviewed": 259,
+    "correct": 256,
+    "precision": 0.9884,
+    "ci95": [
+     0.9665,
+     0.9961
+    ]
+   },
+   "0.97-1.00": {
+    "links": 7,
+    "reviewed": 7,
+    "correct": 7,
+    "precision": 1.0,
+    "ci95": [
+     0.6457,
+     1.0
+    ]
+   }
+  },
+  "reviewed_links": 387,
+  "reviewed_still_linked": 387,
+  "estimate_stratified": 0.9998,
+  "lower_bound_stratified": 0.9511,
+  "below_threshold": {
+   "near_miss_link:0.85-0.90": {
+    "pairs": 74,
+    "correct": 63,
+    "unsure": 10,
+    "incorrect": 1
+   },
+   "near_miss_link:0.90-0.94": {
+    "pairs": 69,
+    "correct": 66,
+    "unsure": 3,
+    "incorrect": 0
+   },
+   "near_miss_margin:not_linked": {
+    "pairs": 30,
+    "correct": 1,
+    "unsure": 0,
+    "incorrect": 29
+   }
+  }
+ },
+ "independent_check": {
+  "linked_all": 0.1083,
+  "linked_exact": 0.1088,
+  "linked_fuzzy": 0.0865,
+  "n_exact": 11972,
+  "n_fuzzy": 266,
+  "random_same_union_group": 0.0012,
+  "random_permutations": 50
+ },
+ "by_district": [
+  {
+   "district_2011": "ari",
+   "later_districts": "ari",
+   "later_year": 2019,
+   "seats_2011": 200,
+   "seats_later": 201,
+   "linked": 200
+  },
+  {
+   "district_2011": "cbe",
+   "later_districts": "cbe",
+   "later_year": 2019,
+   "seats_2011": 228,
+   "seats_later": 228,
+   "linked": 226
+  },
+  {
+   "district_2011": "cud",
+   "later_districts": "cud",
+   "later_year": 2019,
+   "seats_2011": 683,
+   "seats_later": 683,
+   "linked": 676
+  },
+  {
+   "district_2011": "dgl",
+   "later_districts": "dgl",
+   "later_year": 2019,
+   "seats_2011": 306,
+   "seats_later": 306,
+   "linked": 301
+  },
+  {
+   "district_2011": "dpi",
+   "later_districts": "dpi",
+   "later_year": 2019,
+   "seats_2011": 251,
+   "seats_later": 251,
+   "linked": 239
+  },
+  {
+   "district_2011": "erd",
+   "later_districts": "erd",
+   "later_year": 2019,
+   "seats_2011": 225,
+   "seats_later": 225,
+   "linked": 221
+  },
+  {
+   "district_2011": "kar",
+   "later_districts": "kar",
+   "later_year": 2019,
+   "seats_2011": 157,
+   "seats_later": 157,
+   "linked": 155
+  },
+  {
+   "district_2011": "kgi",
+   "later_districts": "kgi",
+   "later_year": 2019,
+   "seats_2011": 333,
+   "seats_later": 333,
+   "linked": 329
+  },
+  {
+   "district_2011": "kkm",
+   "later_districts": "kkm",
+   "later_year": 2019,
+   "seats_2011": 95,
+   "seats_later": 95,
+   "linked": 95
+  },
+  {
+   "district_2011": "kpm",
+   "later_districts": "kpm+cpt",
+   "later_year": 2021,
+   "seats_2011": 633,
+   "seats_later": 632,
+   "linked": 630
+  },
+  {
+   "district_2011": "mdu",
+   "later_districts": "mdu",
+   "later_year": 2019,
+   "seats_2011": 420,
+   "seats_later": 420,
+   "linked": 418
+  },
+  {
+   "district_2011": "ngp",
+   "later_districts": "ngp",
+   "later_year": 2019,
+   "seats_2011": 434,
+   "seats_later": 434,
+   "linked": 432
+  },
+  {
+   "district_2011": "nlg",
+   "later_districts": "nlg",
+   "later_year": 2019,
+   "seats_2011": 35,
+   "seats_later": 35,
+   "linked": 35
+  },
+  {
+   "district_2011": "nmk",
+   "later_districts": "nmk",
+   "later_year": 2019,
+   "seats_2011": 322,
+   "seats_later": 322,
+   "linked": 316
+  },
+  {
+   "district_2011": "pdk",
+   "later_districts": "pdk",
+   "later_year": 2019,
+   "seats_2011": 497,
+   "seats_later": 497,
+   "linked": 486
+  },
+  {
+   "district_2011": "pmb",
+   "later_districts": "pmb",
+   "later_year": 2019,
+   "seats_2011": 121,
+   "seats_later": 121,
+   "linked": 121
+  },
+  {
+   "district_2011": "rmd",
+   "later_districts": "rmd",
+   "later_year": 2019,
+   "seats_2011": 429,
+   "seats_later": 429,
+   "linked": 429
+  },
+  {
+   "district_2011": "slm",
+   "later_districts": "slm",
+   "later_year": 2019,
+   "seats_2011": 385,
+   "seats_later": 385,
+   "linked": 382
+  },
+  {
+   "district_2011": "svg",
+   "later_districts": "svg",
+   "later_year": 2019,
+   "seats_2011": 445,
+   "seats_later": 445,
+   "linked": 442
+  },
+  {
+   "district_2011": "thn",
+   "later_districts": "thn",
+   "later_year": 2019,
+   "seats_2011": 130,
+   "seats_later": 130,
+   "linked": 130
+  },
+  {
+   "district_2011": "tlr",
+   "later_districts": "tlr",
+   "later_year": 2019,
+   "seats_2011": 526,
+   "seats_later": 526,
+   "linked": 515
+  },
+  {
+   "district_2011": "tnj",
+   "later_districts": "tnj",
+   "later_year": 2019,
+   "seats_2011": 589,
+   "seats_later": 589,
+   "linked": 565
+  },
+  {
+   "district_2011": "tnv",
+   "later_districts": "tnv+tki",
+   "later_year": 2021,
+   "seats_2011": 425,
+   "seats_later": 425,
+   "linked": 401
+  },
+  {
+   "district_2011": "tpr",
+   "later_districts": "tpr",
+   "later_year": 2019,
+   "seats_2011": 265,
+   "seats_later": 265,
+   "linked": 263
+  },
+  {
+   "district_2011": "try",
+   "later_districts": "try",
+   "later_year": 2019,
+   "seats_2011": 404,
+   "seats_later": 404,
+   "linked": 395
+  },
+  {
+   "district_2011": "tut",
+   "later_districts": "tut",
+   "later_year": 2019,
+   "seats_2011": 403,
+   "seats_later": 403,
+   "linked": 401
+  },
+  {
+   "district_2011": "tvm",
+   "later_districts": "tvm",
+   "later_year": 2019,
+   "seats_2011": 860,
+   "seats_later": 860,
+   "linked": 856
+  },
+  {
+   "district_2011": "tvr",
+   "later_districts": "tvr",
+   "later_year": 2019,
+   "seats_2011": 430,
+   "seats_later": 430,
+   "linked": 421
+  },
+  {
+   "district_2011": "vlr",
+   "later_districts": "vlr+tpt+rpt",
+   "later_year": 2021,
+   "seats_2011": 743,
+   "seats_later": 743,
+   "linked": 655
+  },
+  {
+   "district_2011": "vnr",
+   "later_districts": "vnr",
+   "later_year": 2019,
+   "seats_2011": 450,
+   "seats_later": 450,
+   "linked": 442
+  },
+  {
+   "district_2011": "vpm",
+   "later_districts": "vpm+kki",
+   "later_year": 2021,
+   "seats_2011": 1099,
+   "seats_later": 1100,
+   "linked": 1061
+  }
+ ],
+ "inputs": {
+  "data/2011/vp_president_results.parquet": "78ce144ef80343feeb9d22380820b26db52de6e3a8c98fe8815b8697d1784baf",
+  "data/2019/vp_president_results.parquet": "8a6f72fdd7ba2459c0f2d92755e88c06f271a005158415bc3f2c42aa72800702",
+  "data/2021/vp_president_results.parquet": "4576af48e1d630c9931720a7e16ff54cb97f54c2e311c42142afe2d451dd8c1b",
+  "data/linkage/union_crosswalk_2011_2019_2021.csv": "3ba65d34309b1d5dcc45f6a617b681b8d5e28e7bc9188149b90bbd09b879c595",
+  "data/linkage/review_2011_2019_2021.csv": "9519e6a06c0d1cf353cd66c7d80108d221ef746bf0c58a39e35e236c1284f88a"
+ },
+ "code_sha256": {
+  "vp_links.py": "4a5e7b0318b4d74c54fb3aeb02fec0a370a6ac471a5ee7b0172fe2553e4237cb",
+  "names.py": "a78962ceff49172c26e995dd49cdea75d2e4320fd5fd085c2a36cc36c8c6d296",
+  "candidate_check.py": "a7dad0c50b0eae3351cfd11f504f403dd99c8f797cec5e607ffab2087486b6be"
+ },
+ "outputs": {
+  "vp_2011_2019.parquet": {
+   "rows": 9491,
+   "sha256": "4fecda05b10c0217adfaca8eb712d30d65ae1b08f449e48bb3695cb1ade9708f"
+  },
+  "vp_2011_2021.parquet": {
+   "rows": 2747,
+   "sha256": "283520d220be730d63a300a33c64ec5c84f83e221d5f3dd13e1ed38f98c20a2e"
+  }
+ }
+}

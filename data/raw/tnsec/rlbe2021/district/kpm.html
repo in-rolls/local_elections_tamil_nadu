@@ -1,0 +1,849 @@
+
+ 
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="Tamil Nadu State Election Commission" />
+    <meta name="description" content="Tamil Nadu State Election Commission" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="/tnsec_static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/tnsec_static/css/bcrumb.css" rel="stylesheet">
+    <link href="/tnsec_static/fonts/font.css" rel="stylesheet">
+    <link href="/tnsec_static/fonts/tafont.css" rel="stylesheet">
+    <title>Tamil Nadu State Election Commission</title>
+    <link href="/tnsec_static/css/slick.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/tnsec_static/css/jquery.dataTables.min.css">
+
+    <script src="/tnsec_static/js/jquery.min.js"></script>
+    <script src="/tnsec_static/js/popper.min.js"></script>
+    <!-- <script src="/js/bootstrap.bundle.min.js"></script> -->
+    <script src="/tnsec_static/js/scrollreveal.js"></script>
+    <script src="/tnsec_static/js/scrollup-counter.js"></script>
+    <script type="text/javascript" src="/tnsec_static/js/slick.min.js"></script>
+    <script src="/tnsec_static/js/footer-carousal.js"></script>
+    <script src="/tnsec_static/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="/tnsec_static/js/jquery.dataTables.min.js"></script>
+ 
+</head>
+<script type="text/javascript">
+$(document).ready(function() {	  
+	  $(".navbar-nav > .nav-item").on("keydown mouseenter", function(e) {
+		  $(".navbar-nav").find('.dropdown-menu').css({"display": "none"});
+		  $(this).find('.dropdown-menu').css({"display": "block"});
+	  });
+	  
+	  
+	  $(".dropdown-menu").on("mouseleave ", function() {
+		  //alert('kfkf');
+		  $(".navbar-nav").find('.dropdown-menu').css({"display": "none"});
+		 
+	  });  
+ 	  
+	
+	
+	  
+});
+	   
+</script>
+<style>
+
+.dropdown:hover .dropdown-menu {
+      display: block;
+}
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'poppins', sans-serif !important;
+    font-size: 14px !important;
+    overflow-x: hidden !important;
+}
+
+.header_text {
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+    margin-top: -5px;
+    font-size: 25px
+}
+
+.tamil_header_text {
+    color: #0e446d;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.top_header {
+    background: #f5f2f2;
+}
+
+.menu_bar {
+    background: #036aaf;
+    font: normal normal 1.002vw Poppins;
+    letter-spacing: 0.008vw;
+}
+
+.text_color {
+    color: #056074 !important;
+}
+
+nav.circle ul li a {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-size: 16px;
+}
+
+nav.circle ul li a:before {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '.';
+    color: transparent;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: transparent;
+}
+
+nav.circle ul li a:hover:before {
+    -webkit-animation: circle 0.8s ease-in forwards;
+}
+
+.dropdown-item:hover {
+    color: #fff;
+}
+
+.dropdown-item {
+    font-size: 13px;
+}
+
+.navbar-nav .dropdown-menu {
+    background: #fff;
+    box-shadow: 0 5px 15px 0 rgb(2 59 109 / 10%);
+}
+
+.dropdown-toggle.show+.dropdown-menu {
+    animation: openDropDown 0.5s ease 0s 1 forwards;
+}
+
+@keyframes openDropDown {
+    from {
+        transform: rotateX(50deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
+    }
+}
+
+/* Keyframes */
+@-webkit-keyframes circle {
+    0% {
+        width: 1px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: 1px;
+        z-index: -1;
+        background: #94c9ed;
+        border-radius: 100%;
+    }
+
+    100% {
+        background: #3498DB;
+        height: 5000%;
+        width: 5000%;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 0;
+    }
+}
+
+.nav-item,
+.prof_name {
+    white-space: nowrap;
+}
+
+/* Google Search Styles Start*/
+.gsc-control-cse{
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 2px !important;
+    background: #eff4ff !important;
+    border: 1px solid #c2e4f6 !important;
+    width: 230px !important;
+}
+.gsc-input-box {
+    border: 1px solid #e2f3fc !important;
+}
+form.gsc-search-box, table.gsc-search-box{
+    margin: 0px !important;
+}
+.gsib_b {
+    height: 30px !important;
+    width: 30px !important;
+}
+.gsib_a {
+    padding: 0px 5px 0px 50px !important;
+}
+.slick-slide{
+    margin:15px;
+}
+
+.footer-carousal .slick-slide{
+    margin: 10px;
+    border: 2px solid #0a2d54;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Google Search Styles End*/
+
+@media screen and (max-width:768px) {
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .search {
+        display: none;
+    }
+
+    .screenReader {
+        display: none;
+    }
+
+    .header-part {
+        flex-direction: column;
+    }
+
+    .header-part img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tamil_header_text {
+        font-size: 20px !important;
+    }
+
+    .header_text {
+        font-size: 15px;
+    }
+
+    .social-media-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .font-setting-btn {
+        justify-content: center;
+    }
+
+    .nav.nav-pills {
+        justify-content: center;
+    }
+	
+	.dropdown-menu {
+      display: none !important;
+}
+.dropdown-menu.show {
+    display: block !important;
+}
+	
+}
+</style>
+
+<body>
+    <nav class="top_header border-bottom">
+        <div class="container p-0">
+            <div class="d-flex justify-content-between align-items-center header-buttons">
+                <div class="social-media-btn">
+                    <button type="button" class="btn btn-sm fw-bold me-1">
+                        <img src="/tnsec_static/Images/Icons/navIcons/phone.svg" width="15px" alt="">
+                        044-23635010
+                    </button>
+                    <button type="button" class="btn btn-sm fw-bold me-1">
+                        <img src="/tnsec_static/Images/Icons/navIcons/mail.svg" width="17px" alt="">
+                        tnsec[dot]tn[at]nic[dot]in
+                    </button>
+                </div>
+               <div class="d-flex text-lg-end text-md-start font-setting-btn align-items-center header-part">
+                    <div>
+                        <button type="button" class="btn btn-sm fw-bold me-3 me-md-1"><a
+                                href="/tnsec_static/header_and_footer_related/sitemap_t.php"
+                                style="text-decoration:none; color:#000; background:none;">Sitemap</a></button>
+                        <button type="button" class="btn btn-sm fw-bold me-3 me-md-1 screenReader"><a
+                                href="/tnsec_static/header_and_footer_related/screen_reader_access_t.php"
+                                style="text-decoration:none; color:#000; background:none;">Screen Reader</a></button>
+
+                        <!-- <button type="button" class="btn btn-sm fw-bold me-3 me-md-1">-A</button>
+						<button type="button" class="btn btn-sm fw-bold me-3 me-md-1">A</button>
+						<button type="button" class="btn btn-sm fw-bold me-3 me-md-1">+A</button> -->
+
+                        <button type="button" class="btn btn-sm fw-bold me-3 me-md-1 increase-plugin-ac"
+                            title="Font Size Increase" style="font-size: 14px;">A+</button>
+                        <button type="button" class="btn btn-sm fw-bold me-3 me-md-1 normal-plugin-ac"
+                            title="Normal Font Size" style="font-size: 14px;">A</button>
+                        <button type="button" class="btn btn-sm fw-bold me-3 me-md-1 decrease-plugin-ac"
+                            title="Font Size Decrease" style="font-size: 14px;">A-</button>
+
+                        <button type="button" class="btn btn-sm fw-bold me-3 me-md-1"><a
+                                href="/tnsec_static/index_eng.php"
+                                style="text-decoration:none; color:#000; background:none;">ENGLISH</a></button>
+                    </div>
+                
+
+ <script async src="https://cse.google.com/cse.js?cx=476774c329b934358"></script>
+<div style="width:10%; height:10%" class="gcse-search"></div>
+
+</div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light bg-white border-bottom top_head py-1">
+        <div class="container d-inline">
+            <div class="header-part d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="text-center">
+                        <a class="navbar-brand me-0" href="#" style="background:none;">
+                            <img src="/tnsec_static/Images/TNSEC_Emblem_Tamil_trans.png" alt=""
+                                height="100" class="d-inline-block rounded">
+                        </a>
+                    </div>
+                    <div class="ps-1 justify-content-center align-self-center text-center text-lg-start">
+                        <h5 class="tamil_header_text" style="font-family:marufont; font-size:30px">தமிழ்நாடு மாநில தேர்தல் ஆணையம்</h5>
+                        <p class="header_text mb-0"><b>Tamil Nadu State Election Commission</b></p>
+                    </div>
+                </div><a href="https://digitalindia.gov.in/ " target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark menu_bar circle py-0">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                              <img class="navbar-toggler-icon" src="/tnsec_static/Images/Icons/toggle-icon.svg" alt="">
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent" style="font-family:marufont;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item pe-4">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="/tnsec_static/../index.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512"><path fill="#fff" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown pe-3">
+                        <a class="nav-link dropdown-toggle text-white"
+                            href="/tnsec_static/about_us/about_us_t.php" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">எம்மைப் பற்றி</a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/about_us/au_introduction_t.php"
+                                    style="--delay:0.2s">அறிமுகம்</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/about_us/au_constitution_of_the_commission_t.php"
+                                    style="--delay:0.4s">ஆணையத்தின் அமைப்பு</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/about_us/au_organisation_chart_t.php"
+                                    style="--delay:0.6s">நிர்வாக அமைப்பு</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/about_us/au_former_tnsecr_t.php"
+                                    style="--delay:0.6s">முன்னாள் த.நா.மா.தே.ஆ.</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown pe-3">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">வரலாற்றுச் சான்றுகள்</a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/historical_perspective/hp_epigraphical_inscription_t.php"
+                                    style="--delay:0.2s">கல்வெட்டு ஆதாரங்கள்</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/historical_perspective/hp_pre_independence_method_of_election_t.php"
+                                    style="--delay:0.4s">சுதந்திரத்திற்கு முந்தைய தேர்தல்முறை</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/historical_perspective/hp_post_independence_method_of_election_t.php"
+                                    style="--delay:0.6s">சுதந்திரத்திற்கு பிந்தைய தேர்தல்முறை</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown pe-3">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">தேர்தல்கள்</a>
+                        <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_types_of_election_t.php"
+                                    style="--delay:0.2s">தேர்தல்களின் வகைகள்</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_eligibility_criteria_t.php"
+                                    style="--delay:0.4s">தகுதி வரன்முறைகள்</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_election_machinery_t.php"
+                                    style="--delay:0.6s">தேர்தல் பணிக்குழு</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_conduct_of_elections_t.php"
+                                    style="--delay:0.6s">தேர்தல்கள் நடத்துதல்</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_election_expenses_t.php"
+                                    style="--delay:0.6s">தேர்தல் செலவினங்கள்</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_election_offences_t.php"
+                                    style="--delay:0.6s">தேர்தல் குற்றங்கள்</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_dos_donts_t.php"
+                                    style="--delay:0.6s">செய்யக் கூடியவை & செய்யக் கூடாதவை</a></li>
+                            <li><a class="dropdown-item"
+                                    href="/tnsec_static/elections/ele_reservation_t.php"
+                                    style="--delay:0.6s">இடஒதுக்கீடு</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item pe-3">
+                        <a class="nav-link text-white"
+                            href="/tnsec_static/office_contact/office_contact_t.php"><i
+                                class="fa fa-envelope me-1"></i>அலுவலக தொடர்புகள்</a>
+                    </li>
+                    
+                    <li class="nav-item pe-5">
+                        <a class="nav-link text-white"
+                            href="/tnsec_static/photo_gallery/photo_gallery_t.php"><i
+                                class="fa fa-link me-1"></i>புகைப்படத் தொகுப்பு</a>
+                    </li>   
+                                        
+					                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <script src="/tnsec_static/js/bootstrap.bundle.min.js"></script>
+    <script>
+	
+		$("select").click(function() {
+			var open = $(this).data("isopen");
+			if (open) {
+				window.location.href = $(this).val()
+			}
+			$(this).data("isopen", !open);
+		});
+
+		var current_font_size = 0;
+		window.addEventListener('load', () => {
+
+			$(".increase-plugin-ac").click(function() {
+				$("div, span, td, a").children().each(function() {
+					var size = parseInt($(this).css("font-size"));
+					console.log(current_font_size);
+					size = (size + 1) + "px";
+					$(this).css({
+						'font-size': size
+					});
+				});
+				++current_font_size;
+			});
+
+			$(".normal-plugin-ac").click(function() {
+				$("div, span, td, a").children().each(function() {
+					var size = parseInt($(this).css("font-size"));
+					console.log(current_font_size);
+					if (current_font_size > 0)
+						size = (size - current_font_size) + "px";
+					if (current_font_size < 0)
+						size = (size + Math.abs(current_font_size)) + "px";
+					$(this).css({
+						'font-size': size
+					});
+				});
+				current_font_size = 0;
+			});
+
+			$(".decrease-plugin-ac").click(function() {
+				$("div, span, td, a").children().each(function() {
+					console.log(current_font_size);
+					var size = parseInt($(this).css("font-size"));
+					size = (size - 1) + "px";
+					$(this).css({
+						'font-size': size
+					});
+				});
+				--current_font_size;
+			});
+
+		});
+
+    </script>
+
+</body>
+
+</html>
+<style>
+/* Tab Section */
+	.container .tab-block {
+	box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+	padding: 2px;
+	max-width: 1100px;
+	margin: auto;
+}
+.heading-part {
+	background: #0680b4;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+}
+.content-part {
+	background: aliceblue;
+	padding: 25px;
+}
+.content-part-withindent {
+	background: aliceblue;
+	text-indent:50px;
+}
+.content-part-withindent_wonewline {
+	text-indent:50px;
+	display:inline;
+}
+.heading-part h5 {
+	font-size: 25px;
+}
+.title {
+	font-size: 16px;
+	font-weight: 600;
+}
+.nextline {
+	display:inline;
+}
+.hangingindent1 {
+	padding-left:20px;
+	text-indent:-20px;
+}
+.hangingindent2 {
+	padding-left:25px;
+	text-indent:-25px;
+}
+/* Table */
+	.table__head {
+	color: #FFF;
+	font-weight: 700;
+	background: #9b4085;
+	background: linear-gradient(351deg, #a87766 0%, #0680b4 0%);
+	white-space: normal;
+	text-indent: 3px;
+}
+.table-bordered td, .table-bordered th {
+ border: 1px solid:#FFF;
+}
+.winner__table {
+	white-space: nowrap;
+ rown
+}
+table, td, th {
+ border: 1px solid:#FFF;
+	padding:2px;
+}
+ @media screen and (max-width: 567px) {
+ .winner__table {
+ font-size: 12px;
+}
+}
+.button11 {
+	border:thick;
+	color:#146bad;
+	text-align: center;
+	text-decoration: none;
+	font-size: 25px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.button1 {
+	background-color: white;
+	color:#146bad;
+	border: 2px solid #4CAF50;
+	font-size: 25px;
+}
+.button1:hover {
+	background-color:#146bad;
+	color: white;
+	font-weight:bold;
+}
+.Divbg {
+	box-shadow: 0px 5px 25px 0px rgb(0 0 0 / 20%);
+	background:none;
+	padding: 10px;
+ color: #fff text-align: center;
+}
+.Divbg:hover {
+	background:#0680b4;
+	color:#FFF;
+}
+thead tr.first th, thead tr.first td {
+	position: sticky;
+	top: 0px;
+}
+.d-inline-flex1 {
+	gap:15px;
+}
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	background-color:transparent;
+	justify-content: center;
+	height:auto;
+	align-items: center;
+	margin:5px;
+}
+.flex-container > div {
+	margin: 10px;
+	text-align: center;
+	line-height:inherit;
+	font-size:inherit;
+}
+</style>
+<section class="container py-2 my-3"; style="font-family:marufont; font-size:16px; line-height:1.5; font-weight:bold;">
+<div class="tab-block">
+  <ul class="breadcrumb">
+    <li><a href="../../../index.php" style="background:none;"><img src="../../Images/home.png" width="25" height="25"></a></li>
+    <li><a href="../election_results_t.php">தேர்தல் முடிவுகள்</a></li>
+    <li>ஊரக உள்ளாட்சி தேர்தல் முடிவுகள் - 2021 (தற்செயல் உட்பட)</a></li>
+  </ul>
+  <div class="heading-part" >
+    <h5 class="text-center mb-0 mt-0 heading">ஊரக உள்ளாட்சி தேர்தல் முடிவுகள் - 2021 (தற்செயல் உட்பட)</h5>
+  </div>
+  <div class="content-part" align="center" >
+    <div style="font-family:marufont; font-size:20px; font-weight:bold; margin-top:0px; background-color:transparent;">
+      <form action="" method="post">
+        <select id="cmb_district" name="cmb_district" onchange="this.form.submit()" style="font-family:marufont; font-size:20px; font-weight:bold;">
+          <option value="" >மாவட்டத்தை தேர்வு செய்க</option>
+                              <option value="ari"> அரியலூர் </option>
+                              <option value="rmd"> இராமநாதபுரம் </option>
+                              <option value="erd"> ஈரோடு </option>
+                              <option value="cud"> கடலூர் </option>
+                              <option value="kar"> கரூர் </option>
+                              <option value="kki"> கள்ளக்குறிச்சி </option>
+                              <option value="kkm"> கன்னியாகுமரி </option>
+                              <option value="kpm" selected="selected"> காஞ்சிபுரம் </option>
+                              <option value="kgi"> கிருஷ்ணகிரி </option>
+                              <option value="cbe"> கோயம்பத்தூர் </option>
+                              <option value="svg"> சிவகங்கை </option>
+                              <option value="cpt"> செங்கல்பட்டு </option>
+                                       <option value="slm"> சேலம் </option>
+                              <option value="tnj"> தஞ்சாவூர் </option>
+                              <option value="dpi"> தர்மபுரி </option>
+                              <option value="dgl"> திண்டுக்கல் </option>
+                              <option value="try"> திருச்சிராப்பள்ளி </option>
+                              <option value="tnv"> திருநெல்வேலி </option>
+                              <option value="tpt"> திருப்பத்தூர் </option>
+                              <option value="tpr"> திருப்பூர் </option>
+                              <option value="tvm"> திருவண்ணாமலை </option>
+                              <option value="tlr"> திருவள்ளுர் </option>
+                              <option value="tvr"> திருவாரூர் </option>
+                              <option value="tut"> தூத்துக்குடி </option>
+                              <option value="tki"> தென்காசி </option>
+                              <option value="thn"> தேனி </option>
+                              <option value="ngp"> நாகப்பட்டினம் </option>
+                              <option value="nmk"> நாமக்கல் </option>
+                              <option value="nlg"> நீலகிரி </option>
+                              <option value="pdk"> புதுக்கோட்டை </option>
+                              <option value="pmb"> பெரம்பலூர் </option>
+                              <option value="mdu"> மதுரை </option>
+                              <option value="myl"> மயிலாடுதுறை </option>
+                              <option value="rpt"> ராணிப்பேட்டை </option>
+                              <option value="vnr"> விருதுநகர் </option>
+                              <option value="vpm"> விழுப்புரம் </option>
+                              <option value="vlr"> வேலூர் </option>
+                  </select>
+      </form>
+      </form>
+    </div>
+    <br />
+    <div style="font-family:marufont; font-size:20px; background-color:#0680b4; color:#FFF; margin-top:10px;" >
+      தேர்ந்தெடுக்கப்பட்ட மாவட்டத்தின் பெயர் : காஞ்சிபுரம்    </div>
+    <div align="center">
+                      <div class="flex-container">
+                              </div>
+      <div class="flex-container">
+                <div onClick="window.open('dpwm_kpm.pdf', '_blank');" style="cursor: pointer;" class="Divbg">மாவட்ட ஊராட்சி வார்டு உறுப்பினர் தேர்தல்<br />
+          <br />
+          <img src="pdfdl1.png" width="50px" height="50px"/><br />
+          Download File</div>
+                        <div onClick="window.open('puwm_kpm.pdf', '_blank');" style="cursor: pointer;" class="Divbg">ஊராட்சி ஒன்றிய வார்டு உறுப்பினர் தேர்தல்<br />
+          <br />
+          <img src="pdfdl2.png" width="50px" height="50px"/><br />
+          Download File</div>
+                        <div onClick="window.open('vpp_kpm.pdf', '_blank');" style="cursor: pointer;" class="Divbg">கிராம ஊராட்சித் தலைவர் தேர்தல்<br />
+          <br />
+          <img src="pdfdl3.png" width="50px" height="50px"/><br />
+          Download File</div>
+              </div>
+      <div style="background-color:#FFF; margin-top:25px">
+        <div align="center" style="margin-top:10px; font-size:18px; color:#146bad;">கிராம ஊராட்சி வார்டு உறுப்பினர் தேர்தல் (ஊராட்சி ஒன்றியம் வாரியாக)</div>
+        <div class="flex-container" align="center"; style="margin:25px; margin-top:5px;">
+           <div onClick="window.open('vpwm_kpm_uthira.pdf', '_blank');" style="cursor: pointer;" class="Divbg"><img src="pdfdl4.png" width="30px" height="30px"/> உத்திரமேரூர்</div>           <div onClick="window.open('vpwm_kpm_kanche.pdf', '_blank');" style="cursor: pointer;" class="Divbg"><img src="pdfdl4.png" width="30px" height="30px"/> காஞ்சிபுரம்</div>           <div onClick="window.open('vpwm_kpm_kundra.pdf', '_blank');" style="cursor: pointer;" class="Divbg"><img src="pdfdl4.png" width="30px" height="30px"/> குன்றத்தூர்</div>		  
+           <div onClick="window.open('vpwm_kpm_walaja.pdf', '_blank');" style="cursor: pointer;" class="Divbg"><img src="pdfdl4.png" width="30px" height="30px"/> வாலாஜாபாத்</div>           <div onClick="window.open('vpwm_kpm_sriper.pdf', '_blank');" style="cursor: pointer;" class="Divbg"><img src="pdfdl4.png" width="30px" height="30px"/> ஸ்ரீபெரும்புதூர்</div>        </div>
+      </div>
+                               
+                                          </section>
+<style>
+.footer-carousal img{
+    border-radius: 10px;
+}
+.footer_h5 span {
+    border-bottom: 2px solid #fff;
+}
+
+.span_item:hover {
+    background-color: #91640F !important;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.hightlighted_text {
+    color: gold;
+    font-weight: 500;
+}
+
+#footer_bg {
+    /* background: #9b5c3de6; */
+    background-image: url('/tnsec_static/Images/bg-noise.png');
+    padding: 60px 0 15px;
+}
+
+.span_item:hover {
+    background-color: unset !important;
+    padding: 0px;
+}
+
+.top-negative {
+    top: -1px;
+    left: 0;
+}
+</style>
+</head>
+
+<!--<section class="container">
+    <div class="footer-carousal">
+        <div> <a href="https://www.india.gov.in/" target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+            <img src="/tnsec_static/Images/carousal/india-gov.jpg" class="w-100" height="80" title="india-gov"></a>
+        </div>
+        <div><a href="https://data.gov.in/" target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+            <img src="/tnsec_static/Images/carousal/data-gov.png" class="w-100" height="80" title="data-gov"></a>
+        </div>
+        <div><a href="http://www.tn.gov.in/" target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+            <img src="/tnsec_static/Images/carousal/tn.gov.png" class="w-100" height="80" title="www.tn.gov.in"></a>
+        </div>
+        <div><a href="https://igod.gov.in/" target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+            <img src="/tnsec_static/Images/carousal/goidirectory.png" class="w-100" height="80" title="GOI web directory"></a>
+        </div>
+        <div><a href="https://www.mygov.in/" target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+            <img src="/tnsec_static/Images/carousal/mygov.png" class="w-100" height="80" title="My Gov"></a>
+        </div>
+        <div><a href="https://www.nvsp.in/" target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+            <img src="/tnsec_static/Images/carousal/voter.png" class="w-100" height="80" title="Voter"></a>
+        </div>
+        <div><a href="https://amritmahotsav.nic.in/" target="_blank" onClick="return confirm('You are being redirected to an external website. Please note that TNSEC cannot be held responsible for external websites content &amp; privacy policies.')">
+            <img src="/tnsec_static/Images/carousal/amrit-mahotsav.png" class="w-100" height="80" title="amrit-mahotsav"></a>
+        </div>
+    </div>
+</section>-->
+
+
+
+<section id="footer_bg" class="mx-auto position-relative">
+
+    <div class="container-fluid px-0 mx-auto text-center">
+        <div class="row footer_bgcolor">
+            <div class="col-12 text-white mb-2">
+                <p style="font-size:15px; font-family:marufont;"> "லஞ்சம் சட்ட விரோதமானது. லஞ்சம் பற்றிய புகார்களைப்
+                    பின்வரும் முகவரிக்கு எழுதி அனுப்பவும். விழிப்புப்பணி, இலஞ்ச ஒழிப்பு இயக்குநர், சென்னை-28." <br>
+                    வலைதளம்: <a href="https://www.dvac.tn.gov.in/" class="text-white"
+                        style="background:none; text-decoration:none;">https://www.dvac.tn.gov.in/</a> தொலைபேசி எண்.
+                    24615989/24615929/24615949 </p>
+                    
+                    
+            </div>
+        </div>
+        
+        
+       
+    <footer class="container-fluid bglight">
+        <div class="row text-center">
+            <div class="col-12">
+                <ul class="list-inline mb-1">
+                    <li class="list-inline-item text-white mx-2"><span class="span_item"><a
+                                href="/tnsec_static/header_and_footer_related/terms_of_use.php"
+                                style="text-decoration:none; background:none;" class="text-white">Terms of
+                                Use</a></span></li>
+                    <li class="list-inline-item text-white mx-2"><span class="span_item"><a
+                                href="/tnsec_static/header_and_footer_related/privacy_policy.php"
+                                style="text-decoration:none; background:none" class="text-white">Privacy
+                                Policy</a></span></li>
+                    <li class="list-inline-item text-white mx-2"><span class="span_item"><a
+                                href="/tnsec_static/header_and_footer_related/copy_right_policy.php"
+                                style="text-decoration:none; background:none" class="text-white">Copy Right
+                                Policy</a></span></li>
+                    <li class="list-inline-item text-white mx-2"><span class="span_item"><a
+                                href="/tnsec_static/header_and_footer_related/hyper_linking_policy.php"
+                                style="text-decoration:none; background:none" class="text-white">Hyper Linking
+                                Policy</a></span></li>
+                    <li class="list-inline-item text-white mx-2"><span class="span_item"><a
+                                href="/tnsec_static/header_and_footer_related/web_information_manager.php"
+                                style="text-decoration:none; background:none" class="text-white">Web Information Manager</a></span></li>                                
+                    <li class="list-inline-item text-white mx-2"><span class="span_item"><a
+                                href="/tnsec_static/header_and_footer_related/disclaimer.php"
+                                style="text-decoration:none; background:none" class="text-white">Disclaimer</a></span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="container-fluid px-0 mx-auto text-center">
+            <div class="row footer_bgcolor">
+                <div class="col-12 text-white mb-1">
+                    © Contents Owned, Maintained and Updated by <span class="hightlighted_text">Tamil Nadu State
+                        Election Commission</span>
+                </div>
+                <div class="col-12 text-white mb-1">
+                    Designed & Developed by <span class="hightlighted_text">National Informatics Centre,</span>
+                    Ministry of Electronics & Information Technology, Government of India
+                </div>
+                               
+                 <div class="col-12 text-white mb-2" style="font-size:15px; font-family:marufont;">
+                    பார்வையாளர்களின் எண்ணிக்கை : 3637116                </div>
+                
+                
+            </div>
+        </div>
+
+    </footer>
+    <svg class="position-absolute top-negative" style="fill: #fff;" xmlns="http://www.w3.org/2000/svg" version="1.0"
+        viewBox="0 0 1200 30" preserveAspectRatio="none">
+        <path
+            d="M0,0S1.209,1.508,200.671,7.031C375.088,15.751,454.658,30,600,30V0H0ZM1200,0s-90.21,1.511-200.671,7.034C824.911,15.751,745.342,30,600,30V0h600Z">
+        </path>
+    </svg>
+</section>
+
+
+

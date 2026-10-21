@@ -1,0 +1,561 @@
+kind,band,district_code_2011,block_2011,gram_panchayat_2011,later_year,district_code_later,block_later,gram_panchayat_later,name_score,decision,reason,reviewer,date
+link_sample,exact,ari,அரியலூர்,ஆலந்துறையார்கட்டளை,2019,ari,அரியலூர்,ஆலந்துறையார்கட்டளை,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,ari,செந்துறை,நக்கம்பாடி,2019,ari,செந்துறை,நக்கம்பாடி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,ari,திருமானூர்,அண்ணிமங்கலம்,2019,ari,திருமானூர்,அன்னிமங்கலம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact_respelled,ari,திருமானூர்,சின்னபட்டாக்காடு,2019,ari,திருமானூர்,சின்னப்பட்டாக்காடு,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,ari,திருமானூர்,ஏலக்குறிச்சி,2019,ari,திருமானூர்,ஏலாக்குறிச்சி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,ari,திருமானூர்,கண்டராதித்தம்,2019,ari,திருமானூர்,கண்டிராதித்தம்,0.9565,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,cbe,அன்னூர்,பிள்ளையப்பம்பாளையம்,2019,cbe,அன்னூர்,பிள்ளையப்பம்பாளையம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,cbe,கிணத்துக்கடவு,வராதனூர்,2019,cbe,கிணத்துக்கடவு,வரதனூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,cbe,மதுக்கரை,நாச்சிபாளையம்,2019,cbe,மதுக்கரை,நாச்சிபாளையம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,cbe,பொள்ளாச்சி வடக்கு,சேர்வர்காரன்பாளையம்,2019,cbe,பொள்ளாச்சி வடக்கு,சேர்வகாரன்பாளையம்,0.9444,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,cbe,பொள்ளாச்சி தெற்கு,மாக்கிநாம்பட்டி,2019,cbe,பொள்ளாச்சி தெற்கு,மக்கிநாம்பட்டி,0.9524,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,cud,அண்ணாகிராமம்,கள்ளிப்பட்டு,2019,cud,அண்ணாகிராமம்,கள்ளிப்பட்டு,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,cud,அண்ணாகிராமம்,கோட்லம்பாக்கம்,2019,cud,அண்ணாகிராமம்,கோட்லாம்பாக்கம்,0.96,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.97-1.00,cud,காட்டுமன்னார்கோயில்,கல்நாட்டாம்புலியூர்,2019,cud,காட்டுமன்னார்கோயில்,கால்நாட்டாம்புலியூர்,0.9714,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,cud,காட்டுமன்னார்கோயில்,கே.பூவிழந்தநல்லூர்,2019,cud,காட்டுமன்னார்கோயில்,கே.பூவிழுந்தநல்லூர்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,cud,காட்டுமன்னார்கோயில்,மாணியம்ஆடூர்,2019,cud,காட்டுமன்னார்கோயில்,மானியம்ஆடூர்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,cud,காட்டுமன்னார்கோயில்,நாட்டார்மங்லம்,2019,cud,காட்டுமன்னார்கோயில்,நாட்டார்மங்கலம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,cud,காட்டுமன்னார்கோயில்,டி.அருள்மொழிதேவன்,2019,cud,காட்டுமன்னார்கோயில்,டி.அருள்மொழிதேவன்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,cud,கீரப்பாளையம்,எண்ணாநகரம்,2019,cud,கீரப்பாளையம்,எண்ணநகரம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,cud,குமராட்சி,கீழபருத்திக்குடி,2019,cud,குமராட்சி,கீழபருத்திக்குடி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,cud,குமராட்சி,திருநாரையூர்,2019,cud,குமராட்சி,திருநாரையூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,cud,மங்கலூர்,எஸ்.நாரையூர்,2019,cud,மங்களூர்,எஸ்.நரையூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,cud,மங்கலூர்,பனையந்தூர்,2019,cud,மங்களூர்,பனையாந்தூர்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,cud,நல்லூர்,கீழ்குறிச்சி,2019,cud,நல்லூர்,கீழக்குறிச்சி,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,cud,நல்லூர்,சேவூர்,2019,cud,நல்லூர்,சேவூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,cud,விருத்தாசலம்,டி.மாவிடந்தல்,2019,cud,விருத்தாசலம்,டி.மாவிடந்தல்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,dgl,ஆத்தூர்,போடிக்காமன்வாடி,2019,dgl,ஆத்தூர்,போடிகாமன்வாடி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact_respelled,dgl,வத்தலக்குண்டு,மல்லனம்பட்டி,2019,dgl,வத்தலக்குண்டு,மல்லணம்பட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,dgl,கொடைக்கானல்,கூக்கால்,2019,dgl,கொடைக்கானல்,கூக்கல்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,dgl,குஜிலியம்பாறை,சின்னுலுப்பை,2019,dgl,குஜிலியம்பாறை,சின்னுலுப்பை,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,dgl,ஒட்டன்சத்திரம்,லக்கையன்கோட்டை,2019,dgl,ஒட்டன்சத்திரம்,லெக்கையன்கோட்டை,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,dgl,ஒட்டன்சத்திரம்,சிந்தலப்பட்டி,2019,dgl,ஒட்டன்சத்திரம்,சிந்தலைப்பட்டி,0.9474,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,dgl,ஒட்டன்சத்திரம்,வீரலப்பட்டி,2019,dgl,ஒட்டன்சத்திரம்,வீரலப்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,dgl,தொப்பம்பட்டி,ராஜம்பட்டி,2019,dgl,தொப்பம்பட்டி,ராஜாம்பட்டி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,dpi,அரூர்,கீரைப்பட்டி,2019,dpi,அரூர்,கீரைப்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,dpi,பாலக்கோடு,அ.மல்லாபுரம்,2019,dpi,பாலக்கோடு,அ.மல்லபுரம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact_respelled,dpi,பாலக்கோடு,சூடானூர்,2019,dpi,பாலக்கோடு,சுடானூர்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,dpi,பாலக்கோடு,கம்மாளபட்டி,2019,dpi,பாலக்கோடு,காம்மாலபட்டி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,dpi,பாப்பிரெட்டிப்பட்டி,ஆலாபுரம்,2019,dpi,பாப்பிரெட்டிப்பட்டி,ஆலபுரம்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,dpi,பாப்பிரெட்டிப்பட்டி,இருளாபட்டி,2019,dpi,பாப்பிரெட்டிப்பட்டி,இருளாபட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,erd,அம்மாபேட்டை,குருவாரெட்டியூர்,2019,erd,அம்மாபேட்டை,குருவரெட்டியூர்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,erd,பவானி,பெரியபுலியூர்,2019,erd,பவானி,பெரியபுலிூூயூர்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,kar,தாந்தோணி,கக்காவாடி,2019,kar,தாந்தோணி,காக்காவாடி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,kgi,மத்தூர்,வலிப்பட்டி,2019,kgi,மத்தூர்,வாலிப்பட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,kgi,ஊத்தங்கரை,கெங்கபிரம்பட்டி,2019,kgi,ஊத்தங்கரை,கெங்கபிராம்பட்டி,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,kgi,ஊத்தங்கரை,கோவிந்தபுரம்,2019,kgi,ஊத்தங்கரை,கோவிந்தாபுரம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,kgi,ஊத்தங்கரை,கள்ளவி,2019,kgi,ஊத்தங்கரை,கல்லாவி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,kgi,ஊத்தங்கரை,பெரியதள்ளாடி,2019,kgi,ஊத்தங்கரை,பெரியதள்ளப்பாடி,0.9524,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,kgi,ஊத்தங்கரை,சிங்காரப்பேட்டை,2019,kgi,ஊத்தங்கரை,சிங்கராப்பேட்டை,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,kgi,ஊத்தங்கரை,உப்பரபட்டி,2019,kgi,ஊத்தங்கரை,உப்பாரபட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,kkm,திருவட்டாறு,பாலாமோர்,2019,kkm,திருவட்டாறு,பாலமோர்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,kkm,திருவட்டாறு,சுரளகோடு,2019,kkm,திருவட்டாறு,சுருளகோடு,0.9412,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,kpm,குன்றத்தூர்,தரப்பாக்கம்,2021,kpm,குன்றத்தூர்,தரப்பாக்கம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,kpm,லத்தூர்,வடக்குவாயலூர்,2021,cpt,லத்தூர்,வடக்குவயலூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,kpm,ஸ்ரீபெரும்புதூர்,சிங்கிலிபாடி,2021,kpm,ஸ்ரீபெரும்புதூர்,சிங்கிலிபாடி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,kpm,உத்திரமேரூர்,திணையாம்பூண்டி,2021,kpm,உத்திரமேரூர்,திணையாம்பூண்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,mdu,கள்ளிக்குடி,நல்லமநாய்க்கன்பட்டி,2019,mdu,கள்ளிக்குடி,நல்லமநாயக்கன்பட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,mdu,கள்ளிக்குடி,எம்.புலியன்குளம்,2019,mdu,கள்ளிக்குடி,எம்.புளியங்குளம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,mdu,மதுரை (மேற்கு),ஆலத்தூர்,2019,mdu,மதுரை (மேற்கு),ஆலாத்தூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,mdu,மதுரை (மேற்கு),மலைப்பட்டி,2019,mdu,மதுரை (மேற்கு),மாலைப்பட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,mdu,திருமங்கலம்,அலப்பலச்சேரி,2019,mdu,திருமங்கலம்,அலப்பலாச்சேரி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,mdu,திருமங்கலம்,பொக்காம்பட்டி,2019,mdu,திருமங்கலம்,பொக்கம்பட்டி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,mdu,திருமங்கலம்,சீத்தலை,2019,mdu,திருமங்கலம்,சி்த்தாலை,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,mdu,திருமங்கலம்,விடாத்தகுளம்,2019,mdu,திருமங்கலம்,விடத்தகுளம்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,mdu,டி கல்லுபட்டி,ஏ.தொட்டியபட்டி,2019,mdu,தே.கல்லுப்பட்டி,அ.தொட்டியபட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact,mdu,உசிலம்பட்டி,இராஜக்காப்பட்டி,2019,mdu,உசிலம்பட்டி,இராஜக்காப்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,mdu,வாடிப்பட்டி,இராமையன்பட்டி,2019,mdu,வாடிப்பட்டி,இராமையன்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,ngp,கீவளுர்,64 மணலூர்,2019,ngp,கீவளுர்,64 மாணலூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact_respelled,ngp,கொள்ளிடம்,ஆணைகாரன்சத்திரம்,2019,ngp,கொள்ளிடம்,ஆணைக்காரன்சத்திரம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,ngp,மயிலாடுதுறை,அருவப்பாடி,2019,ngp,மயிலாடுதுறை,அருவாப்பாடி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,ngp,மயிலாடுதுறை,கங்கனாம்புத்தூர்,2019,ngp,மயிலாடுதுறை,கங்கணம்புத்தூர்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,ngp,மயிலாடுதுறை,வள்ளலாகரம்,2019,ngp,மயிலாடுதுறை,வள்ளாலகரம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,ngp,செம்பனார் கோயில்,உத்தரங்குடி,2019,ngp,செம்பனார் கோயில்,உத்திரங்குடி,0.9474,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,ngp,திருமருகல்,கோபுராஜபுரம்,2019,ngp,திருமருகல்,கோபுராஜபுரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,ngp,திருமருகல்,போலகம்,2019,ngp,திருமருகல்,போலகம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,nmk,எலச்சிப்பாளையம்,சக்திநாய்க்கன்பாளையம்,2019,nmk,எலச்சிப்பாளையம்,சத்திநாய்க்கன்பாளையம்,0.9444,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,nmk,எருமபட்டி,போடிநாய்க்கன்பட்டி,2019,nmk,எருமபட்டி,போடிநாயக்கன்பட்டி,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,nmk,எருமபட்டி,கோணங்கிபட்டி,2019,nmk,எருமபட்டி,கோணங்கிப்பட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,nmk,எருமபட்டி,முட்டன்செட்டி,2019,nmk,எருமபட்டி,முட்டாஞ்செட்டி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,nmk,எருமபட்டி,பெருமாபட்டி,2019,nmk,எருமபட்டி,பெருமாப்பட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact,nmk,எருமபட்டி,பொட்டிரெட்டிபட்டி,2019,nmk,எருமபட்டி,பொட்டிரெட்டிபட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,nmk,எருமபட்டி,சிவாநாய்க்கன்பட்டி,2019,nmk,எருமபட்டி,சிவநாயக்கன்பட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,nmk,எருமபட்டி,வடவாத்தூர்,2019,nmk,எருமபட்டி,வடவத்தூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,nmk,எருமபட்டி,வராகூர்,2019,nmk,எருமபட்டி,வரகூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,nmk,நாமக்கல்,மாரப்பநாய்க்கன்பட்டி,2019,nmk,நாமக்கல்,மாரப்பநாய்க்கன்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,nmk,நாமக்கல்,ராசம்பாளையம்,2019,nmk,நாமக்கல்,ராசாம்பாளையம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,nmk,நாமக்கல்,தாளிகை,2019,nmk,நாமக்கல்,தளிகை,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact_respelled,nmk,நாமக்கல்,வெட்டம்பாடி,2019,nmk,நாமக்கல்,வேட்டம்பாடி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,nmk,நாமக்கல்,விட்டாமநாய்க்கன்பட்டி,2019,nmk,நாமக்கல்,விட்டமநாய்க்கன்பட்டி,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,nmk,சேந்தமங்கலம்,கொண்டமநாய்க்கன்பட்டி,2019,nmk,சேந்தமங்கலம்,கொண்டமநாய்க்கன்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,nmk,வெண்ணந்தூர்,பல்லவநாய்க்கன்பட்டி,2019,nmk,வெண்ணந்தூர்,பல்லவநாயக்கன்பட்டி,0.96,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,அன்னவாசல்,நர்த்தமலை,2019,pdk,அன்னவாசல்,நார்த்தாமலை,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,அன்னவாசல்,மண்ணவேளம்பட்டி,2019,pdk,அன்னவாசல்,மண்ணவேளாம்பட்டி,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,அரிமளம்,கைக்குளான்வயல்,2019,pdk,அரிமளம்,கைக்குளன்வயல்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,pdk,ஆவுடையார் கோயில்,பூவலூர்,2019,pdk,ஆவுடையார் கோயில்,பூவலூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,ஆவுடையார் கோயில்,வீரமங்கலம்,2019,pdk,ஆவுடையார் கோயில்,வீராமங்கலம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,pdk,கந்தவர்வ கோட்டை,அண்டனூர்,2019,pdk,கந்தவர்வ கோட்டை,அண்டனூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,கருப்பாட்டிபட்டி,2019,pdk,கரம்பக்குடி,கருப்பட்டிபட்டி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,கலாபம்,2019,pdk,கரம்பக்குடி,களபம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,பட்டாத்திகாடு,2019,pdk,கரம்பக்குடி,பட்டத்திகாடு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,இலைகாடிவிடுதி,2019,pdk,கரம்பக்குடி,இலைகடிவிடுதி,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,தீதன்விடுதி,2019,pdk,கரம்பக்குடி,தீத்தான்விடுதி,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,குலந்திரன்பட்டு,2019,pdk,கரம்பக்குடி,குளந்திரான்பட்டு,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,வண்ணக்கன்காடு,2019,pdk,கரம்பக்குடி,வாணக்கன்காடு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,கரம்பக்குடி,கரம்பாவிடுதி,2019,pdk,கரம்பக்குடி,கறம்பவிடுதி,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.97-1.00,pdk,குன்றாண்டார்கோவில்,பெரியதம்பிஉடையன்பட்டி,2019,pdk,குன்றாண்டார்கோவில்,பெரியதம்பிஉடையான்பட்டி,0.9744,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,pdk,குன்றாண்டார்கோவில்,ராக்கதம்பட்டி,2019,pdk,குன்றாண்டார்கோவில்,இராக்கதம்பட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,பொன்னமராவதி,கொன்னயம்பட்டி,2019,pdk,பொன்னமராவதி,கொன்னையம்பட்டி,0.9474,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,பொன்னமராவதி,மேலமேலநிலை,2019,pdk,பொன்னமராவதி,மேலமேல்நிலை,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,pdk,திருமயம்,கண்ணனூர்,2019,pdk,திருமயம்,கண்ணனூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,pdk,திருமயம்,கோட்டையூர்,2019,pdk,திருமயம்,கோட்டையூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,திருவரங்குளம்,மாஞ்சான்விடுதி,2019,pdk,திருவரங்குளம்,மாஞ்சன்விடுதி,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,pdk,திருவரங்குளம்,வேங்கிடகுளம்,2019,pdk,திருவரங்குளம்,வேங்கிடகுளம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,விராலிமலை,காத்தலூர்,2019,pdk,விராலிமலை,கத்தலூர்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,விராலிமலை,மேலபச்சக்குடி,2019,pdk,விராலிமலை,மேலபச்சைகுடி,0.9474,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,pdk,விராலிமலை,பாலாண்டாம்பட்டி,2019,pdk,விராலிமலை,பாலாண்டம்பட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,pdk,விராலிமலை,தொண்டமான்நல்லூர்,2019,pdk,விராலிமலை,தொண்டாமநல்லூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,rmd,கடலாடி,எஸ்.தாரைக்குடி,2019,rmd,கடலாடி,எஸ்.தரைக்குடி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,rmd,கடலாடி,மரந்தை ஏ/பி,2019,rmd,கடலாடி,மாரந்தை ஏ/பி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,rmd,கடலாடி,அ.உசிலாங்குளம்,2019,rmd,கடலாடி,அ.உசிலங்குளம்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,rmd,கமுதி,முஸ்டக்குறிச்சி,2019,rmd,கமுதி,முஸ்டக்குறிச்சி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,rmd,கமுதி,பாக்குவெட்டி,2019,rmd,கமுதி,பாக்குவெட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,rmd,முதுகுளத்தூர்,கீழக்கொடுமலூர்,2019,rmd,முதுகுளத்தூர்,கீழக்கொடுமலூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,slm,ஆத்தூர்,சீலயம்பட்டி,2019,slm,ஆத்தூர்,சீலியம்பட்டி,0.9474,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,slm,ஆத்தூர்,அம்மம்பாளையம்,2019,slm,ஆத்தூர்,அம்மம்பாளையம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,slm,ஆத்தூர்,துலுக்கானுர்,2019,slm,ஆத்தூர்,துலுக்கனூர்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,slm,ஆத்தூர்,வளைமாதேவி,2019,slm,ஆத்தூர்,வளையமாதேவி,0.9474,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,slm,ஆத்தூர்,இராமநாய்க்கன்பாளையம்,2019,slm,ஆத்தூர்,இராமநாயக்கன்பாளையம்,0.9697,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,slm,அயோத்தியாபட்டணம்,வலசையூர்,2019,slm,அயோத்தியாபட்டணம்,வலசையூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,slm,அயோத்தியாபட்டணம்,மாசிநாயக்கன்பட்டி,2019,slm,அயோத்தியாபட்டணம்,மாசிநாயக்கன்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,slm,கொங்கணாபுரம்,கச்சுப்பள்ளி,2019,slm,கொங்கணாபுரம்,கச்சுப்பள்ளி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,slm,ஓமலூர்,தொளசம்பட்டி,2019,slm,ஓமலூர்,தொளசம்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,slm,பனமரத்துப்பட்டி,தாசநாய்க்கன்பட்டி,2019,slm,பனமரத்துப்பட்டி,தாசநாயக்கன்பட்டி,0.96,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,slm,பனமரத்துப்பட்டி,கெஜல்நாயக்கன் பட்டி,2019,slm,பனமரத்துப்பட்டி,கெஜ்ஜல்நாயக்கன்பட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,slm,பனமரத்துப்பட்டி,சந்தியூர,2019,slm,பனமரத்துப்பட்டி,சந்தியூர்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,svg,இளையாங்குடி,கீழாய்க்குடி,2019,svg,இளையாங்குடி,கீழாய்க்குடி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,svg,காளையார்கோவில்,மேலமங்கலம்,2019,svg,காளையார்கோவில்,மேலமங்கலம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,svg,கண்ணங்குடி,களத்தூர்,2019,svg,கண்ணங்குடி,களத்தூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,svg,கண்ணங்குடி,கண்ணங்குடி,2019,svg,கண்ணங்குடி,கண்ணன்குடி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact,svg,மானாமதுரை,மேலநெட்டூர்,2019,svg,மானாமதுரை,மேலநெட்டூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,svg,சக்கோட்டை,களத்தூர்,2019,svg,சக்கோட்டை,களத்தூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,svg,சிவகங்கை,மலம்பட்டி,2019,svg,சிவகங்கை,மலம்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,svg,திருப்புவனம்,கீழச்சொரிக்குளம்,2019,svg,திருப்புவனம்,கீழச்சொரிக்குளம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,thn,க.மயிலாடும்பாறை,ஆத்தங்கரைபட்டி,2019,thn,க.மயிலாடும்பாறை,ஆத்தாங்கரைபட்டி,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,எல்லாபுரம்,தராட்சி,2019,tlr,எல்லாபுரம்,தாராட்சி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tlr,கும்மிடிப்பூண்டி,எளாவூர்,2019,tlr,கும்மிடிப்பூண்டி,எழவூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tlr,கும்மிடிப்பூண்டி,கொல்லானூர்,2019,tlr,கும்மிடிப்பூண்டி,கொல்லனூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tlr,கும்மிடிப்பூண்டி,மேல்முதலம்பேடு,2019,tlr,கும்மிடிப்பூண்டி,மேல்முதுலம்பேடு,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,கும்மிடிப்பூண்டி,ரெட்டம்பேடு,2019,tlr,கும்மிடிப்பூண்டி,ரெட்டாம்பேடு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,கும்மிடிப்பூண்டி,சித்தராஜகண்டிகை,2019,tlr,கும்மிடிப்பூண்டி,சிதாரஜகாண்டிகை,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tlr,கடம்பத்தூர்,கீழ்நல்லாத்தூர்,2019,tlr,கடம்பத்தூர்,கீழ்நாலத்தூர்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tlr,கடம்பத்தூர்,மேல்நல்லாத்தூர்,2019,tlr,கடம்பத்தூர்,மேல்நல்லத்தூர்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,tlr,மீஞ்சூர்,மேலூர்,2019,tlr,மீஞ்சூர்,மேலூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tlr,பள்ளிப்பட்டு,இராமசந்திராபுரம்,2019,tlr,பள்ளிப்பட்டு,இராமசந்திராபுரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,tlr,பூந்தமல்லி,கருணாகரசேரி,2019,tlr,பூந்தமல்லி,கருணாகரச்சேரி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact_respelled,tlr,பூந்தமல்லி,காட்டுபாக்கம்,2019,tlr,பூந்தமல்லி,காட்டுப்பாக்கம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,பூண்டி,தேவந்தவாக்கம்,2019,tlr,பூண்டி,தேவேந்தவாக்கம்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,பூண்டி,பெண்ணலூர்பேட்டை,2019,tlr,பூண்டி,பென்னாலூர்பேட்டை,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tlr,பூண்டி,வேலகாபுரம்,2019,tlr,பூண்டி,வேளகாபுரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tlr,ஆர் கே பேட்டை,சின்னநாகபூண்டி,2019,tlr,ஆர் கே பேட்டை,சின்னநகபூண்டி,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,ஆர் கே பேட்டை,மகன்காளிகாபுரம்,2019,tlr,ஆர் கே பேட்டை,மகன்களிகாபுரம்,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,ஆர் கே பேட்டை,மீசரகாண்டாபுரம்,2019,tlr,ஆர் கே பேட்டை,மீசரகண்டாபுரம்,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,திருத்தணி,கிருஷ்ணாசமுத்திரம்,2019,tlr,திருத்தணி,கிருஷ்ணசமுத்திரம்,0.9677,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tlr,திருத்தணி,சத்தரஞ்ஜெயபுரம்,2019,tlr,திருத்தணி,சத்திரஞ்ஜெயபுரம்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,tlr,திருத்தணி,வீரகாவேரிராஜபுரம்,2019,tlr,திருத்தணி,வீரகாவேரிராஜபுரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,அம்மாபேட்டை,அன்னப்பான்பேட்டை,2019,tnj,அம்மாபேட்டை,அன்னப்பன்பேட்டை,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tnj,அம்மாபேட்டை,எடவாக்குடி,2019,tnj,அம்மாபேட்டை,எடவாக்குடி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,tnj,அம்மாபேட்டை,குமிலக்குடி,2019,tnj,அம்மாபேட்டை,குமிளக்குடி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,அம்மாபேட்டை,மேலகாளக்குடி,2019,tnj,அம்மாபேட்டை,மேலக்களக்குடி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,அம்மாபேட்டை,புளியாக்குடி,2019,tnj,அம்மாபேட்டை,புளியக்குடி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,அம்மாபேட்டை,இராராமுத்திரகோட்டை,2019,tnj,அம்மாபேட்டை,இராராமுத்திரைக்கோட்டை,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,அம்மாபேட்டை,வைய்யாசேரி,2019,tnj,அம்மாபேட்டை,வையச்சேரி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,கும்பகோணம்,இன்னாம்பூர்,2019,tnj,கும்பகோணம்,இன்னம்பூர்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,கும்பகோணம்,பழவத்தான்கட்டளை,2019,tnj,கும்பகோணம்,பழவாத்தான்கட்டளை,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.97-1.00,tnj,கும்பகோணம்,பண்டாரவடைபெருமாண்டி,2019,tnj,கும்பகோணம்,பண்டாரவாடைபெருமாண்டி,0.9744,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,பாபநாசம்,இராமானுஜாபுரம்,2019,tnj,பாபநாசம்,இராமானுஜபுரம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,பாபநாசம்,திருமண்டாங்குடி,2019,tnj,பாபநாசம்,திருமண்டங்குடி,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,பாபநாசம்,உம்பளாப்பாடி,2019,tnj,பாபநாசம்,உம்பளப்பாடி,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,பேராவூரணி,காலத்தூர்,2019,tnj,பேராவூரணி,களத்தூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,பேராவூரணி,பலதாளி,2019,tnj,பேராவூரணி,பாலத்தளி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,பேராவூரணி,பூவலூர்,2019,tnj,பேராவூரணி,பூவாளுர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,பேராவூரணி,திருச்சிற்றலம்பலம்,2019,tnj,பேராவூரணி,திருச்சிற்றம்பலம்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tnj,சேதுபாவா சத்திரம்,புதுப்பட்டிணம்,2019,tnj,சேதுபாவா சத்திரம்,புதுப்பட்டினம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,சேதுபாவா சத்திரம்,பூவனம்,2019,tnj,சேதுபாவா சத்திரம்,பூவானம்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,சேதுபாவா சத்திரம்,செந்தாழைவயல்,2019,tnj,சேதுபாவா சத்திரம்,செந்தலைவயல்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tnj,சேதுபாவா சத்திரம்,சேதுபாவாச்சத்திரம்,2019,tnj,சேதுபாவா சத்திரம்,சேதுபாவாசத்திரம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact_respelled,tnj,சேதுபாவா சத்திரம்,சேருபாலக்காடு,2019,tnj,சேதுபாவா சத்திரம்,செருபாலக்காடு,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,சேதுபாவா சத்திரம்,வெத்தலைக்காடு,2019,tnj,சேதுபாவா சத்திரம்,வத்தலைக்காடு,0.9412,unsure,வெத்தலை vs வத்தலை: vowel quality differs,claude,2026-10-19
+link_sample,0.94-0.97,tnj,சேதுபாவா சத்திரம்,விளாங்குளம்,2019,tnj,சேதுபாவா சத்திரம்,விளங்குளம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tnj,தஞ்சாவூர்,இனாத்துக்கான்பட்டி,2019,tnj,தஞ்சாவூர்,இனாதுக்கான்பட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,தஞ்சாவூர்,மொன்னனயம்பட்டி,2019,tnj,தஞ்சாவூர்,மொன்னயம்பட்டி,0.9474,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tnj,தஞ்சாவூர்,இராமாபுரம்,2019,tnj,தஞ்சாவூர்,இராமாபுரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருப்பானந்தாள்,காட்டநகரம்,2019,tnj,திருப்பானந்தாள்,கட்டாநகரம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருப்பானந்தாள்,கீழ்மந்தூர்,2019,tnj,திருப்பானந்தாள்,கீழ்மாந்தூர்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவையாறு,தில்லைஸ்தானம்,2019,tnj,திருவையாறு,தில்லைசாதனம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact_respelled,tnj,திருவையாறு,திருசோற்றுதுறை,2019,tnj,திருவையாறு,திருசோற்றுதுரை,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவையாறு,வெல்லாம்பெரம்பூர்,2019,tnj,திருவையாறு,வெல்லம்பெரம்பூர்,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவையாறு,வடுககுடி,2019,tnj,திருவையாறு,வடுகாகுடி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவிடைமருதூர்,கோவிந்தாபுரம்,2019,tnj,திருவிடைமருதூர்,கோவிந்தபுரம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவோணம்,கிளாமங்களம்,2019,tnj,திருவோணம்,கிலமங்கலம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவோணம்,நெமிலி திப்பியகுடி,2019,tnj,திருவோணம்,நெமிலி திப்பியாகுடி,0.9677,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவோணம்,பாதிரன்கோட்டை வடக்கு,2019,tnj,திருவோணம்,பதிரன்கோட்டை வடக்கு,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவோணம்,பாதிரன்கோட்டை தெற்கு,2019,tnj,திருவோணம்,பதிரன்கோட்டை தெற்கு,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவோணம்,சென்னியவிடுதி,2019,tnj,திருவோணம்,சென்னியாவிடுதி,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnj,திருவோணம்,சில்லத்தூர்,2019,tnj,திருவோணம்,சில்லாத்தூர்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnv,சேரன்மாதேவி,வெங்கடறேங்கபுரம்,2021,tnv,சேரன்மகாதேவி,வெங்கட்ரெங்கபுரம்,0.9697,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,கடையம்,பாப்பன்குளம்,2021,tki,கடையம்,பாப்பான்குளம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,கடையம்,சேர்வைகரன்பட்டி,2021,tki,கடையம்,சேர்வைகாரன்பட்டி,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,கடையம்,திருமலையப்பாபுரம்,2021,tki,கடையம்,திருமலையப்பபுரம்,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,tnv,கடையநல்லூர்,வேலாயுதபுரம்,2021,tki,கடையநல்லூர்,வேலாயுதபுரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tnv,மானூர்,கட்டாரங்குளம்,2021,tnv,மானூர்,கட்டாரங்குளம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tnv,மானூர்,அலங்காரப்பேரி,2021,tnv,மானூர்,அலங்காரப்பேரி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,தளபதிசமுதரம்,2021,tnv,நாங்குனேரி,தளபதிசமுத்திரம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,முனஞ்சிபட்டி,2021,tnv,நாங்குனேரி,முனைஞ்சிப்பட்டி,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,கடன்குலம்திருமலபுரம்,2021,tnv,நாங்குனேரி,காடன்குளம்திருமலாபுரம்,0.9524,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,இறைபுவரி,2021,tnv,நாங்குனேரி,இறைப்புவாரி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,தொட்டகுடி,2021,tnv,நாங்குனேரி,தோட்டாக்குடி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,கரந்தநெறி,2021,tnv,நாங்குனேரி,கரந்தானேரி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,A. சாத்தன்குளம்,2021,tnv,நாங்குனேரி,அ.சாத்தான்குளம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,சங்கனன்குளம்,2021,tnv,நாங்குனேரி,சங்கணாங்குளம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,நாங்குனேரி,பருதிபடு,2021,tnv,நாங்குனேரி,பருத்திப்பாடு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tnv,நாங்குனேரி,புலம்,2021,tnv,நாங்குனேரி,பூலம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,பாப்பாகுடி,குத்தபன்ச்சன்,2021,tki,ஆலங்குளம்,குத்தப்பாஞ்சான்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,tnv,பாப்பாகுடி,புதுப்பட்டி,2021,tki,ஆலங்குளம்,புதுப்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnv,பாப்பாகுடி,மைலப்பபுரம்,2021,tnv,பாப்பாக்குடி,மைலப்புரம்,0.9412,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,இராதாபுரம்,விஜயபதி,2021,tnv,இராதாபுரம்,விஜயாபதி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tnv,இராதாபுரம்,கரைசுத்து நாவலடி,2021,tnv,இராதாபுரம்,கரைச்சுத்து நவ்வலடி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tnv,இராதாபுரம்,கோட்டைகருன்குலம்,2021,tnv,இராதாபுரம்,கோட்டைக்கருங்குளம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,tnv,இராதாபுரம்,அஸ்துரிரெந்கபுரம்,2021,tnv,இராதாபுரம்,கஸ்தூரிரெங்கபுரம்,0.9412,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.97-1.00,tnv,இராதாபுரம்,சௌந்தரபாண்டியபுரம்,2021,tnv,இராதாபுரம்,சௌந்திரபாண்டியபுரம்,0.973,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.97-1.00,tnv,வள்ளியூர்,சிதம்பரபுரம் யாகோபுரம்,2021,tnv,வள்ளியூர்,சிதம்பராபுரம் யாக்கோபுரம்,0.9767,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tpr,அவினாசி,வேலாயுதம்பாளையம்,2019,tpr,அவினாசி,வேலயுதம்பாளையம்,0.9677,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tpr,தாராபுரம்,பொன்னாபுரம்,2019,tpr,தாராபுரம்,பொன்னாபுரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tpr,உடுமலைப்பேட்டை,சி.வீராம்பட்டி,2019,tpr,உடுமலைப்பேட்டை,சி.வீராம்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.97-1.00,tpr,உடுமலைப்பேட்டை,ஜிலோபநாய்க்கன்பாளையம்,2019,tpr,உடுமலைப்பேட்டை,ஜிலோபநாயக்கன்பாளையம்,0.973,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tpr,உடுமலைப்பேட்டை,கண்ணமநாய்க்கனூர்,2019,tpr,உடுமலைப்பேட்டை,கண்ணமநாயக்கனூர்,0.9565,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,try,லால்குடி,பல்லாபுரம்,2019,try,லால்குடி,பல்லபுரம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,try,மணப்பாறை,கண்ணுடையான்பட்டி,2019,try,மணப்பாறை,கண்ணுடையான்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,try,மணிகண்டம்,இனம் குளத்தூர்,2019,try,மணிகண்டம்,இனாம்குளத்தூர்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,try,மணிகண்டம்,குமார வாயலூர்,2019,try,மணிகண்டம்,குமாரவயலூர்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,try,மணிகண்டம்,மெக்குடி,2019,try,மணிகண்டம்,மேக்குடி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,try,மணிகண்டம்,நாகாமங்கலம்,2019,try,மணிகண்டம்,நாகமங்கலம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,try,மணிகண்டம்,என்.குட்டாபாட்டு,2019,try,மணிகண்டம்,என்.குட்டப்பட்டு,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,try,மணிகண்டம்,சோமராசம்பேட்டை,2019,try,மணிகண்டம்,சோமரசம்பேட்டை,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,try,மணிகண்டம்,துரைகுடி,2019,try,மணிகண்டம்,துரைக்குடி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,try,மருங்காபுரி,ஏ.பொருவய்,2019,try,மருங்காபுரி,அ.பொருவாய்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact_respelled,try,மருங்காபுரி,எண்டபுலி,2019,try,மருங்காபுரி,எண்டப்புளி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,try,மருங்காபுரி,கஞ்சநாய்க்கன்பட்டி,2019,try,மருங்காபுரி,கஞ்சநாயக்கன்பட்டி,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,try,புல்லம்பாடி,பி.சங்கேந்தி,2019,try,புல்லம்பாடி,பி.சங்கேந்தி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tut,ஆழ்வார்திருநகரி,புறையூர்,2019,tut,ஆழ்வார்திருநகரி,புறையூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tut,கருங்குளம்,ராமனுஜம்புதூர்,2019,tut,கருங்குளம்,இராமானுஜம்புதூர்,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tut,புதூர்,அயங்கரிசல்குலம்,2019,tut,புதூர்,அயன்கரிசல்குளம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tut,புதூர்,அயன்றஜபட்டி,2019,tut,புதூர்,அயன்ராசாபட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,tut,புதூர்,அயன்வடமலபுரம்,2019,tut,புதூர்,அயன்வடமலாபுரம்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tut,புதூர்,பூதலபுரம்,2019,tut,புதூர்,பூதலாபுரம்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tut,சாத்தாங்குளம்,கோமநேரி,2019,tut,சாத்தான்குளம்,கோமாநேரி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,tut,விளாத்திகுளம்,வெள்ளையம்மாள்புரம்,2019,tut,விளாத்திகுளம்,வெள்ளையம்மாள்புரம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tvm,ஆரணி,மட்டதாரி,2019,tvm,ஆரணி,மட்டதாரி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvm,சேத்துப்பட்டு,இடையான்கொளத்தூர்,2019,tvm,சேத்துப்பட்டு,இடையங்கொளத்தூர்,0.963,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvm,சேத்துப்பட்டு,கெங்கசூடாமணி,2019,tvm,சேத்துப்பட்டு,கெங்கைசூடாமணி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tvm,சேத்துப்பட்டு,மருததுவாம்பாடி,2019,tvm,சேத்துப்பட்டு,மருத்துவாம்பாடி,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,tvm,திருவண்ணாமலை,கீழ்கரிப்பூர்,2019,tvm,திருவண்ணாமலை,கீழ்கரிப்பூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvm,வந்தவாசி,கீழ்கொடுங்கலூர்,2019,tvm,வந்தவாசி,கீழ்கொடுங்காலூர்,0.9677,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,tvm,வந்தவாசி,கீழ்சாத்தமங்லம்,2019,tvm,வந்தவாசி,கீழ்சாத்தமங்கலம்,0.963,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvm,வந்தவாசி,மேல்கொடுங்கலூர்,2019,tvm,வந்தவாசி,மேல்கொடுங்காலூர்,0.9677,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,tvm,வந்தவாசி,மூடூர்,2019,tvm,வந்தவாசி,மூடூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvm,வந்தவாசி,சேதாரகுப்பம்,2019,tvm,வந்தவாசி,சேதராகுப்பம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,tvm,வெம்பாக்கம்,சுருட்டல்,2019,tvm,வெம்பாக்கம்,சுருட்டல்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tvm,வெம்பாக்கம்,தென்கழனி,2019,tvm,வெம்பாக்கம்,தென்கழனி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvr,கொரடாச்சேரி,வண்டம்பாளை,2019,tvr,கொரடாச்சேரி,வண்டாம்பாலை,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,tvr,மன்னார்குடி,சித்தனகுடி,2019,tvr,மன்னார்குடி,சித்தன்னகுடி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact,tvr,மன்னார்குடி,சுந்தரக்கோட்டை,2019,tvr,மன்னார்குடி,சுந்தரக்கோட்டை,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,tvr,முத்துப்பேட்டை,ஆரியலுர்,2019,tvr,முத்துப்பேட்டை,ஆரியலூர்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact_respelled,tvr,முத்துப்பேட்டை,கற்பகநாதர் குளம்,2019,tvr,முத்துப்பேட்டை,கற்பகநாதர்குளம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,exact_respelled,tvr,முத்துப்பேட்டை,குன்னலுர்,2019,tvr,முத்துப்பேட்டை,குன்னலூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvr,முத்துப்பேட்டை,வங்காநகர்,2019,tvr,முத்துப்பேட்டை,வங்கநகர்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,tvr,நீடாமங்கலம்,சோனாபேட்டை,2019,tvr,நீடாமங்கலம்,சோனாபேட்டை,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,tvr,திருத்துறைப்பூண்டி,கொக்கலாடி,2019,tvr,திருத்துறைப்பூண்டி,கொக்காலடி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,அலங்காயம்,ஈச்சாங்கல்,2021,tpt,ஆலங்காயம்,ஈச்சங்கால்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,அலங்காயம்,இளயநகரம்,2021,tpt,ஆலங்காயம்,இளையநகரம்,0.9412,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,vlr,அலங்காயம்,கொத்தகோட்டை,2021,tpt,ஆலங்காயம்,கொத்தக்கோட்டை,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,அலங்காயம்,நரசிங்காபுரம்,2021,tpt,ஆலங்காயம்,நரசிங்கபுரம்,0.96,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,அலங்காயம்,நெக்கணமலை,2021,tpt,ஆலங்காயம்,நெக்னாமலை,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,அணைக்கட்டு,ஜார்தன்கொல்லை,2021,vlr,அணைக்கட்டு,ஜார்தான்கொல்லை,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,அணைக்கட்டு,வரதலாம்பட்டு,2021,vlr,அணைக்கட்டு,வரதலம்பட்டு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,அரக்கோணம்,கீழந்தூர்,2021,rpt,அரக்கோணம்,கீழாந்தூர்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,ஜோலார்பேட்டை,அம்மாணன்கோயில்,2021,tpt,ஜோலார்பேட்டை,அம்மணாங்கோயில்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,ஜோலார்பேட்டை,காட்டேரி,2021,tpt,ஜோலார்பேட்டை,கட்டேரி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,ஜோலார்பேட்டை,கேதண்டபட்டி,2021,tpt,ஜோலார்பேட்டை,கேத்தாண்டபட்டி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,ஜோலார்பேட்டை,கோணப்பட்டு,2021,tpt,ஜோலார்பேட்டை,கோணாப்பட்டு,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,ஜோலார்பேட்டை,புல்லனேரி,2021,tpt,ஜோலார்பேட்டை,புள்ளானேரி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,எர்ராம்பட்டி,2021,tpt,கந்திலி,எர்ரம்பட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,காசிநாயக்கன்பட்டி,2021,tpt,கந்திலி,கசிநாயக்கன்பட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,லக்கிநாய்க்கன்பட்டி,2021,tpt,கந்திலி,லக்கிநாயக்கன்பட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,vlr,கண்டிலி,மானவல்லி,2021,tpt,கந்திலி,மானவள்ளி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,மாட்றபள்ளி,2021,tpt,கந்திலி,மட்றப்பள்ளி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,நரசம்பட்டி,2021,tpt,கந்திலி,நார்சாம்பட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,பேரம்பாட்டு,2021,tpt,கந்திலி,பேராம்பட்டு,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact_respelled,vlr,கண்டிலி,பெரியகண்ணாளப்பட்டி,2021,tpt,கந்திலி,பெரியகண்ணாலப்பட்டி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,பெரியகாரம்,2021,tpt,கந்திலி,பெரியகரம்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,சிம்மானபுதூர்,2021,tpt,கந்திலி,சிம்மணபுதூர்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,சுந்தராம்பள்ளி,2021,tpt,கந்திலி,சுந்தரம்பள்ளி,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,கண்டிலி,விஷாமங்கலம்,2021,tpt,கந்திலி,விசமங்கலம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,கணியம்பாடி,காத்தாழம்பட்டு,2021,vlr,கணியம்பாடி,கத்தாழம்பட்டு,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,vlr,காட்பாடி,அரும்பருத்தி,2021,vlr,காட்பாடி,அரும்பருதி,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,காட்பாடி,பிரம்மாபுரம்,2021,vlr,காட்பாடி,பிரம்மபுரம்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,காட்பாடி,செம்பரயநல்லூர்,2021,vlr,காட்பாடி,செம்பராயநல்லூர்,0.96,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,vlr,காவேரிப்பாக்கம்,அக்கச்சிகுப்பம்,2021,rpt,சோளிங்கர்,அக்கச்சிக்குப்பம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,காவேரிப்பாக்கம்,தாளிக்கல்,2021,rpt,சோளிங்கர்,தாளிக்கால்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,exact,vlr,கே வி குப்பம்,வடுகன்தாங்கல்,2021,vlr,கே வி குப்பம்,வடுகன்தாங்கல்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,மாதனூர்,ஆலன்குப்பம்,2021,tpt,மாதனூர்,ஆலாங்குப்பம்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,மாதனூர்,கண்ணாடிகுப்பம்,2021,tpt,மாதனூர்,கன்னடிகுப்பம்,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,மாதனூர்,குப்பாம்பட்டு,2021,vlr,அணைக்கட்டு,குப்பம்பட்டு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,மாதனூர்,பக்கம்பாளையம்,2021,vlr,அணைக்கட்டு,பாக்கம்பாளையம்,0.9565,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,மாதனூர்,பெரியன்குப்பம்,2021,tpt,மாதனூர்,பெரியாங்குப்பம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,நாட்ராம்பள்ளி,ஆவரான்குப்பம்,2021,tpt,நாட்ராம்பள்ளி,ஆவாரங்குப்பம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,நாட்ராம்பள்ளி,சிக்கன்னன்குப்பம்,2021,tpt,நாட்ராம்பள்ளி,சிக்கணாங்குப்பம்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,நாட்ராம்பள்ளி,பாச்சூர்,2021,tpt,நாட்ராம்பள்ளி,பச்சூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,நாட்ராம்பள்ளி,தொப்பாளகுண்டா,2021,tpt,நாட்ராம்பள்ளி,தோப்பலகுண்டா,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,பேரனாம்பேட்டை,சொக்காரிஷிகுப்பம்,2021,vlr,பேர்ணாம்பட்டு,சொக்கரிஷிகுப்பம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,பேரனாம்பேட்டை,மலையம்பட்டு,2021,tpt,மாதனூர்,மலையாம்பட்டு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,பேரனாம்பேட்டை,மேல்சாணங்குப்பம்,2021,tpt,மாதனூர்,மேல்சாணாங்குப்பம்,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,பேரனாம்பேட்டை,பல்லாலகுப்பம்,2021,vlr,பேர்ணாம்பட்டு,பல்லலகுப்பம்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,சோளிங்கர்,அம்மாவரிபள்ளி,2021,vlr,காட்பாடி,அம்மவாரிப்பள்ளி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,சோளிங்கர்,இளயநல்லூர்,2021,vlr,காட்பாடி,இளையநல்லூர்,0.9412,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,சோளிங்கர்,கல்லான்குப்பம்,2021,rpt,சோளிங்கர்,கல்லாலங்குப்பம்,0.9524,unsure,"கல்லான் vs கல்லாலங்: a syllable missing, not certain",claude,2026-10-19
+link_sample,0.94-0.97,vlr,சோளிங்கர்,கட்டராம்பாக்கம்,2021,rpt,சோளிங்கர்,காட்ரம்பாக்கம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,சோளிங்கர்,கேசவனன்குப்பம்,2021,rpt,சோளிங்கர்,கேசவனாங்குப்பம்,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,சோளிங்கர்,செக்காடிகுப்பம்,2021,rpt,சோளிங்கர்,செக்கடிகுப்பம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,சோளிங்கர்,தாகாரகுப்பம்,2021,rpt,சோளிங்கர்,தகரகுப்பம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,அச்சாமங்கலம்,2021,tpt,திருப்பத்தூர்,அச்சமங்கலம்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,அனன்டாபட்டி,2021,tpt,திருப்பத்தூர்,அண்ணாண்டப்பட்டி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,காக்கனம்பாளையம்,2021,tpt,திருப்பத்தூர்,காக்கணாம்பாளையம்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,குரிசிலப்பட்டு,2021,tpt,திருப்பத்தூர்,குரிசிலாப்பட்டு,0.9524,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,மடப்பள்ளி,2021,tpt,திருப்பத்தூர்,மாடப்பள்ளி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,பால்நன்குப்பம்,2021,tpt,திருப்பத்தூர்,பால்நாங்குப்பம்,0.96,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,பூரிகாமணிமிட்டா,2021,tpt,திருப்பத்தூர்,பூரிகமாணிமிட்டா,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,திருப்பத்தூர்,திம்மானமுத்தூர்,2021,tpt,திருப்பத்தூர்,திம்மணாமுத்தூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,வேலூர்,கரும்பத்தூர்,2021,vlr,வேலூர்,கருகம்பத்தூர்,0.9524,unsure,கரும்ப (sugarcane) vs கருகம்: different words,claude,2026-10-19
+link_sample,0.94-0.97,vlr,வேலூர்,சிறுகஞ்சி,2021,vlr,வேலூர்,சிறுகாஞ்சி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,vlr,வாலாஜாபேட்டை,கடப்பேரி,2021,rpt,வாலாஜாபேட்டை,கடப்பேரி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vlr,வாலாஜாபேட்டை,சீக்காராஜபுரம்,2021,rpt,வாலாஜாபேட்டை,சீக்கராஜபுரம்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,vnr,சிவகாசி,சொக்கம்பட்டி,2019,vnr,சிவகாசி,சொக்கம்பட்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,vnr,சிவகாசி,வாடியூா்,2019,vnr,சிவகாசி,வாடியூர்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vnr,வெம்பக்கோட்டை,அப்பை நாயக்கன்பட்டி,2019,vnr,வெம்பக்கோட்டை,அப்பையநாயக்கன்பட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vnr,வெம்பக்கோட்டை,இனம் ரெட்டியபட்டி,2019,vnr,வெம்பக்கோட்டை,இனாம் ரெட்டியபட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,vnr,வெம்பக்கோட்டை,கீழான்மறைநாடு,2019,vnr,வெம்பக்கோட்டை,கீழாண்மறைநாடு,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vnr,வெம்பக்கோட்டை,த.கன்சபுரம்,2019,vnr,வெம்பக்கோட்டை,த.கான்சாபுரம்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vnr,வெம்பக்கோட்டை,முதன்டியாபுரம்,2019,vnr,வெம்பக்கோட்டை,முத்தாண்டியாபுரம்,0.9655,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.97-1.00,vnr,வெம்பக்கோட்டை,சங்கரபாண்டியபுரம்,2019,vnr,வெம்பக்கோட்டை,சங்கரபாண்டியாபுரம்,0.9714,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,vnr,வெம்பக்கோட்டை,வெம்பக்கோட்டை,2019,vnr,வெம்பக்கோட்டை,வெம்பக்கோட்டை,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vnr,விருதுநகர்,சத்திரரெட்டியபட்டி,2019,vnr,விருதுநகர்,சத்திரரெட்டியாபட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vnr,விருதுநகர்,இனாம்ரெட்டியபட்டி,2019,vnr,விருதுநகர்,இனாம்ரெட்டியாபட்டி,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vnr,விருதுநகர்,இ.குமாரலிங்காபுரம்,2019,vnr,விருதுநகர்,இ.குமாரலிங்கபுரம்,0.9677,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vnr,விருதுநகர்,நல்லான்செட்டியபட்டி,2019,vnr,விருதுநகர்,நல்லான்செட்டிபட்டி,0.96,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vnr,விருதுநகர்,சங்கரலிங்காபுரம்,2019,vnr,விருதுநகர்,சங்கரலிங்கபுரம்,0.9677,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,சின்ன சேலம்,எலவாடி,2021,kki,சின்ன சேலம்,எலவடி,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,சின்ன சேலம்,பைத்தாந்துரை,2021,kki,சின்ன சேலம்,பைத்தந்துறை,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,vpm,சின்ன சேலம்,பெத்தாசமுித்திரம்,2021,kki,சின்ன சேலம்,பெத்தாசமுத்திரம்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,செஞ்சி,இன்னம்மாவட்டம்படி,2021,vpm,செஞ்சி,இனாம்மாவட்டம்படி,0.963,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,செஞ்சி,மீனாம்பூர்,2021,vpm,செஞ்சி,மீனம்பூர்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,செஞ்சி,மேல்பப்பம்பாடி,2021,vpm,செஞ்சி,மேல்பாப்பாம்பாடி,0.95,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,கள்ளக்குறிச்சி,கா.அலம்பாலம்,2021,kki,கள்ளக்குறிச்சி,க.அலம்பலம்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,கள்ளக்குறிச்சி,அரியபெருிமனூர்,2021,kki,கள்ளக்குறிச்சி,அரியபெருமானூர்,0.963,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,கண்டமங்கலம்,கலித்திராம்பட்டு,2021,vpm,கண்டமங்கலம்,கலித்திரம்பட்டு,0.9565,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,கண்டமங்கலம்,கொத்தம்பாக்கம்,2021,vpm,கண்டமங்கலம்,கொத்தாம்பாக்கம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,vpm,கண்டமங்கலம்,வி.நெற்குணம்,2021,vpm,கண்டமங்கலம்,வி.நெற்குணம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,கண்டமங்கலம்,சேஷங்கனூர்,2021,vpm,கண்டமங்கலம்,சேஷாங்கனூர்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,கண்டமங்கலம்,சொர்ணவூர் கீழ்பதி,2021,vpm,கண்டமங்கலம்,சொர்ணாவூர் கீழ்பாதி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,கண்டமங்கலம்,சொர்ணவூர் மேல்பதி,2021,vpm,கண்டமங்கலம்,சொர்ணாவூர் மேல்பாதி,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,கண்டமங்கலம்,வடவாம்பாலம்,2021,vpm,கண்டமங்கலம்,வடவாம்பலம்,0.9524,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,vpm,கோளியனூர்,மேல்பாதி,2021,vpm,கோளியனூர்,மேல்பாதி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,கோளியனூர்,பொய்யாப்பாக்கம்,2021,vpm,கோளியனூர்,பொய்யப்பாக்கம்,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact_respelled,vpm,கோளியனூர்,தென்குச்சிபாளையம்,2021,vpm,கோளியனூர்,தென்குச்சிப்பாளையம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,vpm,மேல்மலையூர்,சிறுதலைப்பூண்டி,2021,vpm,மேல்மலையனூர்,சிறுதலைப்பூண்டி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,சங்கராபுரம்,சௌந்தரிவள்ளிபாளையம்,2021,kki,சங்கராபுரம்,சௌந்தரவள்ளிபாளையம்,0.9697,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,சங்கராபுரம்,புத்திராம்பாட்டு,2021,kki,சங்கராபுரம்,புத்திராம்பட்டு,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,சங்கராபுரம்,ரெங்கப்பனூர்,2021,kki,சங்கராபுரம்,ரங்கப்பனூர்,0.9474,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,சங்கராபுரம்,வலையம்பட்டு,2021,kki,சங்கராபுரம்,வளையாம்பட்டு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,சங்கராபுரம்,வடசட்டியந்தல்,2021,kki,சங்கராபுரம்,வடசெட்டியந்தல்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,vpm,தியாகதுர்கம்,கொங்கராயபாளையம்,2021,kki,தியாகதுர்கம்,கொங்கராயபாளையம்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact,vpm,திருகோவிலூர்,அத்தண்டமருதூர்,2021,kki,திருகோவிலூர்,அத்தண்டமருதூர்,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+link_sample,exact_respelled,vpm,திருகோவிலூர்,தனகநந்தல்,2021,kki,திருகோவிலூர்,தனகனந்தல்,1.0,correct,"same place: identical after folding; raw spellings differ in length, gemination, ண/ன, ல/ள or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,திருநாவலூர்,களவானூர்,2021,kki,திருநாவலூர்,களவனூர்,0.95,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+link_sample,0.94-0.97,vpm,திருநாவலூர்,வாணம்பட்டு,2021,kki,திருநாவலூர்,வாணாம்பட்டு,0.95,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,0.94-0.97,vpm,திருவெண்ணெய்நல்லூர்,சித்தானாங்கூர்,2021,vpm,திருவெண்ணெய்நல்லூர்,சித்தானங்கூர்,0.9565,correct,"same place: names differ only in vowel length, gemination or keying",claude,2026-10-19
+link_sample,exact,vpm,வானூர்,ஐவேலி,2021,vpm,வானூர்,ஐவேலி,1.0,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,cbe,அன்னூர்,ஆம்போதி,2019,cbe,அன்னூர்,அம்போதி,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,cud,கீரப்பாளையம்,இடையன்பால்சேரி,2019,cud,கீரப்பாளையம்,இடையன்பால்சொரி,0.9286,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,cud,கீரப்பாளையம்,வாழக்கொல்லை,2019,cud,கீரப்பாளையம்,வாழைக்கொல்லை,0.9333,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,cud,மங்கலூர்,ம.பொடையூர்,2019,cud,மங்களூர்,ம.புடையூர்,0.88,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,dgl,ஒட்டன்சத்திரம்,எல்லைப்பட்டி,2019,dgl,ஒட்டன்சத்திரம்,எல்லப்பட்டி,0.9091,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dgl,ஒட்டன்சத்திரம்,குத்திலுப்பை,2019,dgl,ஒட்டன்சத்திரம்,குத்திலிப்பை,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,dpi,காரிமங்கலம்,மகேந்திரமங்கலம்,2019,dpi,காரிமங்கலம்,மஹேந்திரமங்கலம்,0.9333,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பாப்பிரெட்டிப்பட்டி,போதக்காடு,2019,dpi,பாப்பிரெட்டிப்பட்டி,பேதக்காடு,0.88,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பென்னகரம்,அஞ்சேஹள்ளி,2019,dpi,பென்னகரம்,அஞ்சேஅள்ளி,0.875,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பென்னகரம்,அரகாசனஹள்ளி,2019,dpi,பென்னகரம்,அரக்காசனஅள்ளி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பென்னகரம்,பத்ரஹள்ளி,2019,dpi,ஏரியூர்,பத்ரஅள்ளி,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,dpi,பென்னகரம்,கூக்கூட்ட மருதஹள்ளி,2019,dpi,பென்னகரம்,கூக்கூட்டமருதஅள்ளி,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பென்னகரம்,மஞ்சாரஹள்ளி,2019,dpi,ஏரியூர்,மஞ்சாரஅள்ளி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பென்னகரம்,பருவதனஹள்ளி,2019,dpi,பென்னகரம்,பருவதனஅள்ளி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,dpi,பென்னகரம்,இராமகொண்டஹள்ளி,2019,dpi,ஏரியூர்,இராமகொண்டஅள்ளி,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பென்னகரம்,வேப்பிலைஹள்ளி,2019,dpi,பென்னகரம்,வேப்பிலைஅள்ளி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,dpi,பென்னகரம்,கெண்டயனஹள்ளி,2019,dpi,ஏரியூர்,கெண்டையனஅள்ளி,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,erd,பவானி,சன்னியாசிப்பட்டி,2019,erd,பவானி,சன்னியாிசிப்பட்டி,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,erd,சென்னிமலை,குப்புச்சிபாளையம்,2019,erd,சென்னிமலை,குப்பிச்சிபாளையம்,0.9231,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,kar,குளித்தலை,ஹிரன்யாமங்கலம்,2019,kar,குளித்தலை,இரண்யமங்கலம்,0.88,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,kgi,மத்தூர்,வீராச்சிகுப்பம்,2019,kgi,மத்தூர்,வீராட்சிகுப்பம்,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,kgi,ஊத்தங்கரை,கருமாண்டம்பதி,2019,kgi,ஊத்தங்கரை,கருமாண்டபதி,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,kgi,ஊத்தங்கரை,மேட்டுதங்கர்,2019,kgi,ஊத்தங்கரை,மேட்டுத்தாங்கல்,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,kpm,லத்தூர்,பெரியவெளிக்காடு,2021,cpt,லத்தூர்,பெரியவேலிகடுக்,0.91,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,ngp,கீவளுர்,இலுப்பூர்,2019,ngp,கீவளுர்,இழுப்பூர்,0.9231,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,ngp,கீவளுர்,இருக்கை,2019,ngp,கீவளுர்,எருக்கை,0.8889,unsure,இருக்கை vs எருக்கை: different first vowel,claude,2026-10-19
+near_miss_link,0.90-0.94,nmk,எருமபட்டி,பொம்மசமுத்ரம்,2019,nmk,எருமபட்டி,பொம்மசமுத்திரம்,0.9231,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,nmk,எருமபட்டி,பவித்ரம்,2019,nmk,எருமபட்டி,பவித்திரம்,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,nmk,எருமபட்டி,பவித்ரம் புதூர்,2019,nmk,எருமபட்டி,பவித்திரம் புதூர்,0.9286,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,pdk,அன்னவாசல்,அரியூர்,2019,pdk,அன்னவாசல்,ஆரியூர்,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,pdk,அன்னவாசல்,தாடையூர்,2019,pdk,அன்னவாசல்,தொடையூர்,0.88,unsure,தா vs தொ: vowel quality differs in the first syllable,claude,2026-10-19
+near_miss_link,0.90-0.94,pdk,கரம்பக்குடி,முல்லங்குருச்சி,2019,pdk,கரம்பக்குடி,முள்ளங்குறிச்சி,0.9091,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,pdk,கரம்பக்குடி,இராஞ்சியன்விடுதி,2019,pdk,கரம்பக்குடி,ராங்கியன்விடுதி,0.9333,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,pdk,கரம்பக்குடி,ரெங்கநாதபுரம்,2019,pdk,கரம்பக்குடி,ரெகுநாதபுரம்,0.88,incorrect,ரெங்கநாத (Ranganatha) and ரெகுநாத (Raghunatha) are different names,claude,2026-10-19
+near_miss_link,0.85-0.90,pdk,கரம்பக்குடி,வந்தான்விடுதி,2019,pdk,கரம்பக்குடி,வாண்டான்விடுதி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,pdk,கரம்பக்குடி,மருதக்கோன்விடுதி,2019,pdk,கரம்பக்குடி,மருதன்கோன்விடுதி,0.9333,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,pdk,கரம்பக்குடி,மைலகோன்பட்டி,2019,pdk,கரம்பக்குடி,மைலன்கோன்பட்டி,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,pdk,விராலிமலை,தென்னதிரையன்பட்டி,2019,pdk,விராலிமலை,தென்னதிரயான்பட்டி,0.9231,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,slm,ஆத்தூர்,தென்னகுடிபாளையம்,2019,slm,ஆத்தூர்,தென்னங்குடிபாளையம்,0.9333,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,slm,தாரமங்கலம்,அரூர்பட்டி,2019,slm,தாரமங்கலம்,ஆரூர்பட்டி,0.875,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,svg,கண்ணங்குடி,அனுமந்தகுடி,2019,svg,கண்ணங்குடி,ஹனுமந்தகுடி,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,svg,திருப்பத்தூர்,பிராமணப்பட்டி,2019,svg,திருப்பத்தூர்,பிராமணம்பட்டி,0.9,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tlr,எல்லாபுரம்,அயலாச்சேரி,2019,tlr,எல்லாபுரம்,அயலான்சேரி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tlr,கும்மிடிப்பூண்டி,ஈகுவார்பாளையம்,2019,tlr,கும்மிடிப்பூண்டி,எகுவாரபாளையம்,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tlr,கும்மிடிப்பூண்டி,ஏனாதிமேல்பாக்கம்,2019,tlr,கும்மிடிப்பூண்டி,எனதிமேல்பாக்கம்,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tlr,கும்மிடிப்பூண்டி,வழுதலம்மேடு,2019,tlr,கும்மிடிப்பூண்டி,வழுதலமேடு,0.9,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tlr,கடம்பத்தூர்,இருளசேரி,2019,tlr,கடம்பத்தூர்,இருளஞ்சேரி,0.8833,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tlr,பூண்டி,வேலம்மாகண்டிகை,2019,tlr,பூண்டி,வெலமகண்டிகை,0.9024,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tlr,ஆர் கே பேட்டை,ஆர்.கே.பேட்டை,2019,tlr,ஆர் கே பேட்டை,ஆர்.கே. பெட்,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tlr,திருத்தணி,அலமேல்மங்காபுரம்,2019,tlr,திருத்தணி,அலமேலுமங்காபுரம்,0.9375,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tlr,வில்லிவாக்கம்,பாலவேடு,2019,tlr,வில்லிவாக்கம்,பாலவீடு,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tlr,வில்லிவாக்கம்,பம்மதுகுளம்,2019,tlr,வில்லிவாக்கம்,பாமதுக்குளம்,0.8912,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnj,அம்மாபேட்டை,கனஞ்சேரி,2019,tnj,அம்மாபேட்டை,களஞ்சேரி,0.875,unsure,கனஞ்சேரி vs களஞ்சேரி: ன/ள differ,claude,2026-10-19
+near_miss_link,0.90-0.94,tnj,அம்மாபேட்டை,கீழகோயில்பத்து,2019,tnj,அம்மாபேட்டை,கீழகோவில்பத்து,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnj,ஒரத்தநாடு,வாண்டையாங்கருப்பு,2019,tnj,ஒரத்தநாடு,வாண்டையானிருப்பு,0.8966,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnj,சேதுபாவா சத்திரம்,கதையங்காடு உக்கடை,2019,tnj,சேதுபாவா சத்திரம்,கட்டையங்காடு உக்கடை,0.9286,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnj,சேதுபாவா சத்திரம்,முட்டுக்காடு,2019,tnj,சேதுபாவா சத்திரம்,முதுகாடு,0.875,unsure,முட்டு vs முது: different words,claude,2026-10-19
+near_miss_link,0.85-0.90,tnj,சேதுபாவா சத்திரம்,மொடச்சிக்காடு,2019,tnj,சேதுபாவா சத்திரம்,முடச்சிக்காடு,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnj,சேதுபாவா சத்திரம்,ரென்டபுலிக்காடு,2019,tnj,சேதுபாவா சத்திரம்,இரண்டாம்புளிக்காடு,0.8591,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnj,சேதுபாவா சத்திரம்,சரபேந்தரராஜப்பட்டிணம்,2019,tnj,சேதுபாவா சத்திரம்,சரபேந்திரராஜன்பட்டினம்,0.9189,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnj,சேதுபாவா சத்திரம்,ஊமதனக்காடு,2019,tnj,சேதுபாவா சத்திரம்,ஊமத்தநாடு,0.9333,unsure,ஊமதனக்காடு vs ஊமத்தநாடு: காடு vs நாடு,claude,2026-10-19
+near_miss_link,0.90-0.94,tnj,சேதுபாவா சத்திரம்,வீரையன்கோட்டை,2019,tnj,சேதுபாவா சத்திரம்,வீரியங்கோட்டை,0.9091,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnv,சேரன்மாதேவி,வடக்குகருகுருச்சி,2021,tnv,சேரன்மகாதேவி,வடக்கு காருகுறிச்சி,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnv,சேரன்மாதேவி,கொனியூர்,2021,tnv,சேரன்மகாதேவி,கூனியூர்,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnv,சேரன்மாதேவி,திருவிருந்தன்புளி,2021,tnv,சேரன்மகாதேவி,திருவிருத்தான்புள்ளி,0.9155,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnv,சேரன்மாதேவி,மலயன்குளம்,2021,tnv,சேரன்மகாதேவி,மலையான்குளம்,0.9091,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnv,கடையம்,டையம்பெரும்பத்,2021,tki,கடையம்,கடையம்பெரும்பத்து,0.8966,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnv,நாங்குனேரி,ராஜகமங்கலம்,2021,tnv,நாங்குனேரி,ராஜாக்கள்மங்கலம்,0.8912,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnv,நாங்குனேரி,ராமகிரிஷ்ணபுரம்,2021,tnv,நாங்குனேரி,ராமகிருஷ்ணாபுரம்,0.9032,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnv,நாங்குனேரி,மருகலகுருசி,2021,tnv,நாங்குனேரி,மருகால்குறிச்சி,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tnv,நாங்குனேரி,அல்வாநெறி,2021,tnv,நாங்குனேரி,ஆழ்வானேரி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnv,இராதாபுரம்,உதையத்தூர்,2021,tnv,இராதாபுரம்,உதயத்தூர்,0.9333,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tnv,செங்கோட்டை,இலத்தூர்,2021,tki,செங்கோட்டை,இளதூர்,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tpr,உடுமலைப்பேட்டை,குருஞ்சேரி,2019,tpr,உடுமலைப்பேட்டை,குறிஞ்சேரி,0.9,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,try,லால்குடி,எசனகோரை,2019,try,லால்குடி,எசனைக்கோரை,0.9333,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,try,லால்குடி,பாம்பரம்சுதி,2019,try,லால்குடி,பம்பரம்சுற்றி,0.8696,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,try,மணிகண்டம்,நாச்சிகுருச்சி,2019,try,மணிகண்டம்,நாச்சிக்குறிச்சி,0.9,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,try,மருங்காபுரி,இக்கரைகோசிகுருச்சி,2019,try,மருங்காபுரி,இக்கரைகோசிகுறிச்சி,0.9286,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,try,மருங்காபுரி,மணியன்குருச்சி,2019,try,மருங்காபுரி,மணியங்குறிச்சி,0.9167,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,try,மருங்காபுரி,பாலக்குருச்சி,2019,try,மருங்காபுரி,பாலக்குறிச்சி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,try,திருவரம்பூர்,கீழமுல்லைகுடி,2019,try,திருவரம்பூர்,கீழமுல்​லைகுடி,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,tvm,ஜவ்வாது மலை,ஊர்கவுண்டனூர்,2019,tvm,ஜவ்வாது மலை,வீர்கவுண்டனூர்,0.8889,unsure,ஊர் vs வீர் கவுண்டனூர்: different first syllable,claude,2026-10-19
+near_miss_link,0.85-0.90,tvm,வந்தவாசி,ஒழப்பாக்கம்-கொிசப்பட்டு,2019,tvm,வந்தவாசி,ஒழப்பாக்கம்-கொசப்பட்டு,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tvr,குடவாசல்,விக்ரபாண்டியம்,2019,tvr,குடவாசல்,விக்கிரபாண்டியம்,0.9286,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,tvr,மன்னார்குடி,மகாதேவபட்டிணம்,2019,tvr,மன்னார்குடி,மஹாதேவபட்டிணம்,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,அலங்காயம்,ஜாஃப்ரபாத்,2021,tpt,ஆலங்காயம்,ஜாப்ராபாத்,0.9,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,குடியாத்தம்,அக்ரஹாரம்,2021,vlr,குடியாத்தம்,அக்ராவரம்,0.8889,unsure,அக்ரஹாரம் vs அக்ராவரம் (a distinct village name in Gudiyatham),claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,ஜோலார்பேட்டை,அக்ரஹாரம்,2021,tpt,ஜோலார்பேட்டை,அக்ராகரம்,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,ஜோலார்பேட்டை,சின்னகாமியம்பட்டு,2021,tpt,ஜோலார்பேட்டை,சின்னகம்மியம்பட்டு,0.9065,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,ஜோலார்பேட்டை,பெடகல்லுபள்ளி,2021,tpt,ஜோலார்பேட்டை,பெத்தகல்லுப்பள்ளி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,ஜோலார்பேட்டை,பெரியமேட்டூர்,2021,tpt,ஜோலார்பேட்டை,பெரியமோட்டூர்,0.9091,unsure,மேட்டூர் vs மோட்டூர் are both common village names,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,கண்டிலி,அதியூர்,2021,tpt,கந்திலி,ஆதியூர்,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,கண்டிலி,அவல்நாய்க்கன்பட்டி,2021,tpt,கந்திலி,ஆவல்நாயக்கன்பட்டி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,கண்டிலி,காஜல்நாய்க்கன்பட்டி,2021,tpt,கந்திலி,கெஜல்நாயக்கன்பட்டி,0.9024,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,கண்டிலி,தோரணம்பட்டி,2021,tpt,கந்திலி,தோரணம்பதி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,காட்பாடி,அரிமுத்துமோட்டூர்,2021,vlr,காட்பாடி,ஆரிமுத்துமோட்டூர்,0.9231,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,காட்பாடி,எரந்தாங்கல்,2021,vlr,காட்பாடி,ஏரந்தாங்கல்,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,காட்பாடி,கார்ணப்பட்டு,2021,vlr,காட்பாடி,கார்ணாம்பட்டு,0.8731,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,காட்பாடி,குப்பத்துமோட்டூர்,2021,vlr,காட்பாடி,குப்பத்தாமோட்டூர்,0.9091,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,மாதனூர்,ஆசனாம்பேட்,2021,vlr,அணைக்கட்டு,ஆசனாம்பட்டு,0.88,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,மாதனூர்,மேல்பள்ளிப்பேட்,2021,vlr,அணைக்கட்டு,மேல்பள்ளிப்பட்டு,0.88,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,மாதனூர்,வடபுதுப்பேட்,2021,tpt,மாதனூர்,வடபுதுப்பட்டு,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,நாட்ராம்பள்ளி,ஆலசந்தாபுரம்,2021,tpt,நாட்ராம்பள்ளி,அலசந்தாபுரம்,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,நாட்ராம்பள்ளி,பண்டாரப்பள்ளி,2021,tpt,நாட்ராம்பள்ளி,பந்தாரப்பள்ளி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,நாட்ராம்பள்ளி,இக்லாஸ்புரம்,2021,tpt,நாட்ராம்பள்ளி,எக்லாஸ்புரம்,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,நாட்ராம்பள்ளி,கொண்டகிண்டபள்ளி,2021,tpt,நாட்ராம்பள்ளி,கொண்டகிந்தனபள்ளி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,நாட்ராம்பள்ளி,கோடயஞ்சி,2021,tpt,நாட்ராம்பள்ளி,கொடையாஞ்சி,0.8889,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,நாட்ராம்பள்ளி,நாயனசெருவை,2021,tpt,நாட்ராம்பள்ளி,நாயனச்செருவு,0.9,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,நாட்ராம்பள்ளி,தீக்குபெட்டு,2021,tpt,நாட்ராம்பள்ளி,தெக்குப்பட்டு,0.88,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,பேரனாம்பேட்டை,அயித்தம்பட்டி,2021,tpt,மாதனூர்,அயித்தம்பட்டு,0.8889,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,பேரனாம்பேட்டை,எரிகுத்தி,2021,vlr,பேர்ணாம்பட்டு,ஏரிகுத்தி,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,பேரனாம்பேட்டை,பெரியகொமேஸ்வரம்,2021,tpt,மாதனூர்,பெரியகொம்மேஸ்வரம்,0.9375,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,சோளிங்கர்,அவுலரங்கபள்ளி,2021,vlr,காட்பாடி,ஆவுலரங்கப்பள்ளி,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,சோளிங்கர்,பாலிகுப்பம்,2021,vlr,காட்பாடி,பாலேகுப்பம்,0.8889,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,சோளிங்கர்,கொடக்கால்,2021,rpt,சோளிங்கர்,கொடைக்கல்,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,சோளிங்கர்,மதனக்குப்பம்,2021,vlr,காட்பாடி,மாதாண்டகுப்பம்,0.8833,unsure,மதனக்குப்பம் vs மாதாண்டகுப்பம்: not certain,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,சோளிங்கர்,மதிமண்டலம்,2021,vlr,காட்பாடி,மகிமண்டலம்,0.9,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,சோளிங்கர்,தாலங்கி,2021,rpt,சோளிங்கர்,தலங்கை,0.88,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,சோளிங்கர்,தாங்கல்,2021,vlr,காட்பாடி,தெங்கால்,0.88,unsure,தா vs தெ: vowel quality differs,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,சோளிங்கர்,வன்னம்பள்ளி,2021,vlr,காட்பாடி,விண்ணம்பள்ளி,0.9333,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,திருப்பத்தூர்,இருனாபேட்,2021,tpt,திருப்பத்தூர்,இருணாப்பட்டு,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,திருப்பத்தூர்,கடிரம்பட்டி,2021,tpt,திருப்பத்தூர்,கதிரம்பட்டி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vlr,திருப்பத்தூர்,கடிரிமங்கலம்,2021,tpt,திருப்பத்தூர்,கதிரிமங்கலம்,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,திருப்பத்தூர்,மேலச்சாமங்கலம்,2021,tpt,திருப்பத்தூர்,மேல்அச்சமங்கலம்,0.8974,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vlr,வேலூர்,சீக்கனூர்,2021,vlr,வேலூர்,சேக்கனூர்,0.88,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vnr,வெம்பக்கோட்டை,கல்லமனைநாய்க்கன்பட்டி,2019,vnr,வெம்பக்கோட்டை,கல்லமநாயக்கன்பட்டி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vnr,வெம்பக்கோட்டை,குண்டியிருப்பு,2019,vnr,வெம்பக்கோட்டை,குண்டாயிருப்பு,0.9167,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vnr,வெம்பக்கோட்டை,எ.லட்சுமிபுரம்,2019,vnr,வெம்பக்கோட்டை,எ.லட்சுமியாபுரம்,0.9231,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vnr,வெம்பக்கோட்டை,மேலஒட்டம்பட்டி,2019,vnr,வெம்பக்கோட்டை,மேலஓட்டம்பட்டி,0.9,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vnr,வெம்பக்கோட்டை,துளுக்கன்குருச்சி,2019,vnr,வெம்பக்கோட்டை,துலுக்கன்குறிச்சி,0.9231,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vnr,விருதுநகர்,துலுக்கம்பட்டி,2019,vnr,விருதுநகர்,துலுக்கப்பட்டி,0.8912,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,செஞ்சி,மாவந்தாங்கல்,2021,vpm,செஞ்சி,மழவந்தாங்கல்,0.9167,unsure,"மாவந்தாங்கல் vs மழவந்தாங்கல்: ழ missing, not certain",claude,2026-10-19
+near_miss_link,0.85-0.90,vpm,செஞ்சி,மத்தியூர்திருக்கை,2021,vpm,செஞ்சி,மாத்தூா்திருக்கை,0.88,unsure,மத்தியூர் vs மாத்தூர் திருக்கை: different names,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,செஞ்சி,மேல்அடையாளம்,2021,vpm,செஞ்சி,மேல்எடையாளம்,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,செஞ்சி,பழவேலம்,2021,vpm,செஞ்சி,பழவலம்,0.9231,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,செஞ்சி,சித்தாம்பூண்டி,2021,vpm,செஞ்சி,சிட்டாம்பூண்டி,0.9167,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vpm,கண்டமங்கலம்,கள்ளாளிப்பட்டு,2021,vpm,கண்டமங்கலம்,கள்ளிப்பட்டு,0.8731,unsure,கள்ளாளி vs கள்ளி: may be different villages,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,மயிலம்,சின்னநெற்குணம்,2021,vpm,மயிலம்,சின்னநெற்ணம்,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vpm,ஒலக்கூர்,ஒங்கூர்,2021,vpm,ஒலக்கூர்,ஓங்கூர்,0.8571,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,ஒலக்கூர்,பாங்குளத்தூர்,2021,vpm,ஒலக்கூர்,பாங்கொளத்தூர்,0.9091,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.85-0.90,vpm,வல்லம்,எதாநெமிலி,2021,vpm,வல்லம்,ஏதாநெமிலி,0.8889,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,வானூர்,ஒழிந்தியாம்பட்டு,2021,vpm,வானூர்,ஒழிந்திராம்பட்டு,0.9286,correct,same place: names differ only in spelling or keying,claude,2026-10-19
+near_miss_link,0.90-0.94,vpm,விக்கிரவாண்டி,கொட்டியாம்பூண்டி,2021,vpm,விக்கிரவாண்டி,கொட்டையாம்பூண்டி,0.9286,correct,same place: names differ only in vowel length or keying,claude,2026-10-19
+near_miss_margin,not_linked,vpm,கள்ளக்குறிச்சி,மாத்தூர்,2021,kki,கள்ளக்குறிச்சி,மாடூர்,0.8333,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tvm,பெரணமல்லூர்,பூங்குணம்,2019,tvm,பெரணமல்லூர்,நெடுங்குணம்,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,vlr,கண்டிலி,காசிநாயக்கன்பட்டி,2021,tpt,கந்திலி,லக்கிநாயக்கன்பட்டி,0.88,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,cbe,பொள்ளாச்சி வடக்கு,குள்ளக்காபாளையம்,2019,cbe,பொள்ளாச்சி வடக்கு,ஒக்கிலிபாளையம்,0.75,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,cud,குறிஞ்சிப்பாடி,அன்னதானம்பேட்டை,2019,cud,குறிஞ்சிப்பாடி,அம்பலவாணன்பேட்டை,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tvm,களசபாக்கம்,வெங்கட்டம்பாளையம்,2019,tvm,களசபாக்கம்,கிடாம்பாளையம்,0.7857,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,kpm,அச்சரப்பாக்கம்,ஆலப்பாக்கம்,2021,cpt,அச்சரப்பாக்கம்,எலப்பாக்கம்,0.8571,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tnv,குருவிகுளம்,மலையாங்குளம்,2021,tki,குருவிகுளம்,புளியங்குளம்,0.75,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,try,லால்குடி,சாத்தமங்கலம்,2019,try,லால்குடி,திருமங்கலம்,0.7619,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,erd,தூக்கநாயக்கன்பாளையபம்,கொண்டையம்பாளையம்,2019,erd,தூக்கநாயக்கன்பாளையம்,கொங்கர்பாளையம்,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,kpm,உத்திரமேரூர்,புலிபாக்கம்,2021,kpm,உத்திரமேரூர்,புல்லம்பாக்கம்,0.8421,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tnv,குருவிகுளம்,செவல்குளம்,2021,tnv,மானூர்,தேவர்குளம்,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,erd,கோபி,கோட்டுப்புள்ளாம்பாளையம்,2019,erd,கோபி,குள்ளம்பாளையம்,0.8276,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tnj,திருப்பானந்தாள்,மணிக்குடி,2019,tnj,திருப்பானந்தாள்,நரிக்குடி,0.8571,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,rmd,திருவாடானை,கடம்பூர்,2019,rmd,திருவாடானை,கோடனூர்,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,slm,அயோத்தியாபட்டணம்,மாசிநாயக்கன்பட்டி,2019,slm,அயோத்தியாபட்டணம்,தாசநாயக்கன்பட்டி,0.88,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,dgl,பழனி,பெத்தநாயக்கன்பட்டி,2019,dgl,பழனி,பச்சளநாயக்கன்பட்டி,0.8333,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,cud,மங்கலூர்,கல்லூர்,2019,cud,மங்களூர்,கழுதூர்,0.8333,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,kpm,குன்றத்தூர்,கோவூர்,2021,kpm,குன்றத்தூர்,காவனூர்,0.7692,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tvr,கோட்டூர்,பனையூர்,2019,tvr,கோட்டூர்,பாலையூர்,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,vpm,தியாகதுர்கம்,குடியநல்லூர்,2021,kki,தியாகதுர்கம்,முடியனூர்,0.8421,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,vlr,அரக்கோணம்,பெருமுச்சி,2021,vlr,காட்பாடி,பரமசாத்து,0.7689,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,pdk,அறந்தாங்கி,மன்னகுடி,2019,pdk,அறந்தாங்கி,மாங்குடி,0.95,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,mdu,மதுரை (மேற்கு),காவனூர்,2019,mdu,மதுரை (மேற்கு),கருவனூர்,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tut,திருச்செந்தூர்,வீரபாண்டியன்பட்டணம்,2019,tut,திருச்செந்தூர்,வீரபாண்டியன்பட்டணம்(ரூரல்),0.8205,incorrect,the (ரூரல்) rural part is a separate panchayat; both sides linked to their exact partners,claude,2026-10-19
+near_miss_margin,not_linked,tvr,நீடாமங்கலம்,தளிக்கோட்டை,2019,tvr,நீடாமங்கலம்,நல்லிகோட்டை,0.8571,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,tpr,குடிமங்கலம்,கோட்டமங்கலம்,2019,tpr,குடிமங்கலம்,குடிமங்கலம்,0.88,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,kpm,லத்தூர்,பெரும்பாக்கம்,2021,cpt,லத்தூர்,பச்சம்பாக்கம்,0.8,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
+near_miss_margin,not_linked,vlr,மாதனூர்,குப்பாமபாளையம்,2021,vlr,அணைக்கட்டு,குப்பம்பாளையம்,0.8389,correct,குப்பாமபாளையம் = குப்பம்பாளையம் (keying); neither side linked: a lost link,claude,2026-10-19
+near_miss_margin,not_linked,svg,காளையார்கோவில்,புலியடிதம்மம்,2019,svg,காளையார்கோவில்,பள்ளித்தம்மம்,0.8182,incorrect,different villages; each side is linked to its own exact partner,claude,2026-10-19
