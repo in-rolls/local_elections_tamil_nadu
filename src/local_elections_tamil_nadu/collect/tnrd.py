@@ -3,11 +3,16 @@
 tnrd.tn.gov.in answers from outside India, so this connects directly. Its
 "Panchayat Raj Reservation Gazette" index (dyn_json_schemes_name_details.php,
 sch_code 58) lists eight gazettes, 1996-2011, and nothing later whatever year
-is requested (checked 2026-10-18 for 2016, 2019, 2020, 2021). Kept here:
+is requested (checked 2026-10-18 for 2016, 2019, 2020, 2021). All eight are
+kept, with the index page and the department's 2006 election summary page:
 
-  318/2011  G.O.Ms.60 de-reservations and G.O.Ms.61 president roster, 2011
+  395/1996, 401/1996  1996 reservation orders (scans)
+  636/2001  2001 amendments to the 1996 president roster (scan)
+  214/2006  2006 reservation order
   228/2006  G.O.Ms.107 president roster, 2006 (509-page scan, ~116 MB)
   254/2006  G.O.Ms.121 errata to 228/2006
+  316/2011  2011 reservation order
+  318/2011  G.O.Ms.60 de-reservations and G.O.Ms.61 president roster, 2011
   the index page and the department's 2006 election summary page
 
 A file over GitHub's 100 MB limit (228/2006) is committed as byte-split parts,
@@ -35,6 +40,11 @@ FILES = {
     "1_58_2011_318_en.pdf": f"{GO}/1_58_2011_318_en.pdf",
     "1_58_2006_254_en.pdf": f"{GO}/1_58_2006_254_en.pdf",
     "1_58_2006_228_en.pdf": f"{GO}/1_58_2006_228_en.pdf",
+    "1_58_1996_395_en.pdf": f"{GO}/1_58_1996_395_en.pdf",
+    "1_58_1996_401_en.pdf": f"{GO}/1_58_1996_401_en.pdf",
+    "1_58_2001_636_en.pdf": f"{GO}/1_58_2001_636_en.pdf",
+    "1_58_2006_214_en.pdf": f"{GO}/1_58_2006_214_en.pdf",
+    "1_58_2011_316_en.pdf": f"{GO}/1_58_2011_316_en.pdf",
 }
 
 log = logging.getLogger("tnrd")

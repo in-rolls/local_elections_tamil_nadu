@@ -1,7 +1,7 @@
 PY = .venv/bin/python
 RUFF = .venv/bin/ruff
 
-.PHONY: sync collect collect-tnsec collect-tnrd data links union-evidence hand-sample manifest lint verify check
+.PHONY: sync collect collect-tnsec collect-tnrd data gazettes scans links union-evidence hand-sample manifest lint verify check
 
 sync:
 	uv sync --frozen --all-groups
@@ -21,7 +21,20 @@ data:
 	$(PY) -m local_elections_tamil_nadu.parse.results
 	$(PY) -m local_elections_tamil_nadu.parse.app2019
 	$(PY) -m local_elections_tamil_nadu.parse.wards
+	$(MAKE) gazettes
 	$(MAKE) manifest
+
+# reservation gazettes: the 2011 president roster, its independent controls, and
+# the 2001 amendments read by hand (checked against data/interim/scans)
+gazettes:
+	$(PY) -m local_elections_tamil_nadu.parse.president_reservations_2011
+	$(PY) -m local_elections_tamil_nadu.build.gazette_318_controls
+	$(PY) -m local_elections_tamil_nadu.parse.president_amendments_2001
+
+# re-OCR the 1996 and 2001 gazette scans into data/interim/scans (tesseract,
+# pdftoppm); a page already read with the same engine is kept
+scans:
+	$(PY) -m local_elections_tamil_nadu.parse.scans
 
 # 2011 -> 2019/2021 seat links from the results tables and the hand-coded
 # union crosswalk and review in data/linkage/
@@ -48,4 +61,4 @@ verify:
 	$(PY) -m local_elections_tamil_nadu.build.release verify
 
 check: lint verify
-	$(PY) -m unittest discover -s tests -v
+	$(PY) -m pytest tests -q

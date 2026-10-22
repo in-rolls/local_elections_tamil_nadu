@@ -28,6 +28,7 @@ from local_elections_tamil_nadu.parse.results import SEX
 MANIFEST = DATA / "MANIFEST.json"
 README = ROOT / "README.md"
 MARK = ("<!-- checks:start -->", "<!-- checks:end -->")
+GAZETTE_2011 = DATA / "2011/vp_president_reservations/vp_president_reservations.parquet"
 OUTPUTS = [
     "2011/vp_president_results.parquet",
     "2011/vp_president_candidates.parquet",
@@ -48,6 +49,8 @@ OUTPUTS = [
     "linkage/review_2011_2019_2021.csv",
     "linkage/vp_2011_2019.parquet",
     "linkage/vp_2011_2021.parquet",
+    "2011/vp_president_reservations/vp_president_reservations.parquet",
+    "2001/vp_president_amendments/vp_president_amendment_operations.parquet",
 ]
 # The commission's 2011 state abstracts (data/raw/tnsec/rulbe2011/abstract_*.pdf),
 # row "சிற்றூராட்சி தலைவர்" (village panchayat president), read 2026-10-18.
@@ -252,7 +255,13 @@ def checks_2011():
             total_abs_gap=gap,
         )
     )
-    ref = pd.read_csv(DATA / "reference" / "gazette318_2011_counts.csv")
+    ref = (
+        pd.read_parquet(GAZETTE_2011, columns=["district", "reservation"])
+        .groupby(["district", "reservation"])
+        .size()
+        .rename("gp_count")
+        .reset_index()
+    )
     names = pd.read_csv(DATA / "reference" / "districts.csv").dropna()
     fold = {
         "General": ("NONE", 0),
@@ -262,12 +271,8 @@ def checks_2011():
         "ST (General)": ("ST", 0),
         "ST (Women)": ("ST", 1),
     }
-    ref = ref[
-        ref["reservation"].isin(fold)
-    ]  # old-name: header of a local_elections file
-    ref[["reserved_caste", "reserved_woman"]] = (
-        ref["reservation"].map(fold).tolist()
-    )  # old-name
+    ref = ref[ref["reservation"].isin(fold)].copy()
+    ref[["reserved_caste", "reserved_woman"]] = ref["reservation"].map(fold).tolist()
     ref = ref.merge(names, left_on="district", right_on="gazette_2011_district")
     a = ref.groupby(["district_code", "reserved_caste", "reserved_woman"])[
         "gp_count"
@@ -281,7 +286,7 @@ def checks_2011():
             "external",
             "pass" if diff.empty else "warn",
             "seats per district x reservation in the results vs the September 2011 "
-            "GO61 roster (Gazette 318, parsed independently in local_elections); "
+            "GO61 roster (Gazette 318, data/2011/vp_president_reservations/); "
             "differences can be real (later amendments, no-nomination seats)",
             cells=len(both),
             cells_differing=len(diff),

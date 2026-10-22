@@ -33,7 +33,11 @@ women's quota in one term changes who wins the open seat in the next. The
 | `data/checks/hand_check.csv`, `data/checks/hand/` | 30 sampled rows read by hand against crops of the source |
 | `data/linkage/vp_2011_2019.parquet`, `vp_2011_2021.parquet` | a 2011 seat paired with its 2019 or 2021 seat |
 | `data/linkage/union_crosswalk_2011_2019_2021.csv`, `review_2011_2019_2021.csv` | the hand-coded union crosswalk and the hand review behind the links |
-| `data/reference/` | district codes; the mPDF glyph table; seat counts from the 2011 gazette roster |
+| `data/2011/vp_president_reservations/` | named president seat in the September 2011 GO61 roster (Gazette 318/2011): 12,524 rows, 31 districts, 385 unions, the printed reservation, page and line; with its page audit, union counts and dictionary ([guide](data/2011/vp_president_reservations/README.md)) |
+| `data/2001/vp_president_amendments/` | amendment operation in Gazette 636/2001 to the 1996 president roster (456: 434 section replacements, 17 insertions, 5 category changes), read by hand from the scan and reviewed name by name; not a roster ([guide](data/2001/vp_president_amendments/README.md)) |
+| `data/checks/gazette_review/` | page review of the eight TNRD gazettes, and independent native-text controls for the 2011 roster |
+| `data/interim/scans/` | page images and tesseract OCR of the 1996 and 2001 gazette scans, kept as evidence for the hand readings |
+| `data/reference/` | district codes; the mPDF glyph table |
 
 `data/MANIFEST.json` holds the sha256 of every output and the result of every
 check.
@@ -88,7 +92,16 @@ India.
 | 2021 | **Results PDFs:** `rlbe2021/vpp_<code>.pdf`, covering the ordinary election in 9 districts plus casual elections in others. No results application | every district PDF linked |
 
 `data/raw/fetch_log.csv` records the URL, method, sha256, size, HTTP status
-and UTC time of every saved response. The `collect.log` files record each
+and UTC time of every saved response. `data/raw/unlisted/` holds urban files
+(2011 mayor results by corporation, the 2022 chairman reservation, Gazette 326,
+an election-types chart) that came from
+[in-rolls/local_elections](https://github.com/in-rolls/local_elections) with
+no download URL on record; their rows give that repository and commit in
+`method` and leave `url` blank. The gazette roster and amendment exports, their
+hand readings and the scan OCR were also built there and moved here in October
+2026; the hand readings keep that repository's file paths, because they pin
+each other by sha256, and `parse/president_amendments_2001.py` maps those
+paths to where the files now are. The `collect.log` files record each
 run.
 
 ## Ward members
@@ -163,10 +176,10 @@ manifest`.
 | `2011_seats_vs_sec_abstract`: seats parsed vs the commission's abstract: 12,524 posts, 12,523 filled | external | **pass** | {"parsed": 12523, "sec_posts": 12524, "sec_elected": 12523} |
 | `2011_women_reserved_vs_sec_abstract`: women-reserved seats by caste category vs abstract_women.pdf; seats whose bracket is printed empty cannot be counted and may explain a gap | external | **warn** | {"parsed": {"ST": 38, "SC": 1164, "NONE": 3085}, "sec": {"ST": 38, "SC": 1164, "NONE": 3089}, "blank_in_source": 4} |
 | `2011_winners_by_sex_vs_sec_abstract`: winners by printed sex vs abstract_categorywise.pdf (whose categories are the winners' own caste, not the seat's: it counts 4,077 SC winners against 3,132 SC-reserved seats, so only the sex totals are comparable) | external | **pass** | {"parsed_vs_sec": {"female": [4984, 4984], "male": [7539, 7539]}, "total_abs_gap": 0} |
-| `2011_district_category_counts_vs_gazette_318`: seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, parsed independently in local_elections); differences can be real (later amendments, no-nomination seats) | external | **warn** | {"cells": 147, "cells_differing": 12, "seats_differing": 12, "examples": [{"cell": "ari/ST/0", "gazette": 3, "results": 2}, {"cell": "kar/SC/0", "gazette": 22, "results": 21}, {"cell": "nlg/NONE/0", "gazette": 13, "results": 14}, {"cell": "nlg/NONE/1", "gazette": 10, "results": 9}, {"cell": "slm/NON |
+| `2011_district_category_counts_vs_gazette_318`: seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, data/2011/vp_president_reservations/); differences can be real (later amendments, no-nomination seats) | external | **warn** | {"cells": 147, "cells_differing": 12, "seats_differing": 12, "examples": [{"cell": "ari/ST/0", "gazette": 3, "results": 2}, {"cell": "kar/SC/0", "gazette": 22, "results": 21}, {"cell": "nlg/NONE/0", "gazette": 13, "results": 14}, {"cell": "nlg/NONE/1", "gazette": 10, "results": 9}, {"cell": "slm/NON |
 | `2011_women_reserved_share`: 2011 reserved one third of offices for women (50% came in 2016) | legal | **pass** | {"share": 0.3424} |
 | `2019_seats_vs_results_application`: seats in the PDFs (including headings printed with no candidate) vs posts in the commission's results application; the application's other rows are panchayats it marks 'result not declared' | external | **pass** | {"parsed": 9624, "parsed_no_candidates": 2, "app_posts": 9624, "app_posts_no_nomination": 2, "app_rows": 9690} |
-| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9994, "sex_compared": 9622, "sex_agree": 1.0} |
+| `2019_winner_vs_results_application`: PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி) | external | **pass** | {"seats": 9624, "joined_on_names": 9624, "winner_name_agree": 0.9995, "sex_compared": 9622, "sex_agree": 1.0} |
 | `2019_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5, "districts_below_half": {}} |
 | `2021_ordinary_seats_vs_sec`: seats in the nine districts' files vs the 2,901 posts announced | external | **warn** | {"parsed": 2900, "sec": 2901, "casual_seats": 105} |
 | `2021_unopposed_vs_sec`: presidents elected unopposed in the nine districts vs 119 reported | external | **pass** | {"parsed": 119, "sec": 119} |
@@ -388,5 +401,6 @@ make sync
 make collect      # network; tnsec.tn.gov.in needs TN_PROXY
 make data         # parse data/raw into data/<year>/; rewrite the manifest
 make links        # 2011 -> 2019/2021 links
+make scans        # re-OCR the 1996/2001 gazette scans (tesseract); kept pages are reused
 make check
 ```

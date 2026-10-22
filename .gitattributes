@@ -1,5 +1,6 @@
-# Raw sources are stored byte-for-byte; their sha256 is in data/raw/fetch_log.csv.
-data/raw/** -text
+# Data files are stored byte-for-byte: raw sources are pinned by sha256 in
+# data/raw/fetch_log.csv, and the gazette exports and reviews pin each other.
+data/** -text
 *.pdf binary
 *.parquet binary
 *.png binary

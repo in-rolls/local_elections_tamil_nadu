@@ -18,7 +18,9 @@
   "linkage/union_crosswalk_2011_2019_2021.csv": "3ba65d34309b1d5dcc45f6a617b681b8d5e28e7bc9188149b90bbd09b879c595",
   "linkage/review_2011_2019_2021.csv": "9519e6a06c0d1cf353cd66c7d80108d221ef746bf0c58a39e35e236c1284f88a",
   "linkage/vp_2011_2019.parquet": "4fecda05b10c0217adfaca8eb712d30d65ae1b08f449e48bb3695cb1ade9708f",
-  "linkage/vp_2011_2021.parquet": "283520d220be730d63a300a33c64ec5c84f83e221d5f3dd13e1ed38f98c20a2e"
+  "linkage/vp_2011_2021.parquet": "283520d220be730d63a300a33c64ec5c84f83e221d5f3dd13e1ed38f98c20a2e",
+  "2011/vp_president_reservations/vp_president_reservations.parquet": "99190628a0a4ed8b0de9df5e5b82db1383bd6b8f5decc59bf0314fa0c6c37ebd",
+  "2001/vp_president_amendments/vp_president_amendment_operations.parquet": "78420a21a779ff0df82159fe2846a89d9efaa0d4a67649af1060e0daf2574c1e"
  },
  "checks": [
   {
@@ -210,7 +212,7 @@
    "appeals_to": "external",
    "status": "warn",
    "blocking": false,
-   "detail": "seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, parsed independently in local_elections); differences can be real (later amendments, no-nomination seats)",
+   "detail": "seats per district x reservation in the results vs the September 2011 GO61 roster (Gazette 318, data/2011/vp_president_reservations/); differences can be real (later amendments, no-nomination seats)",
    "cells": 147,
    "cells_differing": 12,
    "seats_differing": 12,
@@ -285,7 +287,7 @@
    "detail": "PDF winner vs the application's winner for the same union and panchayat (two separately typed publications); sex compares printed sex with the application's honorific (திரு/திருமதி)",
    "seats": 9624,
    "joined_on_names": 9624,
-   "winner_name_agree": 0.9994,
+   "winner_name_agree": 0.9995,
    "sex_compared": 9622,
    "sex_agree": 1.0
   },
