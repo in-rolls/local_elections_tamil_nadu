@@ -22,7 +22,7 @@ from pdfplumber.utils.text import extract_text
 ROOT = Path(__file__).resolve().parents[3]
 SOURCE = ROOT / "data/raw/tnrd/1_58_2011_318_en.pdf"
 SOURCE_URL = "https://tnrd.tn.gov.in/project/go_files/1_58_2011_318_en.pdf"
-OUT = ROOT / "data/2011/vp_president_reservations"
+OUT = ROOT / "data/release/2011/vp_president_reservations"
 FETCH_LOG = ROOT / "data/raw/fetch_log.csv"
 VERSION = 1
 UNION = re.compile(

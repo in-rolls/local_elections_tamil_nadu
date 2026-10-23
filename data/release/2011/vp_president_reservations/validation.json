@@ -1,17 +1,19 @@
 {
   "parser_version": 1,
-  "parser_sha256": "9055dfb9c5f83b1c51b7b69ee241f6b4327cfca05d38601a59fdd92b7defbfae",
+  "parser_sha256": "33c46ca178509f23da716a7affff062dcf8367ecebe0147ded36c83994ef686a",
   "pdfplumber_version": "0.11.10",
   "pyarrow_version": "26.0.0",
   "source": {
     "path": "data/raw/tnrd/1_58_2011_318_en.pdf",
     "url": "https://tnrd.tn.gov.in/project/go_files/1_58_2011_318_en.pdf",
-    "method": "GET",
     "sha256": "340e18bc66c484a97c9ea7634f3ba6aa12ab715f2b73745c1d96f1b25bcf3ffd",
     "bytes": "1425952",
+    "fetched_at_utc": "2026-10-19T04:51:26Z",
+    "method": "live",
+    "copied_from": "",
+    "http_method": "GET",
     "raw_sha256": "340e18bc66c484a97c9ea7634f3ba6aa12ab715f2b73745c1d96f1b25bcf3ffd",
-    "status": "200",
-    "fetched_at_utc": "2026-10-19T04:51:26Z"
+    "status": "200"
   },
   "roster_pdf_pages": [
     3,

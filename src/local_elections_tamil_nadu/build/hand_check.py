@@ -16,7 +16,7 @@ import subprocess
 
 import pandas as pd
 
-from local_elections_tamil_nadu.parse.common import DATA, ROOT
+from local_elections_tamil_nadu.parse.common import DATA, RELEASE, ROOT
 
 OUT = DATA / "checks" / "hand"
 DPI = 110
@@ -27,8 +27,8 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     rows = []
     for year in (2011, 2019, 2021):
-        s = pd.read_parquet(DATA / str(year) / "vp_president_results.parquet")
-        c = pd.read_parquet(DATA / str(year) / "vp_president_candidates.parquet")
+        s = pd.read_parquet(RELEASE / str(year) / "vp_president_results.parquet")
+        c = pd.read_parquet(RELEASE / str(year) / "vp_president_candidates.parquet")
         s = s[s["election_type"] == "General Election"]
         pick = s.sample(10, random_state=SEED)
         for i, seat in enumerate(pick.itertuples(), 1):

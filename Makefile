@@ -25,19 +25,19 @@ data:
 	$(MAKE) manifest
 
 # reservation gazettes: the 2011 president roster, its independent controls, and
-# the 2001 amendments read by hand (checked against data/interim/scans)
+# the 2001 amendments read by hand (checked against data/extracted/scans)
 gazettes:
 	$(PY) -m local_elections_tamil_nadu.parse.president_reservations_2011
 	$(PY) -m local_elections_tamil_nadu.build.gazette_318_controls
 	$(PY) -m local_elections_tamil_nadu.parse.president_amendments_2001
 
-# re-OCR the 1996 and 2001 gazette scans into data/interim/scans (tesseract,
+# re-OCR the 1996 and 2001 gazette scans into data/extracted/scans (tesseract,
 # pdftoppm); a page already read with the same engine is kept
 scans:
 	$(PY) -m local_elections_tamil_nadu.parse.scans
 
 # 2011 -> 2019/2021 seat links from the results tables and the hand-coded
-# union crosswalk and review in data/linkage/
+# union crosswalk and review in data/release/linkage/
 links:
 	$(PY) -m local_elections_tamil_nadu.linkage.vp_links
 	$(MAKE) manifest

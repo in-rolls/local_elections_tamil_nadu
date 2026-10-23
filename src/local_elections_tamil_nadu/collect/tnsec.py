@@ -148,7 +148,7 @@ def results_app(s, held):
 
 
 def main():
-    setup_logging(f"{OUT}/collect.log")
+    setup_logging("data/search_log/tnsec_collect.log")
     s = session()
     held = None  # re-read the log on each call so a resumed run skips work
     site_pages(s, held)

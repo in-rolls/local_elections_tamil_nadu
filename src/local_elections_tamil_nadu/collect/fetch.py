@@ -28,15 +28,19 @@ import requests
 ROOT = Path(__file__).resolve().parents[3]
 RAW = ROOT / "data" / "raw"
 LOG = RAW / "fetch_log.csv"
+# The first six are local_elections docs/layout.md's required columns;
+# http_method is the request's verb (GET or POST).
 FIELDS = [
     "path",
     "url",
-    "method",
     "sha256",
     "bytes",
+    "fetched_at_utc",
+    "method",
+    "copied_from",
+    "http_method",
     "raw_sha256",
     "status",
-    "fetched_at_utc",
 ]
 HEADERS = {"User-Agent": "Mozilla/5.0 (research data collection; in-rolls)"}
 PROXY = os.environ.get("TN_PROXY", "socks5h://localhost:1080")
@@ -110,7 +114,9 @@ def save(content, rel, url, status, method="GET"):
             {
                 "path": rel,
                 "url": url,
-                "method": method,
+                "method": "live",
+                "copied_from": "",
+                "http_method": method,
                 "sha256": sha256(stored),
                 "bytes": len(stored),
                 "raw_sha256": sha256(content),

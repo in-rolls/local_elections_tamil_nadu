@@ -27,8 +27,8 @@ import pdfplumber
 from pdfplumber.utils import cluster_objects
 
 from local_elections_tamil_nadu.parse.common import (
-    DATA,
     RAW,
+    RELEASE,
     inside,
     page_chars,
     rel,
@@ -410,7 +410,7 @@ def main():
             )
             cand += rows
         cand = pd.DataFrame(cand)
-        out = DATA / str(year)
+        out = RELEASE / str(year)
         out.mkdir(parents=True, exist_ok=True)
         seat = seats(cand)
         cand = cand[~cand["placeholder"]].drop(columns="placeholder")

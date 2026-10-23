@@ -19,7 +19,7 @@ import re
 import pandas as pd
 from bs4 import BeautifulSoup
 
-from local_elections_tamil_nadu.parse.common import DATA, RAW, rel
+from local_elections_tamil_nadu.parse.common import RAW, RELEASE, rel
 
 APP = RAW / "tnsec" / "rlbe2019_app"
 LINK = re.compile(r"dcode=([A-Za-z0-9=]+)&(?:amp;)?bcode=([A-Za-z0-9=]+)")
@@ -104,7 +104,7 @@ def winners(union_table):
 
 
 def main():
-    out = DATA / "2019"
+    out = RELEASE / "2019"
     out.mkdir(parents=True, exist_ok=True)
     u = unions()
     w = winners(u)

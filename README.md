@@ -12,31 +12,31 @@ carries:
 
 Built for linking panchayats across consecutive elections, to study whether a
 women's quota in one term changes who wins the open seat in the next. The
-2011 → 2019/2021 seat links are in `data/linkage/`; see
+2011 → 2019/2021 seat links are in `data/release/linkage/`; see
 [Linking across elections](#linking-across-elections).
 
 ## Data
 
 | File | Unit |
 |---|---|
-| `data/2011/vp_president_results.parquet` | seat, 31 rural districts (12,523) |
-| `data/2011/vp_president_candidates.parquet` | candidate |
-| `data/2019/vp_president_results.parquet` | seat, 27 districts (9,624, of which 2 had no nomination) |
-| `data/2019/vp_president_candidates.parquet` | candidate |
-| `data/2021/vp_president_results.parquet` | seat: nine districts' ordinary election (`election_type` = `General Election`) plus casual by-elections elsewhere (`By Election`) |
-| `data/2021/vp_president_candidates.parquet` | candidate |
-| `data/2011/ward_results.parquet` | ward, three rural offices (`tier`: `vp_ward` village panchayat 99,322; `pu_ward` panchayat union 6,471; `dp_ward` district panchayat 655). 2011 prints winners only for village wards, with the winner's community (`winner_community_raw`) |
-| `data/2019/ward_results.parquet`, `data/2021/ward_results.parquet` | ward, the same three offices (2019: 76,734 / 5,090 / 515; 2021: 23,210 / 1,421 / 153, ordinary and by-elections) |
-| `data/2011/ward_candidates.parquet`, `data/2019/ward_candidates.parquet`, `data/2021/ward_candidates.parquet` | candidate, with sex, votes, result, and party for union/district offices; 2011 has 36,250 union/district candidates and no village-candidate table |
-| `data/2019/app_winners.parquet` | panchayat row in the commission's 2019 results application, a second publication of the same results (winner with honorific) |
-| `data/2019/app_union_counts.parquet` | union: posts in total, declared, without nomination |
+| `data/release/2011/vp_president_results.parquet` | seat, 31 rural districts (12,523) |
+| `data/release/2011/vp_president_candidates.parquet` | candidate |
+| `data/release/2019/vp_president_results.parquet` | seat, 27 districts (9,624, of which 2 had no nomination) |
+| `data/release/2019/vp_president_candidates.parquet` | candidate |
+| `data/release/2021/vp_president_results.parquet` | seat: nine districts' ordinary election (`election_type` = `General Election`) plus casual by-elections elsewhere (`By Election`) |
+| `data/release/2021/vp_president_candidates.parquet` | candidate |
+| `data/release/2011/ward_results.parquet` | ward, three rural offices (`tier`: `vp_ward` village panchayat 99,322; `pu_ward` panchayat union 6,471; `dp_ward` district panchayat 655). 2011 prints winners only for village wards, with the winner's community (`winner_community_raw`) |
+| `data/release/2019/ward_results.parquet`, `data/release/2021/ward_results.parquet` | ward, the same three offices (2019: 76,734 / 5,090 / 515; 2021: 23,210 / 1,421 / 153, ordinary and by-elections) |
+| `data/release/2011/ward_candidates.parquet`, `data/release/2019/ward_candidates.parquet`, `data/release/2021/ward_candidates.parquet` | candidate, with sex, votes, result, and party for union/district offices; 2011 has 36,250 union/district candidates and no village-candidate table |
+| `data/release/2019/app_winners.parquet` | panchayat row in the commission's 2019 results application, a second publication of the same results (winner with honorific) |
+| `data/release/2019/app_union_counts.parquet` | union: posts in total, declared, without nomination |
 | `data/checks/hand_check.csv`, `data/checks/hand/` | 30 sampled rows read by hand against crops of the source |
-| `data/linkage/vp_2011_2019.parquet`, `vp_2011_2021.parquet` | a 2011 seat paired with its 2019 or 2021 seat |
-| `data/linkage/union_crosswalk_2011_2019_2021.csv`, `review_2011_2019_2021.csv` | the hand-coded union crosswalk and the hand review behind the links |
-| `data/2011/vp_president_reservations/` | named president seat in the September 2011 GO61 roster (Gazette 318/2011): 12,524 rows, 31 districts, 385 unions, the printed reservation, page and line; with its page audit, union counts and dictionary ([guide](data/2011/vp_president_reservations/README.md)) |
-| `data/2001/vp_president_amendments/` | amendment operation in Gazette 636/2001 to the 1996 president roster (456: 434 section replacements, 17 insertions, 5 category changes), read by hand from the scan and reviewed name by name; not a roster ([guide](data/2001/vp_president_amendments/README.md)) |
+| `data/release/linkage/vp_2011_2019.parquet`, `vp_2011_2021.parquet` | a 2011 seat paired with its 2019 or 2021 seat |
+| `data/manual/union_crosswalk_2011_2019_2021.csv`, `review_2011_2019_2021.csv` | the hand-coded union crosswalk and the hand review behind the links |
+| `data/release/2011/vp_president_reservations/` | named president seat in the September 2011 GO61 roster (Gazette 318/2011): 12,524 rows, 31 districts, 385 unions, the printed reservation, page and line; with its page audit, union counts and dictionary ([guide](data/release/2011/vp_president_reservations/README.md)) |
+| `data/release/2001/vp_president_amendments/` | amendment operation in Gazette 636/2001 to the 1996 president roster (456: 434 section replacements, 17 insertions, 5 category changes), read by hand from the scan and reviewed name by name; not a roster ([guide](data/release/2001/vp_president_amendments/README.md)) |
 | `data/checks/gazette_review/` | page review of the eight TNRD gazettes, and independent native-text controls for the 2011 roster |
-| `data/interim/scans/` | page images and tesseract OCR of the 1996 and 2001 gazette scans, kept as evidence for the hand readings |
+| `data/extracted/scans/` | page images and tesseract OCR of the 1996 and 2001 gazette scans, kept as evidence for the hand readings |
 | `data/reference/` | district codes; the mPDF glyph table |
 
 `data/MANIFEST.json` holds the sha256 of every output and the result of every
@@ -186,7 +186,7 @@ manifest`.
 | `2021_women_reserved_share`: at least half of president offices reserved for women (Tamil Nadu Panchayats (Amendment) Act, 2016, L.A. Bill 5 of 2016, s.57), statewide and per district | legal | **pass** | {"share": 0.5003, "districts_below_half": {}} |
 | `links_keys_resolve_one_to_one`: each link side's (district_code, block, gram_panchayat) names exactly one row of its results table (2021: ordinary election rows), and no seat is linked twice | internal | **pass** | {"2019:2011": {"repeated_in_links": 0, "not_one_row": 0}, "2019:2019": {"repeated_in_links": 0, "not_one_row": 0}, "2021:2011": {"repeated_in_links": 0, "not_one_row": 0}, "2021:2021": {"repeated_in_links": 0, "not_one_row": 0}} |
 | `links_union_crosswalk_covers_all_unions`: every 2011 and later panchayat union appears in a usable crosswalk row | internal | **pass** | {"decisions": {"same": 368, "split": 27, "merged": 4, "uncertain": 1}, "unions_2011_uncovered": [], "unions_later_uncovered": []} |
-| `links_precision_hand_review`: hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as wrong): precision at least 98% in every stratum and overall. Fuzzy links were read in full, exact links by sample | external | **pass** | {"bands": {"exact": "76/76 of 11604, CI 0.9519-1.0", "exact_respelled": "45/45 of 368, CI 0.9213-1.0", "0.94-0.97": "256/259 of 259, CI 0.9665-0.9961", "0.97-1.00": "7/7 of 7, CI 0.6457-1.0"}, "estimate": 0.9998, "lower_bound": 0.9511} |
+| `links_precision_hand_review`: hand review (data/manual/linkage_review_2011_2019_2021.csv; unsure counts as wrong): precision at least 98% in every stratum and overall. Fuzzy links were read in full, exact links by sample | external | **pass** | {"bands": {"exact": "76/76 of 11604, CI 0.9519-1.0", "exact_respelled": "45/45 of 368, CI 0.9213-1.0", "0.94-0.97": "256/259 of 259, CI 0.9665-0.9961", "0.97-1.00": "7/7 of 7, CI 0.6457-1.0"}, "estimate": 0.9998, "lower_bound": 0.9511} |
 | `links_share_candidates_vs_random`: linked pairs share a candidate name across the two elections far more often than random pairs in the same union group (code shares nothing with the name match); exact and fuzzy links each at least ten times the random rate | external | **pass** | {"linked_exact": 0.1088, "linked_fuzzy": 0.0865, "random_same_union_group": 0.0012} |
 | `2011_dp_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 655, "published": 655} |
 | `2011_pu_ward_seats_vs_abstract`: rural ward seats in the 2011 sheets vs the commission's category-wise abstract | external | **pass** | {"parsed": 6471, "published": 6471} |
@@ -220,8 +220,8 @@ What the passes rest on:
 
 ## Linking across elections
 
-`make links` writes `data/linkage/vp_2011_2019.parquet` and
-`data/linkage/vp_2011_2021.parquet`: a 2011 president seat paired with its
+`make links` writes `data/release/linkage/vp_2011_2019.parquet` and
+`data/release/linkage/vp_2011_2021.parquet`: a 2011 president seat paired with its
 2019 or 2021 seat. **9,491 links to 2019 and 2,747
 to 2021** (11,972 with names identical after folding,
 266 fuzzy). A link says two panchayat names agree inside
@@ -244,7 +244,7 @@ feature).
 
 ### Union crosswalk
 
-`data/linkage/union_crosswalk_2011_2019_2021.csv`, coded by hand from
+`data/manual/union_crosswalk_2011_2019_2021.csv`, coded by hand from
 `make union-evidence`: for each 2011 union, how many of its panchayats have
 their best name match in each later union of the same district or of the
 districts carved from it. An edge needs at least 3 identical folded names and
@@ -333,7 +333,7 @@ reorganised across three new districts.
 
 ### Precision (hand review)
 
-`data/linkage/review_2011_2019_2021.csv`. Every fuzzy link was read; exact
+`data/manual/linkage_review_2011_2019_2021.csv`. Every fuzzy link was read; exact
 links by random sample. A pair was judged from both names, the best rival
 name on each side, and the union. `unsure` counts as wrong. The reviewer is
 Claude, not a person.

@@ -8,7 +8,7 @@ There are 12,523 recorded reservation categories and one genuinely blank cell.
 These are office reservations; the source does not report elected presidents
 or their sex. This export is separate from the pooled master.
 
-The source is the [9 September 2011 gazette](../../raw/tnrd/1_58_2011_318_en.pdf),
+The source is the [9 September 2011 gazette](../../../raw/tnrd/1_58_2011_318_en.pdf),
 [official download](https://tnrd.tn.gov.in/project/go_files/1_58_2011_318_en.pdf).
 PDF pages 3–153 contain the roster. The eight GO60 amendments on pages 1–2 are
 separate operations and are not appended as eight additional GPs. Later
@@ -45,7 +45,7 @@ CSV readers must preserve it as missing and read identifiers as text.
 The layout parser accounts for every table page, including the single-column
 Nilgiris page. A separate native reader agrees on all 12,524 GP names, printed
 serials and reservation texts after whitespace/case normalization. Its
-[controls and visual checks](../../checks/gazette_review/2011_controls/README.md)
+[controls and visual checks](../../../checks/gazette_review/2011_controls/README.md)
 include per-page, union and district counts. These checks do not claim that
 all 12,524 names were visually transcribed or that the supplied notification
 captures every subsequent administrative change.
@@ -76,7 +76,7 @@ authoritative; CSV is provided for inspection and manual work.
 ## Earlier sources
 
 The preserved 1996 notification, 2001 amendments and 2006 notification/errata
-are described in the [historical source review](../../checks/gazette_review/README.md).
+are described in the [historical source review](../../../checks/gazette_review/README.md).
 The [early-source ledger](https://github.com/in-rolls/local_elections/blob/main/data/source_search/early_heads/README.md) distinguishes
 full rosters, amendments and other office tiers. OCR readings are stored under
 `data/tn/derived/scans/` with source images, engine/settings and checksums; they are not

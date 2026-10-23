@@ -7,7 +7,7 @@ pair is left unlinked.
 
 Blocking. A pair is a candidate only inside a union group: the 2011 and
 later unions joined by the hand-coded crosswalk
-(data/linkage/union_crosswalk_2011_2019_2021.csv, decisions other than
+(data/manual/union_crosswalk_2011_2019_2021.csv, decisions other than
 `uncertain`), closed into connected components so that a split (Cuddalore's
 three unions that gave panchayats to the new ஸ்ரீமுஷ்ணம்) forms one group.
 preclink's Crosswalk maps each year's union key to its group; a key outside
@@ -39,7 +39,7 @@ rival just under the threshold still counts), and assigns one-to-one by the
 Hungarian method. The same is run with the years swapped, and a link must be
 found both ways (the margin filter only looks at the left side). Links
 scoring below THRESHOLD are then dropped. THRESHOLD was chosen from the hand
-review in data/linkage/review_2011_2019_2021.csv.
+review in data/manual/linkage_review_2011_2019_2021.csv.
 
     python -m local_elections_tamil_nadu.linkage.vp_links
 """
@@ -59,13 +59,13 @@ from rapidfuzz import fuzz
 from local_elections_tamil_nadu.linkage import names
 from local_elections_tamil_nadu.linkage.candidate_check import check
 from local_elections_tamil_nadu.linkage.union_evidence import LATER
-from local_elections_tamil_nadu.parse.common import DATA
+from local_elections_tamil_nadu.parse.common import DATA, RELEASE
 
-OUT = DATA / "linkage"
-CROSSWALK = OUT / "union_crosswalk_2011_2019_2021.csv"
-REVIEW = OUT / "review_2011_2019_2021.csv"
+OUT = RELEASE / "linkage"
+CROSSWALK = DATA / "manual" / "union_crosswalk_2011_2019_2021.csv"
+REVIEW = DATA / "manual" / "linkage_review_2011_2019_2021.csv"
 SOURCES = {
-    y: DATA / str(y) / "vp_president_results.parquet" for y in (2011, 2019, 2021)
+    y: RELEASE / str(y) / "vp_president_results.parquet" for y in (2011, 2019, 2021)
 }
 KEY = ["district_code", "block", "gram_panchayat"]
 THRESHOLD = 0.94

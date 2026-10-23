@@ -22,7 +22,7 @@ import pdfplumber
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[3]
-OUT = ROOT / "data/interim/scans"
+OUT = ROOT / "data/extracted/scans"
 MANIFEST = ROOT / "data/raw/fetch_log.csv"
 SOURCES = {
     "tn_1_58_1996_401_en": {

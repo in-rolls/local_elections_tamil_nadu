@@ -31,7 +31,7 @@ import re
 import pandas as pd
 import pdfplumber
 
-from local_elections_tamil_nadu.parse.common import DATA, RAW, page_chars, rel
+from local_elections_tamil_nadu.parse.common import RAW, RELEASE, page_chars, rel
 from local_elections_tamil_nadu.parse.results import (
     ELECTIONS,
     ORDINARY_2021,
@@ -329,7 +329,7 @@ def main():
                     blocks = parse_modern(path, office, family)
                     cand += modern_rows(blocks, election, district, office, path, year)
             log.info("%s %s done", election, office)
-        out = DATA / str(year)
+        out = RELEASE / str(year)
         seat = pd.DataFrame(seats)
         if cand:
             cand = pd.DataFrame(cand)

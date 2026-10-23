@@ -19,10 +19,12 @@ ROOT = Path(__file__).resolve().parents[3]
 # in-rolls/local_elections and pin each other by sha256, so their image paths
 # keep that repository's layout. These prefixes say where those files are now.
 HUB_PREFIXES = {
-    "data/tn/derived/amendments_2001/": "data/2001/vp_president_amendments/",
-    "data/tn/derived/scans/": "data/interim/scans/",
-    "data/tamil_nadu/release/amendments_2001/": "data/2001/vp_president_amendments/",
-    "data/tamil_nadu/interim/scans/": "data/interim/scans/",
+    "data/tn/derived/amendments_2001/": "data/release/2001/vp_president_amendments/",
+    "data/tn/derived/scans/": "data/extracted/scans/",
+    "data/tamil_nadu/release/amendments_2001/": (
+        "data/release/2001/vp_president_amendments/"
+    ),
+    "data/tamil_nadu/interim/scans/": "data/extracted/scans/",
     "data/source_search/early_heads/tn_review/": "data/checks/gazette_review/",
     "data/source_search/early_heads/raw/tn_": "data/raw/tnrd/",
 }
@@ -35,7 +37,7 @@ def resolve_path(path, root):
     return root / path
 
 
-OUT = ROOT / "data/2001/vp_president_amendments"
+OUT = ROOT / "data/release/2001/vp_president_amendments"
 SOURCE_SHA = "5cc758b6cc8ad025f284276c61ce3f24302890783ea0a0233a6f2d4d76051bf3"
 CATEGORIES = {
     "General": ("UR", False),
@@ -186,7 +188,7 @@ def write_table(path, rows):
 def machine_evidence(root):
     """Pin existing machine OCR independently; never use it as curated values."""
     evidence = []
-    base = root / "data/interim/scans/tn_1_58_2001_636_en"
+    base = root / "data/extracted/scans/tn_1_58_2001_636_en"
     for page in range(1, 19):
         directory = base / f"page_{page:04d}"
         latest = directory / "latest.json"

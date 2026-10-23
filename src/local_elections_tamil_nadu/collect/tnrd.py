@@ -51,7 +51,7 @@ log = logging.getLogger("tnrd")
 
 
 def main():
-    setup_logging(f"{OUT}/collect.log")
+    setup_logging("data/search_log/tnrd_collect.log")
     s = session(proxy=False)
     for name, url in FILES.items():
         fetch(s, url, f"{OUT}/{name}")

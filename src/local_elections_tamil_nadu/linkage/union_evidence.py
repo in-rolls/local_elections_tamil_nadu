@@ -6,7 +6,7 @@ match (similarity >= MATCH, equal qualifiers) in that later union, and how
 many of those are exact after folding. Union names are printed beside. Writes
 data/linkage/union_evidence_2011_2019_2021.csv (one row per union pair with
 any shared panchayat). The decisions are made by hand in
-data/linkage/union_crosswalk_2011_2019_2021.csv, which this script does not
+data/manual/union_crosswalk_2011_2019_2021.csv, which this script does not
 write.
 
     python -m local_elections_tamil_nadu.linkage.union_evidence
@@ -21,9 +21,9 @@ from local_elections_tamil_nadu.linkage.names import (
     qualifiers,
     similarity,
 )
-from local_elections_tamil_nadu.parse.common import DATA
+from local_elections_tamil_nadu.parse.common import RELEASE
 
-OUT = DATA / "linkage" / "union_evidence_2011_2019_2021.csv"
+OUT = RELEASE / "linkage" / "union_evidence_2011_2019_2021.csv"
 MATCH = 0.80
 # 2011 district -> districts covering its area later. The four districts
 # split after 2011 voted in 2021; every other district voted in 2019.
@@ -36,7 +36,7 @@ LATER = {
 
 
 def seats(year):
-    s = pd.read_parquet(DATA / str(year) / "vp_president_results.parquet")
+    s = pd.read_parquet(RELEASE / str(year) / "vp_president_results.parquet")
     s = s[s["election_type"] == "General Election"].copy()
     s["year"] = year
     c = s["gram_panchayat"].map(clean)

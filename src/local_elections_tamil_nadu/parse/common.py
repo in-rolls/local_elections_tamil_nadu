@@ -9,6 +9,7 @@ from local_elections_tamil_nadu.parse import tamil_fonts
 
 RAW = ROOT / "data" / "raw"
 DATA = ROOT / "data"
+RELEASE = DATA / "release"
 
 
 def rel(path):

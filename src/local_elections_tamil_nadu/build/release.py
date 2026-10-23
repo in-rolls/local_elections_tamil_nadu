@@ -22,35 +22,37 @@ import unicodedata
 
 import pandas as pd
 
-from local_elections_tamil_nadu.parse.common import DATA, ROOT
+from local_elections_tamil_nadu.parse.common import DATA, RELEASE, ROOT
 from local_elections_tamil_nadu.parse.results import SEX
 
 MANIFEST = DATA / "MANIFEST.json"
 README = ROOT / "README.md"
 MARK = ("<!-- checks:start -->", "<!-- checks:end -->")
-GAZETTE_2011 = DATA / "2011/vp_president_reservations/vp_president_reservations.parquet"
+GAZETTE_2011 = (
+    RELEASE / "2011/vp_president_reservations/vp_president_reservations.parquet"
+)
 OUTPUTS = [
-    "2011/vp_president_results.parquet",
-    "2011/vp_president_candidates.parquet",
-    "2019/vp_president_results.parquet",
-    "2019/vp_president_candidates.parquet",
-    "2019/app_winners.parquet",
-    "2019/app_union_counts.parquet",
-    "2021/vp_president_results.parquet",
-    "2021/vp_president_candidates.parquet",
-    "2011/ward_results.parquet",
-    "2011/ward_candidates.parquet",
-    "2019/ward_results.parquet",
-    "2019/ward_candidates.parquet",
-    "2021/ward_results.parquet",
-    "2021/ward_candidates.parquet",
+    "release/2011/vp_president_results.parquet",
+    "release/2011/vp_president_candidates.parquet",
+    "release/2019/vp_president_results.parquet",
+    "release/2019/vp_president_candidates.parquet",
+    "release/2019/app_winners.parquet",
+    "release/2019/app_union_counts.parquet",
+    "release/2021/vp_president_results.parquet",
+    "release/2021/vp_president_candidates.parquet",
+    "release/2011/ward_results.parquet",
+    "release/2011/ward_candidates.parquet",
+    "release/2019/ward_results.parquet",
+    "release/2019/ward_candidates.parquet",
+    "release/2021/ward_results.parquet",
+    "release/2021/ward_candidates.parquet",
     "checks/hand_check.csv",
-    "linkage/union_crosswalk_2011_2019_2021.csv",
-    "linkage/review_2011_2019_2021.csv",
-    "linkage/vp_2011_2019.parquet",
-    "linkage/vp_2011_2021.parquet",
-    "2011/vp_president_reservations/vp_president_reservations.parquet",
-    "2001/vp_president_amendments/vp_president_amendment_operations.parquet",
+    "manual/union_crosswalk_2011_2019_2021.csv",
+    "manual/linkage_review_2011_2019_2021.csv",
+    "release/linkage/vp_2011_2019.parquet",
+    "release/linkage/vp_2011_2021.parquet",
+    "release/2011/vp_president_reservations/vp_president_reservations.parquet",
+    "release/2001/vp_president_amendments/vp_president_amendment_operations.parquet",
 ]
 # The commission's 2011 state abstracts (data/raw/tnsec/rulbe2011/abstract_*.pdf),
 # row "சிற்றூராட்சி தலைவர்" (village panchayat president), read 2026-10-18.
@@ -85,7 +87,7 @@ def result(name, appeals_to, status, detail, blocking=False, **numbers):
 
 
 def load(year, kind):
-    return pd.read_parquet(DATA / str(year) / f"vp_president_{kind}.parquet")
+    return pd.read_parquet(RELEASE / str(year) / f"vp_president_{kind}.parquet")
 
 
 def ordinary(df):
@@ -315,8 +317,8 @@ def checks_2011():
 
 def checks_2019():
     s = load(2019, "results")
-    app = pd.read_parquet(DATA / "2019" / "app_winners.parquet")
-    unions = pd.read_parquet(DATA / "2019" / "app_union_counts.parquet")
+    app = pd.read_parquet(RELEASE / "2019" / "app_winners.parquet")
+    unions = pd.read_parquet(RELEASE / "2019" / "app_union_counts.parquet")
     out = []
     posts = int(unions["posts_total"].sum())
     out.append(
@@ -452,13 +454,13 @@ def checks_links():
     """The 2011 -> 2019/2021 links (data/linkage/)."""
     out = []
     summary = json.loads(
-        (DATA / "linkage" / "MANIFEST.json").read_text(encoding="utf-8")
+        (RELEASE / "linkage" / "MANIFEST.json").read_text(encoding="utf-8")
     )
-    early = pd.read_parquet(DATA / "2011" / "vp_president_results.parquet")
+    early = pd.read_parquet(RELEASE / "2011" / "vp_president_results.parquet")
     problems = {}
     for year in (2019, 2021):
-        links = pd.read_parquet(DATA / "linkage" / f"vp_2011_{year}.parquet")
-        later = pd.read_parquet(DATA / str(year) / "vp_president_results.parquet")
+        links = pd.read_parquet(RELEASE / "linkage" / f"vp_2011_{year}.parquet")
+        later = pd.read_parquet(RELEASE / str(year) / "vp_president_results.parquet")
         later = later[later["election_type"] == "General Election"]
         for side, rows in (("2011", early), (str(year), later)):
             keys = links[[f"{k}_{side}" for k in LINK_KEY]].set_axis(LINK_KEY, axis=1)
@@ -481,10 +483,10 @@ def checks_links():
             **problems,
         )
     )
-    cw = pd.read_csv(DATA / "linkage" / "union_crosswalk_2011_2019_2021.csv")
+    cw = pd.read_csv(DATA / "manual" / "union_crosswalk_2011_2019_2021.csv")
     used = cw[cw["decision"] != "uncertain"]
     later_all = pd.concat(
-        pd.read_parquet(DATA / str(y) / "vp_president_results.parquet").query(
+        pd.read_parquet(RELEASE / str(y) / "vp_president_results.parquet").query(
             "election_type == 'General Election'"
         )
         for y in (2019, 2021)
@@ -513,9 +515,9 @@ def checks_links():
             "links_precision_hand_review",
             "external",
             "pass" if not low and prec["estimate_stratified"] >= 0.98 else "fail",
-            "hand review (data/linkage/review_2011_2019_2021.csv; unsure counts as "
-            "wrong): precision at least 98% in every stratum and overall. Fuzzy "
-            "links were read in full, exact links by sample",
+            "hand review (data/manual/linkage_review_2011_2019_2021.csv; "
+            "unsure counts as wrong): precision at least 98% in every stratum "
+            "and overall. Fuzzy links were read in full, exact links by sample",
             blocking=True,
             bands={
                 b: f"{v['correct']}/{v['reviewed']} of {v['links']}, "
@@ -602,7 +604,7 @@ def community(raw):
 
 def checks_wards():
     out = []
-    w = pd.read_parquet(DATA / "2011" / "ward_results.parquet")
+    w = pd.read_parquet(RELEASE / "2011" / "ward_results.parquet")
     for tier, (seats, cells) in ABSTRACT_2011.items():
         g = w[w["tier"] == tier]
         gap = abs(len(g) - seats)
@@ -646,8 +648,8 @@ def checks_wards():
                 )
             )
     for year in (2011, 2019, 2021):
-        w = pd.read_parquet(DATA / str(year) / "ward_results.parquet")
-        candidates = pd.read_parquet(DATA / str(year) / "ward_candidates.parquet")
+        w = pd.read_parquet(RELEASE / str(year) / "ward_results.parquet")
+        candidates = pd.read_parquet(RELEASE / str(year) / "ward_candidates.parquet")
         counts = candidates.groupby(["source_path", "ward_seq"]).elected.sum()
         bad = counts.ne(1).sum()
         out.append(

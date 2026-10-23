@@ -19,7 +19,7 @@ import unicodedata
 import numpy as np
 import pandas as pd
 
-from local_elections_tamil_nadu.parse.common import DATA
+from local_elections_tamil_nadu.parse.common import RELEASE
 
 KEY = ["district_code", "block", "gram_panchayat"]
 PERMUTATIONS = 50
@@ -36,7 +36,7 @@ def person(name):
 
 
 def name_sets(year):
-    c = pd.read_parquet(DATA / str(year) / "vp_president_candidates.parquet")
+    c = pd.read_parquet(RELEASE / str(year) / "vp_president_candidates.parquet")
     if "election_type" in c:
         c = c[c["election_type"] == "General Election"]
     c = c.assign(p=c["candidate_name"].map(person))
