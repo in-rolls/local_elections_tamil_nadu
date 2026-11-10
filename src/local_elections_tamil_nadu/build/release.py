@@ -22,6 +22,7 @@ import unicodedata
 
 import pandas as pd
 
+from local_elections_tamil_nadu.parse import urban
 from local_elections_tamil_nadu.parse.common import DATA, RELEASE, ROOT
 from local_elections_tamil_nadu.parse.results import SEX
 
@@ -32,6 +33,10 @@ GAZETTE_2011 = (
     RELEASE / "2011/vp_president_reservations/vp_president_reservations.parquet"
 )
 OUTPUTS = [
+    "release/urban/README.md",
+    "manual/urban/sources.csv",
+    "manual/urban/renames.csv",
+    *[f"release/urban/{name}" for name in urban.RELEASE_FILES],
     "release/2011/vp_president_results.parquet",
     "release/2011/vp_president_candidates.parquet",
     "release/2019/vp_president_results.parquet",
@@ -707,6 +712,24 @@ def checks_wards():
     return out
 
 
+def checks_urban():
+    try:
+        counts = urban.validate_release()
+    except (ValueError, OSError, KeyError) as error:
+        return [result("urban_contract", "internal", "fail", str(error), blocking=True)]
+    return [
+        result(
+            "urban_contract",
+            "internal",
+            "pass",
+            "urban field names, physical types, nullability, keys, "
+            "dictionaries and hashes match declared contracts",
+            blocking=True,
+            rows=counts,
+        )
+    ]
+
+
 def run_checks():
     out = []
     for year in (2011, 2019, 2021):
@@ -714,6 +737,7 @@ def run_checks():
     out += checks_2011() + checks_2019() + checks_2021()
     out += checks_links()
     out += checks_wards()
+    out += checks_urban()
     return out
 
 

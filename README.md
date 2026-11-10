@@ -127,6 +127,17 @@ Cuddalore page 119 prints the same village and ward number for two rows.
 The two-seat shortfall against the 2011 abstract is reported as a warning,
 not exact agreement.
 
+## Urban source supplement
+
+[Chennai and Coimbatore urban records](data/release/urban/README.md) add 5,920
+candidate records and 500 winners: Chennai in 2011 and 2022, and Coimbatore in
+2022. The source packet preserves primary reservation and delimitation gazettes,
+an official Coimbatore councilor list, and secondary candidate extracts. It
+corrects two Chennai reservation labels against the primary gazette while
+preserving both sources. The 2011 Chennai extract lacks sex and reservation;
+no cross-election geographic links are claimed. These files are separate from
+the rural release above.
+
 ## How the text was recovered
 
 Ordinary text extraction garbles these PDFs, differently by year. The fixes
@@ -204,6 +215,7 @@ manifest`.
 | `2021_ward_candidate_keys`: candidate serial numbers are unique within each source ward | internal | **pass** | {"duplicates": 0} |
 | `2021_ward_union_present`: village and union wards retain their printed union identifier | internal | **pass** | {"missing": 0} |
 | `2021_ward_printed_keys`: repeated printed ward identifiers are retained for source review and every row of one is marked gp_name_repeated | internal | **pass** | {"duplicates": 0, "unmarked": 0} |
+| `urban_contract`: urban field names, physical types, nullability, keys, dictionaries and hashes match declared contracts | internal | **pass** | {"rows": {"reserved_source_conflicts": 2, "candidates": 5920, "winners": 500, "chennai_reservations_2022": 200, "coimbatore_councilors_2022": 100}} |
 <!-- checks:end -->
 
 What the passes rest on:

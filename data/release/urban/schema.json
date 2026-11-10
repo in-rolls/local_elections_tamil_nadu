@@ -1,0 +1,858 @@
+{
+  "description": "Source-specific urban supplement using pooled election vocabulary; incomplete pooled metadata is not fabricated.",
+  "tables": {
+    "reserved_source_conflicts": {
+      "path": "reserved_source_conflicts.parquet",
+      "unit_of_observation": "One secondary reservation label contradicted by the adopted primary notification",
+      "primaryKey": [
+        "year",
+        "body",
+        "ward_no"
+      ],
+      "expected_rows": 2,
+      "fields": [
+        {
+          "name": "year",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              2011,
+              2022
+            ]
+          },
+          "description": "Election year labeled by the source; 2011 or 2022."
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              "Chennai",
+              "Coimbatore"
+            ]
+          },
+          "description": "Municipal corporation: Chennai or Coimbatore, not the district."
+        },
+        {
+          "name": "ward_no",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Ward identifier stored as text; normalized numeric label, no historical geographic equivalence implied."
+        },
+        {
+          "name": "reserved_label_secondary",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "English reservation label in the secondary CSV, retained separately from the adopted primary notification."
+        },
+        {
+          "name": "reserved_caste",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              "SC",
+              "NONE"
+            ]
+          },
+          "description": "Adopted seat caste quota: SC or NONE; NONE means unreserved by caste, not a statement about the winner; null if unknown."
+        },
+        {
+          "name": "reserved_woman",
+          "type": "integer",
+          "arrow": "int8",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "description": "Adopted women quota: 1 reserved, 0 nonquota, null if unknown; distinct from candidate or winner sex."
+        },
+        {
+          "name": "source_page",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "1-based page of the original PDF; page 1 denotes the complete schedule frame for unlisted wards."
+        },
+        {
+          "name": "source_row",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "HTML table row ordinal, PDF printed serial, or logical CSV record ordinal with header counted as 1; null for schedule complements."
+        },
+        {
+          "name": "source_path",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Path to unchanged retained source bytes, relative to repository root."
+        },
+        {
+          "name": "source_sha256",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "SHA-256 of retained bytes (compressed bytes for the 2011 HTML)."
+        }
+      ]
+    },
+    "candidates": {
+      "path": "candidates.parquet",
+      "unit_of_observation": "One candidate in one ward election",
+      "primaryKey": [
+        "year",
+        "body",
+        "ward_no",
+        "candidate_no"
+      ],
+      "expected_rows": 5920,
+      "fields": [
+        {
+          "name": "year",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              2011,
+              2022
+            ]
+          },
+          "description": "Election year labeled by the source; 2011 or 2022."
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              "Chennai",
+              "Coimbatore"
+            ]
+          },
+          "description": "Municipal corporation: Chennai or Coimbatore, not the district."
+        },
+        {
+          "name": "ward_no",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Ward identifier stored as text; normalized numeric label, no historical geographic equivalence implied."
+        },
+        {
+          "name": "candidate_no",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Printed candidate serial stored as text, unique within its ward election."
+        },
+        {
+          "name": "candidate_name",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Candidate name as printed in the retained source; Tamil script retained; HTML whitespace normalized."
+        },
+        {
+          "name": "party",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Party label as printed, without cross-source grouping."
+        },
+        {
+          "name": "votes",
+          "type": "integer",
+          "arrow": "int32",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Printed integer vote count; null if unavailable, never substituted with zero."
+        },
+        {
+          "name": "result",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Printed election outcome label, retained in its source language."
+        },
+        {
+          "name": "elected",
+          "type": "boolean",
+          "arrow": "bool",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Published Elected/WON status, including explicit lot/unopposed statuses; true for every winner row."
+        },
+        {
+          "name": "candidate_woman_raw",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              "Male",
+              "Female",
+              "Transgender"
+            ]
+          },
+          "description": "Explicit source sex label; null in the 2011 republication."
+        },
+        {
+          "name": "candidate_woman",
+          "type": "integer",
+          "arrow": "int8",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "description": "1 for source Female, 0 for Male; null for Transgender or absent sex. No name or quota inference."
+        },
+        {
+          "name": "source_kind",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Result republication or secondary extraction from SEC PDFs; these are not certified primary result files."
+        },
+        {
+          "name": "source_path",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Path to unchanged retained source bytes, relative to repository root."
+        },
+        {
+          "name": "source_row",
+          "type": "integer",
+          "arrow": "int32",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "HTML table row ordinal, PDF printed serial, or logical CSV record ordinal with header counted as 1; null for schedule complements."
+        },
+        {
+          "name": "source_sha256",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "SHA-256 of retained bytes (compressed bytes for the 2011 HTML)."
+        }
+      ]
+    },
+    "winners": {
+      "path": "winners.parquet",
+      "unit_of_observation": "One published elected candidate in one ward election",
+      "primaryKey": [
+        "year",
+        "body",
+        "ward_no"
+      ],
+      "expected_rows": 500,
+      "fields": [
+        {
+          "name": "year",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              2011,
+              2022
+            ]
+          },
+          "description": "Election year labeled by the source; 2011 or 2022."
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              "Chennai",
+              "Coimbatore"
+            ]
+          },
+          "description": "Municipal corporation: Chennai or Coimbatore, not the district."
+        },
+        {
+          "name": "ward_no",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Ward identifier stored as text; normalized numeric label, no historical geographic equivalence implied."
+        },
+        {
+          "name": "candidate_no",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Printed candidate serial stored as text, unique within its ward election."
+        },
+        {
+          "name": "winner",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Name of the candidate explicitly marked elected in the retained result source; not selected by maximum votes."
+        },
+        {
+          "name": "party",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Party label as printed, without cross-source grouping."
+        },
+        {
+          "name": "votes",
+          "type": "integer",
+          "arrow": "int32",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Printed integer vote count; null if unavailable, never substituted with zero."
+        },
+        {
+          "name": "result",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Printed election outcome label, retained in its source language."
+        },
+        {
+          "name": "elected",
+          "type": "boolean",
+          "arrow": "bool",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Published Elected/WON status, including explicit lot/unopposed statuses; true for every winner row."
+        },
+        {
+          "name": "winner_woman_raw",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              "Male",
+              "Female",
+              "Transgender"
+            ]
+          },
+          "description": "Explicit sex label in the elected candidate's own source row; null in 2011."
+        },
+        {
+          "name": "winner_woman",
+          "type": "integer",
+          "arrow": "int8",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "description": "1 for recorded Female, 0 for Male, null otherwise; never inferred from quota, names or photographs."
+        },
+        {
+          "name": "source_kind",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Result republication or secondary extraction from SEC PDFs; these are not certified primary result files."
+        },
+        {
+          "name": "source_path",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Path to unchanged retained source bytes, relative to repository root."
+        },
+        {
+          "name": "source_row",
+          "type": "integer",
+          "arrow": "int32",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "HTML table row ordinal, PDF printed serial, or logical CSV record ordinal with header counted as 1; null for schedule complements."
+        },
+        {
+          "name": "source_sha256",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "SHA-256 of retained bytes (compressed bytes for the 2011 HTML)."
+        },
+        {
+          "name": "winner_woman_basis",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "published_candidate_row where sex is supplied; null when unavailable. Source kind records secondary origin."
+        },
+        {
+          "name": "reserved_raw_secondary",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Unchanged Tamil reservation text from the secondary ward extract, retained when contradicted by the primary gazette."
+        },
+        {
+          "name": "reserved_raw",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Adopted source heading or reservation cell; null for an unlisted ward in the complete primary reserved schedule, or unavailable 2011 data."
+        },
+        {
+          "name": "reserved_caste",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              "SC",
+              "NONE"
+            ]
+          },
+          "description": "Adopted seat caste quota: SC or NONE; NONE means unreserved by caste, not a statement about the winner; null if unknown."
+        },
+        {
+          "name": "reserved_woman",
+          "type": "integer",
+          "arrow": "int8",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "description": "Adopted women quota: 1 reserved, 0 nonquota, null if unknown; distinct from candidate or winner sex."
+        },
+        {
+          "name": "reserved_basis",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Which source or complete-roster complement supplied adopted quota values; null when unavailable."
+        },
+        {
+          "name": "reserved_source_conflict",
+          "type": "boolean",
+          "arrow": "bool",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "True for a checked disagreement, false for checked agreement, null if not compared with a primary roster."
+        },
+        {
+          "name": "councilor_name_raw",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "English name in the official Coimbatore councilor PDF; retained as a separate measurement, not a verified identity match to the Tamil winner."
+        },
+        {
+          "name": "councilor_party_raw",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Party in the official Coimbatore councilor PDF, separate from the candidate result source."
+        },
+        {
+          "name": "councilor_source_page",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "1-based page in coimbatore_councilors_2022.pdf; null for Chennai."
+        },
+        {
+          "name": "councilor_link_basis",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Same 2022 body and ward; candidate identity is not independently validated by this join."
+        },
+        {
+          "name": "is_geographic_link_validated",
+          "type": "boolean",
+          "arrow": "bool",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "False throughout; no cross-election ward link has been validated."
+        }
+      ]
+    },
+    "chennai_reservations_2022": {
+      "path": "chennai_reservations_2022.parquet",
+      "unit_of_observation": "One ward under the January 17, 2022 notification",
+      "primaryKey": [
+        "year",
+        "body",
+        "ward_no"
+      ],
+      "expected_rows": 200,
+      "fields": [
+        {
+          "name": "year",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              2011,
+              2022
+            ]
+          },
+          "description": "Election year labeled by the source; 2011 or 2022."
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              "Chennai",
+              "Coimbatore"
+            ]
+          },
+          "description": "Municipal corporation: Chennai or Coimbatore, not the district."
+        },
+        {
+          "name": "ward_no",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Ward identifier stored as text; normalized numeric label, no historical geographic equivalence implied."
+        },
+        {
+          "name": "reserved_caste",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              "SC",
+              "NONE"
+            ]
+          },
+          "description": "Adopted seat caste quota: SC or NONE; NONE means unreserved by caste, not a statement about the winner; null if unknown."
+        },
+        {
+          "name": "reserved_woman",
+          "type": "integer",
+          "arrow": "int8",
+          "nullable": true,
+          "constraints": {
+            "required": false,
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "description": "Adopted women quota: 1 reserved, 0 nonquota, null if unknown; distinct from candidate or winner sex."
+        },
+        {
+          "name": "reserved_raw",
+          "type": "string",
+          "arrow": "string",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "Adopted source heading or reservation cell; null for an unlisted ward in the complete primary reserved schedule, or unavailable 2011 data."
+        },
+        {
+          "name": "reserved_basis",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Which source or complete-roster complement supplied adopted quota values; null when unavailable."
+        },
+        {
+          "name": "source_page",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "1-based page of the original PDF; page 1 denotes the complete schedule frame for unlisted wards."
+        },
+        {
+          "name": "source_row",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": true,
+          "constraints": {
+            "required": false
+          },
+          "description": "HTML table row ordinal, PDF printed serial, or logical CSV record ordinal with header counted as 1; null for schedule complements."
+        },
+        {
+          "name": "source_path",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Path to unchanged retained source bytes, relative to repository root."
+        },
+        {
+          "name": "source_sha256",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "SHA-256 of retained bytes (compressed bytes for the 2011 HTML)."
+        }
+      ]
+    },
+    "coimbatore_councilors_2022": {
+      "path": "coimbatore_councilors_2022.parquet",
+      "unit_of_observation": "One listed councilor in the March 2022 municipal PDF",
+      "primaryKey": [
+        "year",
+        "body",
+        "ward_no"
+      ],
+      "expected_rows": 100,
+      "fields": [
+        {
+          "name": "year",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              2011,
+              2022
+            ]
+          },
+          "description": "Election year labeled by the source; 2011 or 2022."
+        },
+        {
+          "name": "body",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true,
+            "enum": [
+              "Chennai",
+              "Coimbatore"
+            ]
+          },
+          "description": "Municipal corporation: Chennai or Coimbatore, not the district."
+        },
+        {
+          "name": "ward_no",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Ward identifier stored as text; normalized numeric label, no historical geographic equivalence implied."
+        },
+        {
+          "name": "councilor_name_raw",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "English name in the official Coimbatore councilor PDF; retained as a separate measurement, not a verified identity match to the Tamil winner."
+        },
+        {
+          "name": "party",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Party label as printed, without cross-source grouping."
+        },
+        {
+          "name": "source_page",
+          "type": "integer",
+          "arrow": "int16",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "1-based page of the original PDF; page 1 denotes the complete schedule frame for unlisted wards."
+        },
+        {
+          "name": "source_path",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "Path to unchanged retained source bytes, relative to repository root."
+        },
+        {
+          "name": "source_sha256",
+          "type": "string",
+          "arrow": "string",
+          "nullable": false,
+          "constraints": {
+            "required": true
+          },
+          "description": "SHA-256 of retained bytes (compressed bytes for the 2011 HTML)."
+        }
+      ]
+    }
+  }
+}

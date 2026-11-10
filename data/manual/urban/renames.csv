@@ -1,0 +1,30 @@
+scope,old,new,reason
+candidate and winner columns,city,body,Same local body value; conventional subject
+candidate columns,candidate_name_raw,candidate_name,Printed name retained
+winner columns,candidate_name_raw,winner,Printed elected name retained
+candidate and winner columns,party_raw,party,Printed party retained
+candidate and winner columns,result_raw,result,Printed result retained
+candidate and winner columns,is_winner,elected,Boolean unchanged
+candidate columns,sex_raw,candidate_woman_raw,Source label unchanged
+winner columns,sex_raw,winner_woman_raw,Source label unchanged
+winner columns,candidate_woman,winner_woman,Boolean to nullable Int8; values unchanged
+candidate columns,candidate_woman,candidate_woman,Boolean to nullable Int8; values unchanged
+all table identifiers,ward_no / candidate_no,ward_no / candidate_no,Integer to string; identifiers preserved
+winner/supporting columns,reservation_category,reserved_caste,Same NONE/SC values
+winner columns,reservation_secondary_raw,reserved_raw_secondary,Unchanged source text
+winner columns,reservation_basis,reserved_basis,Same source/rule descriptions
+winner columns,reservation_conflict,reserved_source_conflict,True/false/null meanings preserved
+winner columns,primary_councilor_name_raw,councilor_name_raw,Separate source measurement; explicit councilor_link_basis added
+winner columns,primary_councilor_party_raw,councilor_party_raw,Separate source measurement retained
+winner columns,primary_councilor_source_page,councilor_source_page,Same PDF page
+winner columns,geographic_link_validated,is_geographic_link_validated,False values retained
+winner/supporting columns,reserved_woman,reserved_woman,Boolean to nullable Int8; values unchanged
+paths,data/release/urban/chennai_reservations_2022.csv,data/release/urban/chennai_reservations_2022.parquet,Typed source table; year/body/printed heading/basis explicit
+paths,data/release/urban/coimbatore_councilors_2022.csv,data/release/urban/coimbatore_councilors_2022.parquet,Typed source table; year/body explicit
+paths,data/release/urban/reservation_conflicts.json,data/release/urban/reserved_source_conflicts.parquet,Typed discrepancy table with primary PDF provenance
+paths,data/reference/urban/dictionary.csv,data/release/urban/dictionary.csv,Generated dictionary now covers all table fields
+paths,data/reference/urban/README.md,data/release/urban/README.md,Source review travels with release
+paths,data/reference/urban/sources.csv,data/manual/urban/sources.csv,Manually enumerated URL frame
+paths,data/reference/urban/acquisition_attempts.json,data/search_log/urban/acquisition_attempts.json,Request and archive search log moved unchanged; successful raw hashes remain in fetch_log.csv
+paths,data/reference/urban/archive_checks.json,data/search_log/urban/archive_checks.json,Request and archive search log moved unchanged; successful raw hashes remain in fetch_log.csv
+paths,data/reference/urban/archive_replay.json,data/search_log/urban/archive_replay.json,Request and archive search log moved unchanged; successful raw hashes remain in fetch_log.csv

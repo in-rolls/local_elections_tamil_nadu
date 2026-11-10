@@ -1,0 +1,10 @@
+{
+  "reserved_source_conflicts.parquet": "ccb81062c4c9bda3b3cd793007a6a363c878dcf35388358bd410d66c6b2355da",
+  "candidates.parquet": "a9ce2f1eda25422d74e3e7e6501df2e641e8b360c3e4d5dd26a5ccc76c19c13f",
+  "winners.parquet": "cb45f0f71ccb045c385938738b67972bdc50694c6e16696e3df51955e240aa98",
+  "chennai_reservations_2022.parquet": "c6146932da167fe8a6cc8c0b251e3dedc6978e1a27abde265d3809fd6f2227c4",
+  "coimbatore_councilors_2022.parquet": "e733b9cde920edc37bbab044d1f04eec4b748795904f1be0668d809b89ab5ebd",
+  "profile.json": "ad196238eb664a070b0331d27ae63b4d5e7706afc713db89f57501f62ecfd858",
+  "schema.json": "fa708d01ba03d6e41de0f5f1cd64a86a1a6bbfb9a51fd5d39d72c2e56a5a5a09",
+  "dictionary.csv": "3a3e6d8fc7d1318b4b95abb460cd7f878d112a09cfebc720c556d493f6b7e09f"
+}

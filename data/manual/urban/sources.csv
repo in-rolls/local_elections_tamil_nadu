@@ -1,0 +1,14 @@
+path,url,format
+data/raw/urban/chennai_reservation_2022.pdf,https://chennaicorporation.gov.in/gcc/delimited_ward/pdf/46_Ex_VI_2.pdf-for-Author.pdf,pdf
+data/raw/urban/chennai_delimitation_2018.pdf,https://chennaicorporation.gov.in/gcc/delimited_ward/pdf/2018_delimitation.pdf,pdf
+data/raw/urban/chennai_delimitation_2011.pdf,https://www.tniuscbe.org/download/gg11/gg2/11egg226.pdf,pdf
+data/raw/urban/chn_candidates_2022.csv,https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/chn_candidates.csv,csv
+data/raw/urban/cbe_candidates_2022.csv,https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/cbe_candidates.csv,csv
+data/raw/urban/opencity_chennai.json,https://data.opencity.in/api/3/action/package_show?id=chennai-gcc-elections-data-2022,json
+data/raw/urban/corp_chn_2011.pdf,https://tnsec.tn.nic.in/tnsec_static/election_results/rulbe2011/corp_chn.pdf,pdf
+data/raw/urban/corp_chn_2022.pdf,https://tnsec.tn.gov.in/tnsec_static/election_results/ulbe2022/corp_chn.pdf,pdf
+data/raw/urban/chn_wards_2022.csv,https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/chn_wards.csv,csv
+data/raw/urban/cbe_wards_2022.csv,https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/cbe_wards.csv,csv
+data/raw/urban/chennai_candidates_2011.html,https://www.livechennai.com/Councillors_Chennai.asp,html
+data/raw/urban/coimbatore_councilors_2022.pdf,https://www.ccmc.gov.in/img/upload/CCMC-Councilors%20Details%202022.pdf,pdf
+data/raw/urban/chennai_results_opencity_2022.csv,https://data.opencity.in/dataset/6f51175f-636f-4c61-abfa-cadaed53f6f8/resource/dd9d9957-81cc-4de8-873c-a216d749d68e/download/766741ac-a1ab-46d2-9e38-0f0d5f30456a.csv,csv

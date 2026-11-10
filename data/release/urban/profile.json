@@ -1,0 +1,20 @@
+{
+  "candidate_counts": {
+    "Chennai 2011": 2472,
+    "Chennai 2022": 2670,
+    "Coimbatore 2022": 778
+  },
+  "winner_counts": {
+    "Chennai 2011": 200,
+    "Chennai 2022": 200,
+    "Coimbatore 2022": 100
+  },
+  "winner_woman_raw_counts": {
+    "Chennai 2011 None": 200,
+    "Chennai 2022 Male": 99,
+    "Chennai 2022 Female": 101,
+    "Coimbatore 2022 Female": 55,
+    "Coimbatore 2022 Male": 45
+  },
+  "reserved_source_conflicts": 2
+}

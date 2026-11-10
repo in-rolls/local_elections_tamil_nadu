@@ -1,0 +1,29 @@
+[
+  {
+    "url": "http://www.tnsec.tn.nic.in/tnsec_static/election_results/rulbe2011/corp_chn.pdf",
+    "checked_at": "2026-11-09T07:55:27.583560+00:00",
+    "captures": [
+      {
+        "timestamp": "2024-04-12T19:11:57+00:00",
+        "raw_url": "https://web.archive.org/web/20240412191157id_/https://tnsec.tn.nic.in/tnsec_static/election_results/rulbe2011/corp_chn.pdf",
+        "digest": "SLISRMBLV7OPP2Q4F6FHRG27FD2324HI"
+      }
+    ],
+    "error": "Memento at https://web.archive.org/web/20240412191157id_/https://tnsec.tn.nic.in/tnsec_static/election_results/rulbe2011/corp_chn.pdf could not be played"
+  },
+  {
+    "url": "http://www.tnsec.tn.nic.in/tnsec_static/election_results/rulbe2011/corp_cbe.pdf",
+    "checked_at": "2026-11-09T07:55:37.077027+00:00",
+    "captures": []
+  },
+  {
+    "url": "http://www.tnsec.tn.nic.in/tnsec_static/election_results/ulbe2022/corp_chn.pdf",
+    "checked_at": "2026-11-09T07:55:37.326297+00:00",
+    "captures": []
+  },
+  {
+    "url": "http://www.tnsec.tn.nic.in/tnsec_static/election_results/ulbe2022/corp_cbe.pdf",
+    "checked_at": "2026-11-09T07:55:40.681151+00:00",
+    "captures": []
+  }
+]

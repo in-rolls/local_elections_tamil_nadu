@@ -1,0 +1,131 @@
+[
+  {
+    "file": "data/raw/urban/chennai_reservation_2022.pdf",
+    "url": "https://chennaicorporation.gov.in/gcc/delimited_ward/pdf/46_Ex_VI_2.pdf-for-Author.pdf",
+    "checked_at": "2026-11-09T07:53:48.674495+00:00",
+    "status": 200,
+    "bytes": 1044150,
+    "content_type": "application/pdf",
+    "response_url": "https://chennaicorporation.gov.in/gcc/delimited_ward/pdf/46_Ex_VI_2.pdf-for-Author.pdf"
+  },
+  {
+    "file": "data/raw/urban/chennai_delimitation_2018.pdf",
+    "url": "https://chennaicorporation.gov.in/gcc/delimited_ward/pdf/2018_delimitation.pdf",
+    "checked_at": "2026-11-09T07:53:48.673914+00:00",
+    "status": 200,
+    "bytes": 780255,
+    "content_type": "application/pdf",
+    "response_url": "https://chennaicorporation.gov.in/gcc/delimited_ward/pdf/2018_delimitation.pdf"
+  },
+  {
+    "file": "data/raw/urban/chennai_delimitation_2011.pdf",
+    "url": "https://www.tniuscbe.org/download/gg11/gg2/11egg226.pdf",
+    "checked_at": "2026-11-09T07:53:48.673418+00:00",
+    "status": 200,
+    "bytes": 354958,
+    "content_type": "application/pdf",
+    "response_url": "https://www.tniuscbe.org/download/gg11/gg2/11egg226.pdf"
+  },
+  {
+    "file": "data/raw/urban/chn_candidates_2022.csv",
+    "url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/chn_candidates.csv",
+    "checked_at": "2026-11-09T07:53:48.675551+00:00",
+    "status": 200,
+    "bytes": 619216,
+    "content_type": "text/csv; charset=utf-8",
+    "response_url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/chn_candidates.csv"
+  },
+  {
+    "file": "data/raw/urban/cbe_candidates_2022.csv",
+    "url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/cbe_candidates.csv",
+    "checked_at": "2026-11-09T07:53:49.078789+00:00",
+    "status": 200,
+    "bytes": 763852,
+    "content_type": "text/csv; charset=utf-8",
+    "response_url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/cbe_candidates.csv"
+  },
+  {
+    "file": "data/raw/urban/opencity_chennai.json",
+    "url": "https://data.opencity.in/api/3/action/package_show?id=chennai-gcc-elections-data-2022",
+    "checked_at": "2026-11-09T07:53:49.447514+00:00",
+    "status": 200,
+    "bytes": 3183,
+    "content_type": "application/json;charset=utf-8",
+    "response_url": "https://data.opencity.in/api/3/action/package_show?id=chennai-gcc-elections-data-2022"
+  },
+  {
+    "file": "data/raw/urban/corp_chn_2011.pdf",
+    "url": "https://tnsec.tn.nic.in/tnsec_static/election_results/rulbe2011/corp_chn.pdf",
+    "checked_at": "2026-11-09T07:53:50.475185+00:00",
+    "error": "HTTPSConnectionPool(host='tnsec.tn.nic.in', port=443): Max retries exceeded with url: /tnsec_static/election_results/rulbe2011/corp_chn.pdf (Caused by ConnectTimeoutError(<HTTPSConnection(host='tnsec.tn.nic.in', port=443) at 0x10ab391d0>, 'Connection to tnsec.tn.nic.in timed out. (connect timeout=12)'))"
+  },
+  {
+    "file": "data/raw/urban/corp_chn_2022.pdf",
+    "url": "https://tnsec.tn.gov.in/tnsec_static/election_results/ulbe2022/corp_chn.pdf",
+    "checked_at": "2026-11-09T07:53:50.951142+00:00",
+    "error": "HTTPSConnectionPool(host='tnsec.tn.gov.in', port=443): Max retries exceeded with url: /tnsec_static/election_results/ulbe2022/corp_chn.pdf (Caused by ConnectTimeoutError(<HTTPSConnection(host='tnsec.tn.gov.in', port=443) at 0x10a97e710>, 'Connection to tnsec.tn.gov.in timed out. (connect timeout=12)'))"
+  },
+  {
+    "file": "data/raw/urban/chn_wards_2022.csv",
+    "url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/chn_wards.csv",
+    "checked_at": "2026-11-09T07:55:06.466643+00:00",
+    "status": 200,
+    "bytes": 38514,
+    "content_type": "text/csv; charset=utf-8",
+    "response_url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/chn_wards.csv"
+  },
+  {
+    "file": "data/raw/urban/cbe_wards_2022.csv",
+    "url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/cbe_wards.csv",
+    "checked_at": "2026-11-09T07:55:06.466074+00:00",
+    "status": 200,
+    "bytes": 159154,
+    "content_type": "text/csv; charset=utf-8",
+    "response_url": "https://www.tamilnadudata.org/wp-content/uploads/tn-data/data/elections/localbody/cbe_wards.csv"
+  },
+  {
+    "file": "data/raw/urban/chennai_candidates_2011.html",
+    "url": "https://www.livechennai.com/Councillors_Chennai.asp",
+    "checked_at": "2026-11-09T07:55:06.466403+00:00",
+    "status": 200,
+    "bytes": 1200161,
+    "content_type": "text/html",
+    "response_url": "https://www.livechennai.com/Councillors_Chennai.asp"
+  },
+  {
+    "file": "data/raw/urban/coimbatore_councilors_2022.pdf",
+    "url": "https://www.ccmc.gov.in/img/upload/CCMC-Councilors%20Details%202022.pdf",
+    "checked_at": "2026-11-09T07:55:06.465535+00:00",
+    "status": 200,
+    "bytes": 2103474,
+    "content_type": "application/pdf",
+    "response_url": "https://www.ccmc.gov.in/img/upload/CCMC-Councilors%20Details%202022.pdf"
+  },
+  {
+    "file": "data/raw/urban/chennai_results_opencity_2022.csv",
+    "url": "https://data.opencity.in/dataset/6f51175f-636f-4c61-abfa-cadaed53f6f8/resource/dd9d9957-81cc-4de8-873c-a216d749d68e/download/766741ac-a1ab-46d2-9e38-0f0d5f30456a.csv",
+    "checked_at": "2026-11-09T07:55:06.712983+00:00",
+    "status": 200,
+    "bytes": 34094,
+    "content_type": "text/csv",
+    "response_url": "https://data.opencity.in/dataset/6f51175f-636f-4c61-abfa-cadaed53f6f8/resource/dd9d9957-81cc-4de8-873c-a216d749d68e/download/766741ac-a1ab-46d2-9e38-0f0d5f30456a.csv"
+  },
+  {
+    "file": "data/raw/urban/cbe_secondary_catalog.html",
+    "url": "https://www.tamilnadudata.org/elections/local-body/district/cbe/",
+    "checked_at": "2026-11-09T07:55:06.744324+00:00",
+    "error": "403 Client Error: Forbidden for url: https://www.tamilnadudata.org/elections/local-body/district/cbe/"
+  },
+  {
+    "file": "data/raw/urban/chn_secondary_catalog.html",
+    "url": "https://www.tamilnadudata.org/elections/local-body/district/chn/",
+    "checked_at": "2026-11-09T07:55:06.836059+00:00",
+    "error": "403 Client Error: Forbidden for url: https://www.tamilnadudata.org/elections/local-body/district/chn/"
+  },
+  {
+    "file": "data/raw/urban/ccmc_delimitation.html",
+    "url": "https://ccmc.gov.in/ccmc/index.php/createpage/delimitation-of-ward",
+    "checked_at": "2026-11-09T07:55:07.031892+00:00",
+    "error": "404 Client Error: Not Found for url: https://ccmc.gov.in/ccmc/index.php/createpage/delimitation-of-ward"
+  }
+]
