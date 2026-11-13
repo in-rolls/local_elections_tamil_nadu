@@ -48,7 +48,7 @@ ELECTIONS = {
 ORDINARY_2021 = {"kpm", "cpt", "vlr", "tpt", "rpt", "vpm", "kki", "tnv", "tki"}
 TABLE = {"vertical_strategy": "lines", "horizontal_strategy": "lines"}
 # A heading starts with either label; the parts can wrap onto up to three
-# lines, and a long panchayat name pushes the bracket onto a line centred
+# lines, and a long panchayat name pushes the bracket onto a line centered
 # against the union label, so its words interleave, e.g.
 # "கிராம ஊராட்சி : GP [ஆதி ஊராட்சி ஒன்றியம் : UNION திராவிடர் (பெண்கள்)]".
 START = re.compile(r"(?:சிற்றூராட்சி|கிராம\s*ஊராட்சி)\s*:")
@@ -87,7 +87,7 @@ WON = ("வெற்றி", "போட்டியின்றி")
 
 
 def reservation(raw):
-    """Fold the printed category; anything unrecognised stays unknown."""
+    """Fold the printed category; anything unrecognized stays unknown."""
     text = re.sub(r"\s+", " ", raw).strip(" []")
     woman = "பெண்கள்" in text
     caste_word = text.split("(", 1)[0].strip()
@@ -203,7 +203,7 @@ def parse_pdf(path, election, district_code):
                 lines = [(y, line) for y, line in lines if y >= table.bbox[1]]
                 block_lines = pending_heading + above
                 # the heading's page: the previous one when the label was
-                # printed at its foot and nothing labelled this page's table
+                # printed at its foot and nothing labeled this page's table
                 head_page = (
                     page_number - 1
                     if START.search(" ".join(pending_heading))
