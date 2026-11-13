@@ -152,7 +152,7 @@ are in `parse/tamil_fonts.py`:
 - **2011** (Windows printer driver, then Ghostscript). Each file embeds
   subsets of the Latha font. Some glyphs are named by code point
   (`uni0B95_uni0BC1`); others carry a bare index (`g132`) or a private name
-  (`tm_r_ikaar`). The 70 bare and private names were labelled by rendering
+  (`tm_r_ikaar`). The 70 bare and private names were labeled by rendering
   their outlines from the embedded fonts and reading them. A decoded 2011
   name is only as good as that table. The checks count names containing a
   sequence that Tamil cannot have.
@@ -172,17 +172,17 @@ manifest`.
 | `2011_one_winner_per_seat`: each seat has exactly one candidate marked won or elected unopposed | internal | **pass** | {"seats": 12523, "flagged": 0} |
 | `2011_reservation_read`: every seat's bracketed reservation maps to SC/ST/general x woman or not; brackets printed empty are left unknown and counted separately | internal | **pass** | {"unread": 0, "blank_in_source": 4} |
 | `2011_votes_add_up`: candidate votes sum to the printed valid votes (catches dropped rows) | internal | **pass** | {"contested": 12175, "mismatched": 0} |
-| `2011_glyphs_and_sex_decoded`: no undecoded glyph in names; every candidate's printed sex recognised; few names with a sequence Tamil cannot have (misordered glyphs) | internal | **warn** | {"undecoded": 0, "misordered_names": 50, "names_with_source_keying": 905, "sex_unread": 0} |
+| `2011_glyphs_and_sex_decoded`: no undecoded glyph in names; every candidate's printed sex recognized; few names with a sequence Tamil cannot have (misordered glyphs) | internal | **warn** | {"undecoded": 0, "misordered_names": 50, "names_with_source_keying": 905, "sex_unread": 0} |
 | `2011_winner_has_most_votes`: the candidate marked won has at least the runner-up's votes | internal | **pass** | {"exceptions": 0} |
 | `2019_one_winner_per_seat`: each seat has exactly one candidate marked won or elected unopposed | internal | **pass** | {"seats": 9624, "flagged": 0} |
 | `2019_reservation_read`: every seat's bracketed reservation maps to SC/ST/general x woman or not; brackets printed empty are left unknown and counted separately | internal | **pass** | {"unread": 0, "blank_in_source": 0} |
 | `2019_votes_add_up`: candidate votes sum to the printed valid votes (catches dropped rows) | internal | **warn** | {"contested": 9212, "mismatched": 1} |
-| `2019_glyphs_and_sex_decoded`: no undecoded glyph in names; every candidate's printed sex recognised; few names with a sequence Tamil cannot have (misordered glyphs) | internal | **pass** | {"undecoded": 0, "misordered_names": 19, "names_with_source_keying": 4852, "sex_unread": 0} |
+| `2019_glyphs_and_sex_decoded`: no undecoded glyph in names; every candidate's printed sex recognized; few names with a sequence Tamil cannot have (misordered glyphs) | internal | **pass** | {"undecoded": 0, "misordered_names": 19, "names_with_source_keying": 4852, "sex_unread": 0} |
 | `2019_winner_has_most_votes`: the candidate marked won has at least the runner-up's votes | internal | **pass** | {"exceptions": 0} |
 | `2021_one_winner_per_seat`: each seat has exactly one candidate marked won or elected unopposed | internal | **pass** | {"seats": 3005, "flagged": 0} |
 | `2021_reservation_read`: every seat's bracketed reservation maps to SC/ST/general x woman or not; brackets printed empty are left unknown and counted separately | internal | **pass** | {"unread": 0, "blank_in_source": 0} |
 | `2021_votes_add_up`: candidate votes sum to the printed valid votes (catches dropped rows) | internal | **pass** | {"contested": 2865, "mismatched": 0} |
-| `2021_glyphs_and_sex_decoded`: no undecoded glyph in names; every candidate's printed sex recognised; few names with a sequence Tamil cannot have (misordered glyphs) | internal | **pass** | {"undecoded": 0, "misordered_names": 5, "names_with_source_keying": 782, "sex_unread": 0} |
+| `2021_glyphs_and_sex_decoded`: no undecoded glyph in names; every candidate's printed sex recognized; few names with a sequence Tamil cannot have (misordered glyphs) | internal | **pass** | {"undecoded": 0, "misordered_names": 5, "names_with_source_keying": 782, "sex_unread": 0} |
 | `2021_winner_has_most_votes`: the candidate marked won has at least the runner-up's votes | internal | **pass** | {"exceptions": 0} |
 | `2011_seats_vs_sec_abstract`: seats parsed vs the commission's abstract: 12,524 posts, 12,523 filled | external | **pass** | {"parsed": 12523, "sec_posts": 12524, "sec_elected": 12523} |
 | `2011_women_reserved_vs_sec_abstract`: women-reserved seats by caste category vs abstract_women.pdf; seats whose bracket is printed empty cannot be counted and may explain a gap | external | **warn** | {"parsed": {"ST": 38, "SC": 1164, "NONE": 3085}, "sec": {"ST": 38, "SC": 1164, "NONE": 3089}, "blank_in_source": 4} |
@@ -341,7 +341,7 @@ run in both directions; a link must be found both ways and score at least
 | **All** | | | **12,523** | **12,524** | **12,238** |
 
 Vellore is lowest (88%): its 2011 file was keyed loosely and its unions were
-reorganised across three new districts.
+reorganized across three new districts.
 
 ### Precision (hand review)
 
@@ -376,7 +376,7 @@ direction (கடப்பந்தாங்கல் / வடகடப்பந
 ### Independent check
 
 `linkage/candidate_check.py` shares no code with the name match: does any
-candidate for president in 2011 have the same name (normalised separately) as
+candidate for president in 2011 have the same name (normalized separately) as
 any candidate for the linked seat later?
 
 | Pairs | Share with a candidate name in common |
@@ -397,7 +397,7 @@ review.
 ### What a link does not settle
 
 - **Two-term gap.** 2011 to 2019 spans two terms, because the 2016 election
-  was cancelled.
+  was canceled.
 - **Quota levels differ.** In 2006 and 2011 one third of president offices
   were reserved for women (2011: 4,291 of 12,524). The Tamil Nadu Panchayats
   (Amendment) Act, 2016 (L.A. Bill 5 of 2016; section 57 for president
